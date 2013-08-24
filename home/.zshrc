@@ -8,7 +8,7 @@ SAVEHIST=1000
 
 setopt hist_ignore_all_dups
 setopt autocd
-#setopt correctall
+setopt correctall
 unsetopt beep
 bindkey -e
 
@@ -65,5 +65,5 @@ alias wcc="wicd-curses"
 alias rustime="export TZ=\"Europe/Moscow\" && date && unset TZ"
 alias chr="chromium"
 alias s="sync"
-
 alias homeshick="$HOME/.homesick/repos/homeshick/home/.homeshick"
+
