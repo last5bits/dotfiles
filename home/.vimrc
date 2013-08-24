@@ -15,6 +15,7 @@ set linebreak
 set noswapfile
 set encoding=utf-8 " Default file encoding
 set scrolloff=3
+set hidden " Modified buffers are hidden automatically
 let g:tex_flavor='latex' " TeX вместо PlainTeX
 let mapleader=','
 filetype plugin on
