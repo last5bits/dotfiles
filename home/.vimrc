@@ -28,6 +28,8 @@ execute pathogen#infect()
 " Change your current directory to one you're working in
 command! CD cd %:p:h
 command! LCD lcd %:p:h
+" Pretty JSON
+command! PrettyJson %!python -m json.tool
 
 " Make the current file executable
 nmap ,x :w<cr>:!chmod 755 %<cr>:e<cr>
