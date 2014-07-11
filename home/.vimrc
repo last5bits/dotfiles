@@ -9,15 +9,18 @@ set backspace=2 " Backspace is no use without this
 set number " Line numeration
 set mousehide " Hiding mouse cursor while typing
 set mouse=a " Mouse support is on
-"set wrapscan " ???
 set smartindent " Smart autoindenting when starting a new line
 set linebreak
 set noswapfile
 set encoding=utf-8 " Default file encoding
 set scrolloff=3
 set hidden " Modified buffers are hidden automatically
+set incsearch " Incremental search
+set hlsearch " Search higlights matched string
+
 let g:tex_flavor='latex' " TeX вместо PlainTeX
 let mapleader=','
+
 filetype plugin on
 filetype indent on
 
