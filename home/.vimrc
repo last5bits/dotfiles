@@ -42,8 +42,7 @@ nnoremap <C-J> a<CR><Esc>k$
 
 " This one doesn't work, whatever
 vmap <C-C> "+y
-nmap <C-V> "+p
-imap <C-V> <C-o><C-V>
+imap <C-V> <C-o>"+p
 
 " Make < and > shifts keep selection
 vnoremap < <gv
