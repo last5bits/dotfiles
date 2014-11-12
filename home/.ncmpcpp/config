@@ -414,7 +414,7 @@ follow_now_playing_lyrics = yes
 #
 #jump_to_now_playing_song_at_start = yes
 #
-#ask_before_clearing_playlists = yes
+ask_before_clearing_playlists = no
 #
 #clock_display_seconds = no
 #
