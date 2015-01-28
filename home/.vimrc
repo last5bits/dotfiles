@@ -34,10 +34,17 @@ command! PrettyJson %!python -m json.tool
 " Make the current file executable
 nmap ,x :w<cr>:!chmod 755 %<cr>:e<cr>
 
+" Insert new line
+nnoremap <C-J> a<CR><Esc>k$
+
 " This one doesn't work, whatever
 vmap <C-C> "+y
 nmap <C-V> "+p
 imap <C-V> <C-o><C-V>
+
+" Make < and > shifts keep selection
+vnoremap < <gv
+vnoremap > >gv
 
 " Status line
 fun! <SID>SetStatusLine()
