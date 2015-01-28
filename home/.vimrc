@@ -17,6 +17,7 @@ set scrolloff=3
 set hidden " Modified buffers are hidden automatically
 set incsearch " Incremental search
 set hlsearch " Search higlights matched string
+set t_Co=256
 
 let g:tex_flavor='latex' " TeX вместо PlainTeX
 let mapleader=','
@@ -48,15 +49,17 @@ imap <C-V> <C-o>"+p
 vnoremap < <gv
 vnoremap > >gv
 
-" Status line
-fun! <SID>SetStatusLine()
-    let l:s1="%-3.3n\\ %f\\ %h%m%r%w"
-    let l:s2="[%{strlen(&filetype)?&filetype:'?'},%{&encoding},%{&fileformat}]"
-    let l:s3="%=\\ 0x%-8B\\ \\ %-14.(%l,%c%V%)\\ %<%P"
-    execute "set statusline=" . l:s1 . l:s2 . l:s3
-endfun
+"" Status line
+"fun! <SID>SetStatusLine()
+    "let l:s1="%-3.3n\\ %f\\ %h%m%r%w"
+    "let l:s2="[%{strlen(&filetype)?&filetype:'?'},%{&encoding},%{&fileformat}]"
+    "let l:s3="%=\\ 0x%-8B\\ \\ %-14.(%l,%c%V%)\\ %<%P"
+    "execute "set statusline=" . l:s1 . l:s2 . l:s3
+"endfun
+"set laststatus=2
+"call <SID>SetStatusLine()
 set laststatus=2
-call <SID>SetStatusLine()
+let g:airline_powerline_fonts = 1
 
 nmap <F2> :w<CR>
 " Changing encoding menu {

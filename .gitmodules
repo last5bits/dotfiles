@@ -7,3 +7,6 @@
 [submodule "home/.vim/bundle/c.vim"]
 	path = home/.vim/bundle/c.vim
 	url = https://github.com/vim-scripts/c.vim.git
+[submodule "home/.vim/bundle/vim-airline"]
+	path = home/.vim/bundle/vim-airline
+	url = https://github.com/bling/vim-airline
