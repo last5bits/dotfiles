@@ -17,7 +17,7 @@ set scrolloff=3
 set hidden " Modified buffers are hidden automatically
 set incsearch " Incremental search
 set hlsearch " Search higlights matched string
-set t_Co=256
+set t_Co=256 " Airline forced me to do it
 
 let g:tex_flavor='latex' " TeX вместо PlainTeX
 let mapleader=','
@@ -45,21 +45,10 @@ nnoremap <C-J> a<CR><Esc>k$
 vmap <C-C> "+y
 imap <C-V> <C-o>"+p
 
-" Make < and > shifts keep selection
-vnoremap < <gv
-vnoremap > >gv
-
-"" Status line
-"fun! <SID>SetStatusLine()
-    "let l:s1="%-3.3n\\ %f\\ %h%m%r%w"
-    "let l:s2="[%{strlen(&filetype)?&filetype:'?'},%{&encoding},%{&fileformat}]"
-    "let l:s3="%=\\ 0x%-8B\\ \\ %-14.(%l,%c%V%)\\ %<%P"
-    "execute "set statusline=" . l:s1 . l:s2 . l:s3
-"endfun
-"set laststatus=2
-"call <SID>SetStatusLine()
 set laststatus=2
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
+let g:airline#extensions#tabline#fnamemod = ':t' " Show just the filename
 
 nmap <F2> :w<CR>
 " Changing encoding menu {
@@ -75,8 +64,51 @@ nmap <F10> :qa<CR>
 imap <F10> <ESC>:qa<CR>
 vmap <F10> <ESC><ESC>:qa<CR>
 
-imap <C-b> <left>
-imap <C-f> <right>
+" Walking around your windows
+" Move the cursor to the window left of the current one
+noremap  <leader>h :wincmd h<CR>
+" Move the cursor to the window below the current one
+noremap  <leader>j :wincmd j<CR>
+" Move the cursor to the window above the current one
+noremap  <leader>k :wincmd k<CR>
+" Move the cursor to the window right of the current one
+noremap  <leader>l :wincmd l<CR>
+" Close the window below this one
+noremap  <leader>cj :wincmd j<CR>:close<CR>
+" Close the window above this one
+noremap  <leader>ck :wincmd k<CR>:close<CR>
+" Close the window to the left of this one
+noremap  <leader>ch :wincmd h<CR>:close<CR>
+" Close the window to the right of this one
+noremap  <leader>cl :wincmd l<CR>:close<CR>
+" Close the current window
+noremap  <leader>wc :close<CR>
+" Next buffer
+nmap <leader>n :bnext<CR>
+" Previous buffer
+nmap <leader>p :bprev<CR>
+" New empty buffer
+nmap <leader>t :enew<CR>
+" Close current buffer
+nmap <leader>q :bp <BAR> bd #<CR>
+
+" Move the current window to the right of the main Vim window
+"noremap  <leader>ml L<CR>
+" Move the current window to the top of the main Vim window
+"noremap  <leader>mk K<CR>
+" Move the current window to the left of the main Vim window
+"noremap  <leader>mh H<CR>
+" Move the current window to the bottom of the main Vim window
+"noremap  <leader>mj J<CR>
+" Next tab
+"nmap <leader>n :tabn<CR>
+" Previous tab
+"nmap <leader>p :tabp<CR>
+" New tab
+"nmap <leader>t :tabnew<CR>
+
+"imap <C-b> <left>
+"imap <C-f> <right>
 
 " Disable arrow keys
 "map <up> <nop>
@@ -86,41 +118,11 @@ imap <C-f> <right>
 "imap <up> <nop>
 "imap <down> <nop>
 "imap <left> <nop>
-"imap <right> <nop> 
+"imap <right> <nop>
 
-" Walking around your windows
-" Move the cursor to the window left of the current one
-noremap  ,h :wincmd h<CR>
-" Move the cursor to the window below the current one
-noremap  ,j :wincmd j<CR>
-" Move the cursor to the window above the current one
-noremap  ,k :wincmd k<CR>
-" Move the cursor to the window right of the current one
-noremap  ,l :wincmd l<CR>
-" Close the window below this one
-noremap  ,cj :wincmd j<CR>:close<CR>
-" Close the window above this one
-noremap  ,ck :wincmd k<CR>:close<CR>
-" Close the window to the left of this one
-noremap  ,ch :wincmd h<CR>:close<CR>
-" Close the window to the right of this one
-noremap  ,cl :wincmd l<CR>:close<CR>
-" Close the current window
-noremap  ,wc :close<CR>
-" Move the current window to the right of the main Vim window
-"noremap  ,ml L<CR>
-" Move the current window to the top of the main Vim window
-"noremap  ,mk K<CR>
-" Move the current window to the left of the main Vim window
-"noremap  ,mh H<CR>
-" Move the current window to the bottom of the main Vim window
-"noremap  ,mj J<CR>
-" Next tab
-nmap ,n :tabn<CR>
-" Previous tab
-nmap ,p :tabp<CR>
-" New tab
-nmap ,t :tabnew<CR>
+" Make < and > shifts keep selection
+"vnoremap < <gv
+"vnoremap > >gv
 
 " Русская раскладка клавиатуры
   map ё `
