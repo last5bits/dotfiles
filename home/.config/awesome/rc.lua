@@ -10,6 +10,8 @@ local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
+-- Pop-up calendar
+local cal = require("cal")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -124,6 +126,7 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- {{{ Wibox
 -- Create a textclock widget
 mytextclock = awful.widget.textclock()
+cal.register(mytextclock, "<b>%s</b>")
 
 -- Create a wibox for each screen and add it
 mywibox = {}
