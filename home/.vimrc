@@ -38,8 +38,8 @@ command! PrettyJson %!python -m json.tool
 " Make the current file executable
 nmap ,x :w<cr>:!chmod 755 %<cr>:e<cr>
 
-" Insert new line
-nnoremap <C-J> a<CR><Esc>k$
+" Elevate your privileges
+cnoremap sudow w !sudo tee % >/dev/null
 
 " This one doesn't work, whatever
 vmap <C-C> "+y
