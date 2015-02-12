@@ -397,30 +397,16 @@ awful.rules.rules = {
       properties = { floating = true } },
     { rule = { class = "gimp" },
       properties = { floating = true } },
-    { rule = { class = "Pygtk-shutdown" },
-      properties = { floating = true } },
-    { rule = { class = "BatterySystemTray" },
+    { rule = { class = "Farewell" },
       properties = { floating = true } },
     { rule = { class = "Skype" },
       properties = { floating = true } },
     { rule = { class = "GQview" },
       properties = { floating = true } },
-    { rule = { class = "Bluetooth-properties" },
-      properties = { floating = true } },
     { rule = { class = "Evince" },
-      properties = { floating = true } },
-    { rule = { class = "Gscreenshot.py" },
       properties = { floating = true } },
     { rule = { class = "Xfce4-appfinder" },
       properties = { floating = true } },
-    { rule = { class = "Apvlv" },
-      properties = { floating = true } },
-    { rule = { class = "Google-chrome-stable" },
-      properties = { tag = tags[1][1], border_width = 0 } },
-    { rule = { class = "Thunderbird" },
-      properties = { tag = tags[1][2] } },
-    --{ rule = { class = "QtCreator" },
-      --properties = { tag = tags[2][1] } },
 }
 -- }}}
 
@@ -490,7 +476,9 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
+-- {{{ Specific config
 rc_specific = awful.util.getdir("config") .. "/" .. "rc_specific.lua"
 if awful.util.file_readable(rc_specific) then
     dofile(rc_specific)
 end
+-- }}}
