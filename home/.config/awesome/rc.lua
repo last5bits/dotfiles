@@ -13,6 +13,7 @@ local menubar = require("menubar")
 -- Pop-up calendar
 local cal = require("cal")
 
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -129,7 +130,7 @@ end
 -- Create a laucher widget and a main menu
 myawesomemenu = {
    { "manual", terminal .. " -e man awesome" },
-   { "edit config", editor_cmd .. " " .. awesome.conffile },
+   { "edit config", terminal .. " -x \"" .. editor .. " " .. awesome.conffile .. "\""},
    { "restart", awesome.restart },
    { "quit", awesome.quit }
 }
@@ -305,6 +306,8 @@ globalkeys = awful.util.table.join(
     awful.key({ }, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer set Master 4dB+") end),
     awful.key({ modkey, }, "Up", function () awful.util.spawn("amixer set Master 5%+") end),
     awful.key({ modkey, }, "Down", function () awful.util.spawn("amixer set Master 5%-") end),
+
+    awful.key({ modkey, }, "e", function () awful.util.spawn(terminal .. " -x " .. editor) end),
 
     awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
     awful.key({ modkey, "Control" }, "r", awesome.restart),
