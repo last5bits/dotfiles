@@ -40,22 +40,45 @@ end
 
 -- {{{ Variable definitions
 -- This is used later as the default terminal and editor to run.
-terminal = "sakura"
 home_dir = os.getenv("HOME")
-editor = os.getenv("EDITOR") or "vim"
-editor_cmd = terminal .. " -x " .. editor
-display_off = "dispoff"
-web_browser = "google-chrome-stable"
-wifi_manager = "wicd-curses"
-im_client = "pidgin"
---shutdown_dialog = "pygtk-shutdown"
-shutdown_dialog = "farewell"
 
--- Music player commands
-music = terminal .. " -e ncmpcpp"
-music_toggle = "ncmpcpp toggle"
-music_next   = "ncmpcpp next"
-music_prev   = "ncmpcpp prev"
+-- default_apps.lua would be similar to this
+-- local default_apps = {}
+-- function default_apps.terminal() return "sakura" end
+-- ...
+-- return default_apps
+default_apps_path = awful.util.getdir("config") .. "/" .. "default_apps.lua"
+if awful.util.file_readable(default_apps_path) then
+    local default_apps = require("default_apps")
+    terminal = default_apps.terminal()
+    editor = default_apps.editor()
+    display_off = default_apps.display_off()
+    web_browser = default_apps.web_browser()
+    wifi_manager = default_apps.wifi_manager()
+    im_client = default_apps.im_client()
+    shutdown_dialog = default_apps.shutdown_dialog()
+
+    -- Music player commands
+    music_player = default_apps.music_player()
+    music_toggle = default_apps.music_toggle()
+    music_next   = default_apps.music_next()
+    music_prev   = default_apps.music_prev()
+else
+    terminal = "sakura"
+    editor = os.getenv("EDITOR") or "vim"
+    display_off = "dispoff"
+    web_browser = "google-chrome-stable"
+    wifi_manager = "wifi-menu"
+    im_client = "pidgin"
+    shutdown_dialog = "farewell"
+
+    -- Music player commands
+    music_player = terminal .. " -x ncmpcpp"
+    music_toggle = "ncmpcpp toggle"
+    music_next   = "ncmpcpp next"
+    music_prev   = "ncmpcpp prev"
+end
+
 
 -- Themes define colours, icons, and wallpapers
 beautiful.init(home_dir .. "/.config/awesome/themes/winterlooks/theme.lua")
@@ -263,7 +286,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "F2", function () awful.util.spawn(terminal .. " -x " .. wifi_manager) end),
     awful.key({ modkey,           }, "F3", function () awful.util.spawn(im_client) end),
     awful.key({ modkey,           }, "F4", function () awful.util.spawn(terminal .. " -x mc") end),
-    awful.key({ modkey,           }, "F5", function () awful.util.spawn(music) end),
+    awful.key({ modkey,           }, "F5", function () awful.util.spawn(music_player) end),
     awful.key({ modkey,           }, "F6", function () awful.util.spawn(music_toggle) end),
     awful.key({ modkey,           }, "c", function () awful.util.spawn(music_toggle) end),
     awful.key({ modkey,           }, "F7", function () awful.util.spawn(music_prev) end),
@@ -475,6 +498,28 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+
+-- rc_specifi.lua would be similar to this
+--local awful = require("awful")
+--rules_spec = {
+    --{ rule = { class = "assistant" },
+      --properties = { tag = tags[screen.count()][2] } },
+--}
+--for key, val in ipairs(rules_spec) do
+  --table.insert(awful.rules.rules, val)
+--end
+
+----autorun = true
+--autorun = false
+--autorunApps =
+--{
+    --"assistant"
+--}
+--if autorun then
+	--for app = 1, #autorunApps do
+		--awful.util.spawn(autorunApps[app])
+	--end
+--end
 
 -- {{{ Specific config
 rc_specific = awful.util.getdir("config") .. "/" .. "rc_specific.lua"
