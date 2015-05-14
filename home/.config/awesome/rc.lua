@@ -524,9 +524,16 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 	--end
 --end
 
--- {{{ Specific config
-rc_specific = awful.util.getdir("config") .. "/" .. "rc_specific.lua"
-if awful.util.file_readable(rc_specific) then
-    dofile(rc_specific)
+-- {{{ Specific rules
+rc_rules = awful.util.getdir("config") .. "/" .. "rules.lua"
+if awful.util.file_readable(rc_rules) then
+    dofile(rc_rules)
+end
+-- }}}
+--
+-- {{{ Autorun
+rc_autorun = awful.util.getdir("config") .. "/" .. "autorun.lua"
+if awful.util.file_readable(rc_autorun) then
+    dofile(rc_autorun)
 end
 -- }}}
