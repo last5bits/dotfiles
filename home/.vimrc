@@ -1,4 +1,4 @@
-set nocompatible " Vim is on Vi
+set nocompatible " Vim is not Vi
 syntax on
 set showtabline=1 " Show me your tab line
 set tabstop=4 " One tabulation equals four spaces
