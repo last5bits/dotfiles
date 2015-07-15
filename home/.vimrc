@@ -52,7 +52,6 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
 let g:airline#extensions#tabline#fnamemod = ':t' " Show just the filename
 
-nmap <F2> :w<CR>
 " Changing encoding menu {
 set wildmenu
 set wcm=<Tab>
@@ -61,10 +60,7 @@ menu Encoding.windows-1251 :e ++enc=cp1251<CR>
 menu Encoding.koi8-r :e ++enc=koi8-r<CR>
 menu Encoding.cp866 :e ++enc=cp866<CR>
 " }
-map <F3> :emenu Encoding.<TAB>
-nmap <F10> :qa<CR>
-imap <F10> <ESC>:qa<CR>
-vmap <F10> <ESC><ESC>:qa<CR>
+map <leader>en :emenu Encoding.<TAB>
 
 " Walking around your windows
 " Move the cursor to the window left of the current one
