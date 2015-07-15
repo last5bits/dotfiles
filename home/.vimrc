@@ -22,6 +22,8 @@ set t_Co=256 " Airline forced me to do it
 let g:tex_flavor='latex' " TeX вместо PlainTeX
 let mapleader=','
 
+let delimitMate_expand_cr = 1
+
 filetype plugin on
 filetype indent on
 

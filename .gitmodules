@@ -13,3 +13,6 @@
 [submodule "home/.vim/bundle/cool.vim"]
 	path = home/.vim/bundle/cool.vim
 	url = https://github.com/vim-scripts/cool.vim
+[submodule "home/.vim/bundle/delimitMate"]
+	path = home/.vim/bundle/delimitMate
+	url = https://github.com/Raimondi/delimitMate.git
