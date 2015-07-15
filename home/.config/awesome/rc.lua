@@ -113,11 +113,37 @@ local layouts =
 -- }}}
 
 -- {{{ Wallpaper
-if beautiful.wallpaper then
-    for s = 1, screen.count() do
-        gears.wallpaper.maximized(beautiful.wallpaper, s, true)
+--if beautiful.wallpaper then
+    --for s = 1, screen.count() do
+        --gears.wallpaper.maximized(beautiful.wallpaper, s, true)
+    --end
+--end
+-- }}}
+
+-- {{{ Random Wallpapers
+-- Get the list of files from a directory. Must be all images or folders and non-empty. 
+    function scanDir(directory)
+	local i, fileList, popen = 0, {}, io.popen
+	for filename in popen([[find "]] ..directory.. [[" -type f]]):lines() do
+	    i = i + 1
+	    fileList[i] = filename
+	end
+	return fileList
     end
-end
+    wallpaperList = scanDir(home_dir .. "/.wallpapers")
+
+    if #wallpaperList > 0 then
+        for s = 1, screen.count() do
+        -- Apply a random wallpaper on startup.
+            gears.wallpaper.maximized(wallpaperList[math.random(1, #wallpaperList)], s, true)
+        end
+    else
+        if beautiful.wallpaper then
+            for s = 1, screen.count() do
+                gears.wallpaper.maximized(beautiful.wallpaper, s, true)
+            end
+        end
+    end
 -- }}}
 
 -- {{{ Tags
