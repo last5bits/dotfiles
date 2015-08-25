@@ -3,7 +3,6 @@ PATH="$HOME/bin:$PATH"
 source ~/.zshrc_specific
 source ~/.homesick/repos/homeshick/homeshick.sh
 
-
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
@@ -22,6 +21,11 @@ autoload -Uz compinit promptinit
 promptinit
 compinit
 prompt redhat
+
+autoload -U colors && colors
+PROMPT="[%{$fg_bold[default]%}%n%{$reset_color%}@%{$fg_bold[default]%}%m%{$reset_color%} %1~]%{$reset_color%}%(#.#.$) "
+RPROMPT="[%{$fg_bold[default]%}%?%{$reset_color%}] "
+
 
 # Open current line in $EDITOR
 autoload -U edit-command-line
