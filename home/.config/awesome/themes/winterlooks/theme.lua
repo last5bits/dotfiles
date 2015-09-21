@@ -3,7 +3,7 @@
 ---------------------------
 
 theme = {}
-theme.dir = "/home/alex/.config/awesome/themes"
+theme.dir = os.getenv("HOME") .. "/.config/awesome/themes"
 
 theme.font          = "dejavu sans 8"
 
