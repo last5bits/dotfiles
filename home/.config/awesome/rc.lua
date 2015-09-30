@@ -60,6 +60,7 @@ if awful.util.file_readable(default_apps_path) then
     wifi_manager = default_apps.wifi_manager()
     im_client = default_apps.im_client()
     shutdown_dialog = default_apps.shutdown_dialog()
+    xlocker = default_apps.xlocker()
 
     -- Music player commands
     music_player = default_apps.music_player()
@@ -74,6 +75,7 @@ else
     wifi_manager = "wifi-menu"
     im_client = "pidgin"
     shutdown_dialog = "farewell"
+    xlocker = "slock"
 
     -- Music player commands
     music_player = terminal .. " -x ncmpcpp"
@@ -260,8 +262,8 @@ for s = 1, screen.count() do
 
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
-    right_layout:add(mylayouticon)
     if s == 1 then right_layout:add(wibox.widget.systray()) end
+    right_layout:add(mylayouticon)
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
 
@@ -329,6 +331,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "F9", function () awful.util.spawn(shutdown_dialog) end),
     awful.key({ modkey,           }, "F10", function () awful.util.spawn(terminal .. " -x python -q") end),
     awful.key({ modkey,           }, "F11", function () awful.util.spawn(terminal .. " -x htop") end),
+    awful.key({ modkey,           }, "F12", function () awful.util.spawn(xlocker) end),
     awful.key({                   }, "Print", function () awful.util.spawn("xfce4-screenshooter") end),
 
     awful.key({ modkey,           }, "`", function () awful.screen.focus_relative( 1) end),
