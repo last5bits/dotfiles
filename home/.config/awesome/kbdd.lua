@@ -15,7 +15,7 @@ local layouts = { [0] = "EN", [1] = "RU" }
 local icons = {}
 
 kbdd.set_icon_dir = function(icon_path)
-    icons = { [0] = icon_path .. "ie.png", [1] = icon_path .. "ru.png"  }
+    icons = { [0] = icon_path .. "ca.png", [1] = icon_path .. "ru.png"  }
     kbdwidget:set_image(icons[0])
 end
 
