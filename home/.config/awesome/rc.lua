@@ -329,7 +329,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "F7", function () awful.util.spawn(music_prev) end),
     awful.key({ modkey,           }, "F8", function () awful.util.spawn(music_next) end),
     awful.key({ modkey,           }, "F9", function () awful.util.spawn(shutdown_dialog) end),
-    awful.key({ modkey,           }, "F10", function () awful.util.spawn(terminal .. " -x python -q") end),
+    awful.key({ modkey,           }, "F10", function () awful.util.spawn(terminal .. " -x 'python -q'") end),
     awful.key({ modkey,           }, "F11", function () awful.util.spawn(terminal .. " -x htop") end),
     awful.key({ modkey,           }, "F12", function () awful.util.spawn(xlocker) end),
     awful.key({                   }, "Print", function () awful.util.spawn("xfce4-screenshooter") end),
