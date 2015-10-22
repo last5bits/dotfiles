@@ -43,10 +43,6 @@ nmap ,x :w<cr>:!chmod 755 %<cr>:e<cr>
 " Elevate your privileges
 cnoremap sudow w !sudo tee % >/dev/null
 
-" This one doesn't work, whatever
-vmap <C-C> "+y
-imap <C-V> <C-o>"+p
-
 set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
