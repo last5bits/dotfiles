@@ -78,7 +78,7 @@ else
     xlocker = "slock"
 
     -- Music player commands
-    music_player = terminal .. " -x ncmpcpp"
+    music_player = terminal .. " -e ncmpcpp"
     music_toggle = "ncmpcpp toggle"
     music_next   = "ncmpcpp next"
     music_prev   = "ncmpcpp prev"
@@ -161,7 +161,7 @@ end
 -- Create a laucher widget and a main menu
 myawesomemenu = {
    { "manual", terminal .. " -e man awesome" },
-   { "edit config", terminal .. " -x \"" .. editor .. " " .. awesome.conffile .. "\""},
+   { "edit config", terminal .. " -e \"" .. editor .. " " .. awesome.conffile .. "\""},
    { "restart", awesome.restart },
    { "quit", awesome.quit }
 }
@@ -320,17 +320,18 @@ globalkeys = awful.util.table.join(
     -- Standard program
     awful.key({ modkey,           }, "d", function () awful.util.spawn(display_off) end),
     awful.key({ modkey,           }, "F1", function () awful.util.spawn(web_browser) end),
-    awful.key({ modkey,           }, "F2", function () awful.util.spawn(terminal .. " -x " .. wifi_manager) end),
+    awful.key({ modkey,           }, "F2", function () awful.util.spawn(terminal .. " -e " .. wifi_manager) end),
     awful.key({ modkey,           }, "F3", function () awful.util.spawn(im_client) end),
-    awful.key({ modkey,           }, "F4", function () awful.util.spawn(terminal .. " -x mc") end),
+    awful.key({ modkey,           }, "F4", function () awful.util.spawn(terminal .. " -e mc") end),
+    awful.key({ modkey, "Shift"   }, "Return", function () awful.util.spawn(terminal .. " -e mc") end),
     awful.key({ modkey,           }, "F5", function () awful.util.spawn(music_player) end),
     awful.key({ modkey,           }, "F6", function () awful.util.spawn(music_toggle) end),
     awful.key({ modkey,           }, "c", function () awful.util.spawn(music_toggle) end),
     awful.key({ modkey,           }, "F7", function () awful.util.spawn(music_prev) end),
     awful.key({ modkey,           }, "F8", function () awful.util.spawn(music_next) end),
     awful.key({ modkey,           }, "F9", function () awful.util.spawn(shutdown_dialog) end),
-    awful.key({ modkey,           }, "F10", function () awful.util.spawn(terminal .. " -x 'python -q'") end),
-    awful.key({ modkey,           }, "F11", function () awful.util.spawn(terminal .. " -x htop") end),
+    awful.key({ modkey,           }, "F10", function () awful.util.spawn(terminal .. " -e 'python -q'") end),
+    awful.key({ modkey,           }, "F11", function () awful.util.spawn(terminal .. " -e htop") end),
     awful.key({ modkey,           }, "F12", function () awful.util.spawn(xlocker) end),
     awful.key({                   }, "Print", function () awful.util.spawn("xfce4-screenshooter") end),
 
@@ -344,7 +345,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, }, "Up", function () awful.util.spawn("amixer set Master 5%+") end),
     awful.key({ modkey, }, "Down", function () awful.util.spawn("amixer set Master 5%-") end),
 
-    awful.key({ modkey, }, "e", function () awful.util.spawn(terminal .. " -x " .. editor) end),
+    awful.key({ modkey, }, "e", function () awful.util.spawn(terminal .. " -e " .. editor) end),
 
     awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
     awful.key({ modkey, "Control" }, "r", awesome.restart),
