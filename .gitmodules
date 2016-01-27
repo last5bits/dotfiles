@@ -22,3 +22,6 @@
 [submodule "home/.vim/bundle/copy-cut-paste.vim"]
 	path = home/.vim/bundle/copy-cut-paste.vim
 	url = https://github.com/NLKNguyen/copy-cut-paste.vim.git
+[submodule "home/.vim/bundle/vim-latex-live-preview"]
+	path = home/.vim/bundle/vim-latex-live-preview
+	url = https://github.com/xuhdev/vim-latex-live-preview.git

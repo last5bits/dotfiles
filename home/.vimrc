@@ -24,6 +24,8 @@ let mapleader=','
 
 let delimitMate_expand_cr = 1
 
+let g:livepreview_previewer = 'zathura'
+
 filetype plugin on
 filetype indent on
 
