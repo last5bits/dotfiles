@@ -18,6 +18,8 @@ set hidden " Modified buffers are hidden automatically
 set incsearch " Incremental search
 set hlsearch " Search higlights matched string
 
+colorscheme elflord
+
 let g:tex_flavor='latex' " TeX вместо PlainTeX
 let mapleader=','
 
