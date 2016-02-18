@@ -17,7 +17,6 @@ set scrolloff=3
 set hidden " Modified buffers are hidden automatically
 set incsearch " Incremental search
 set hlsearch " Search higlights matched string
-set t_Co=256 " Airline forced me to do it
 
 let g:tex_flavor='latex' " TeX вместо PlainTeX
 let mapleader=','
