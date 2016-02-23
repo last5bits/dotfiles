@@ -24,7 +24,7 @@ set number
 colorscheme elflord
 
 let g:tex_flavor='latex' " TeX вместо PlainTeX
-let mapleader=','
+let mapleader=' '
 
 let delimitMate_expand_cr = 1
 
@@ -44,7 +44,10 @@ command! LCD lcd %:p:h
 command! PrettyJson %!python -m json.tool
 
 " Make the current file executable
-nmap ,x :w<cr>:!chmod 755 %<cr>:e<cr>
+nmap <leader>x :w<cr>:!chmod 755 %<cr>:e<cr>
+
+" !make shortcut
+nmap <leader>m :!make<cr>
 
 " Elevate your privileges
 cnoremap sudow w !sudo tee % >/dev/null
