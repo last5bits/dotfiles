@@ -17,6 +17,7 @@ set scrolloff=3
 set hidden " Modified buffers are hidden automatically
 set incsearch " Incremental search
 set hlsearch " Search higlights matched string
+set t_Co=256 " Airline forced me to do it
 
 set relativenumber " or set rnu/nornu
 set number
