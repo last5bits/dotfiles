@@ -18,6 +18,9 @@ set hidden " Modified buffers are hidden automatically
 set incsearch " Incremental search
 set hlsearch " Search higlights matched string
 
+set relativenumber " or set rnu/nornu
+set number
+
 colorscheme elflord
 
 let g:tex_flavor='latex' " TeX вместо PlainTeX
