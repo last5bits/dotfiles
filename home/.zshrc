@@ -26,18 +26,11 @@ autoload -U colors && colors
 PROMPT="[%{$fg_bold[default]%}%n%{$reset_color%}@%{$fg_bold[default]%}%m%{$reset_color%} %1~]%{$reset_color%}%(#.#.$) "
 RPROMPT="[%{$fg_bold[default]%}%?%{$reset_color%}] "
 
-
 # Open current line in $EDITOR
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey "^x^e" edit-command-line
 bindkey "\e[3~" delete-char
-
-# Run this in TTY
-if [[ $DISPLAY = "" ]]
-then
-    alias mc="mc -S default"
-fi
 
 alias sudo="nocorrect sudo"
 alias df="df -h"
