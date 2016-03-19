@@ -1,5 +1,5 @@
 export EDITOR="vim"
-PATH="$HOME/bin:$PATH"
+PATH="$PATH:$HOME/bin"
 source ~/.zshrc_specific
 source ~/.homesick/repos/homeshick/homeshick.sh
 
