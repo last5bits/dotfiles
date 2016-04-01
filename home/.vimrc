@@ -22,6 +22,15 @@ set t_Co=256 " Airline forced me to do it
 "set relativenumber " or set rnu/nornu
 set number
 
+" Highlight: case sensitive, no partial match.
+nnoremap <leader>hi :set hlsearch<CR>:let @/='\<<C-r><C-w>\>'<CR>
+" Toggle whitespace display
+nnoremap <leader>tw :set list! list?<CR>
+" Fix spelling
+nnoremap <leader>fs 1z=
+" Open .vimrc
+nnoremap <leader>rc :e $MYVIMRC<CR>
+
 colorscheme elflord
 
 let g:tex_flavor='latex' " TeX вместо PlainTeX
