@@ -35,6 +35,11 @@ let delimitMate_expand_cr = 1
 
 let g:livepreview_previewer = 'zathura'
 
+" ack.vim: if you see silver_searcher -- use it ffs
+if executable('ag')
+    let g:ackprg = 'ag --vimgrep'
+endif
+
 " Pathogen hacks
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
