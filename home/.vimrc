@@ -18,9 +18,7 @@ set t_Co=256 " Airline forced me to do it
 set number
 
 " Highlight: case sensitive, no partial match.
-nnoremap <leader>hi :set hlsearch<CR>:let @/='\<<C-r><C-w>\>'<CR>
-" Toggle whitespace display
-nnoremap <leader>tw :set list! list?<CR>
+nnoremap <leader>i :set hlsearch<CR>:let @/='\<<C-r><C-w>\>'<CR>
 " Fix spelling
 nnoremap <leader>fs 1z=
 " Open .vimrc
