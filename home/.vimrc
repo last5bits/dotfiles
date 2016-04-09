@@ -26,6 +26,9 @@ nnoremap <leader>rc :e $MYVIMRC<CR>
 
 colorscheme elflord
 
+" Disable cowsay for startify
+let g:startify_custom_header = []
+
 let g:tex_flavor='latex' " TeX вместо PlainTeX
 let mapleader=' '
 
