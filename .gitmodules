@@ -25,3 +25,6 @@
 [submodule "home/.vim/bundle/vim-latex-live-preview"]
 	path = home/.vim/bundle/vim-latex-live-preview
 	url = https://github.com/xuhdev/vim-latex-live-preview.git
+[submodule "home/.vim/bundle/vim-sensible"]
+	path = home/.vim/bundle/vim-sensible
+	url = https://github.com/tpope/vim-sensible.git

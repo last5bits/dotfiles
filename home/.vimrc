@@ -1,21 +1,16 @@
 set nocompatible " Vim is not Vi
-syntax on
 set showtabline=1 " Show me your tab line
 set tabstop=4 " One tabulation equals four spaces
 set expandtab " No tabs, only spaces
 set softtabstop=4 " Moving text blocks four spaces by < and > in visual
 set shiftwidth=4 " Same thing with << and >>
-set backspace=2 " Backspace is no use without this
-set number " Line numeration
 set mousehide " Hiding mouse cursor while typing
 set mouse=a " Mouse support is on
 set smartindent " Smart autoindenting when starting a new line
 set linebreak
 set noswapfile
-set encoding=utf-8 " Default file encoding
 set scrolloff=3
 set hidden " Modified buffers are hidden automatically
-set incsearch " Incremental search
 set hlsearch " Search higlights matched string
 set t_Co=256 " Airline forced me to do it
 
@@ -40,9 +35,6 @@ let delimitMate_expand_cr = 1
 
 let g:livepreview_previewer = 'zathura'
 
-filetype plugin on
-filetype indent on
-
 " Pathogen hacks
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
@@ -62,13 +54,11 @@ nmap <leader>m :!make<cr>
 " Elevate your privileges
 cnoremap sudow w !sudo tee % >/dev/null
 
-set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
 let g:airline#extensions#tabline#fnamemod = ':t' " Show just the filename
 
 " Changing encoding menu {
-set wildmenu
 set wcm=<Tab>
 menu Encoding.utf-8 :e ++enc=utf8 <CR>
 menu Encoding.windows-1251 :e ++enc=cp1251<CR>
