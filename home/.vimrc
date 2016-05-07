@@ -13,6 +13,10 @@ set scrolloff=3
 set hidden " Modified buffers are hidden automatically
 set hlsearch " Search higlights matched string
 set t_Co=256 " Airline forced me to do it
+set foldmethod=indent " Let's try folding out
+set foldlevelstart=1
+
+command! -nargs=1 -complete=help H :enew | :set buftype=help | :h <args>
 
 "set relativenumber " or set rnu/nornu
 set number
