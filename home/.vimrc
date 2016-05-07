@@ -13,32 +13,33 @@ set scrolloff=3
 set hidden " Modified buffers are hidden automatically
 set hlsearch " Search higlights matched string
 set t_Co=256 " Airline forced me to do it
+set number " Line numbers, please
 set foldmethod=indent " Let's try folding out
 set foldlevelstart=1
 
-command! -nargs=1 -complete=help H :enew | :set buftype=help | :h <args>
-
-"set relativenumber " or set rnu/nornu
-set number
-
-" Highlight: case sensitive, no partial match.
-nnoremap <leader>y :set hlsearch<CR>:let @/='\<<C-r><C-w>\>'<CR>
-" Fix spelling
-nnoremap <leader>fs 1z=
-" Open .vimrc
-nnoremap <leader>rc :e $MYVIMRC<CR>
-
 colorscheme elflord
 
-" Disable cowsay for startify
-let g:startify_custom_header = []
+" Highlight a word without moving the cursor
+nnoremap * :keepjumps normal! mi*`i<CR>
 
-let g:tex_flavor='latex' " TeX вместо PlainTeX
+" File encoding menu {
+nmap <leader>e :emenu Encoding.<TAB>
+set wcm=<Tab>
+menu Encoding.utf-8 :e ++enc=utf8 <CR>
+menu Encoding.windows-1251 :e ++enc=cp1251<CR>
+menu Encoding.koi8-r :e ++enc=koi8-r<CR>
+menu Encoding.cp866 :e ++enc=cp866<CR>
+" }
+
+let g:startify_custom_header = [] " Disable cowsay for startify
+let g:tex_flavor='latex' " TeX instead of PlainTeX
+let delimitMate_expand_cr = 1
+let g:livepreview_previewer = 'zathura'
 let mapleader=' '
 
-let delimitMate_expand_cr = 1
-
-let g:livepreview_previewer = 'zathura'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
+let g:airline#extensions#tabline#fnamemod = ':t' " Show just the filename
 
 " ack.vim: if you see silver_searcher -- use it ffs
 if executable('ag')
@@ -52,30 +53,18 @@ execute pathogen#infect()
 " Change your current directory to one you're working in
 command! CD cd %:p:h
 command! LCD lcd %:p:h
+
 " Pretty JSON
 command! PrettyJson %!python -m json.tool
+
+" Opens help in the same buffer
+command! -nargs=1 -complete=help H :enew | :set buftype=help | :h <args>
 
 " Make the current file executable
 nmap <leader>x :w<cr>:!chmod 755 %<cr>:e<cr>
 
-" !make shortcut
-nmap <leader>m :!make<cr>
-
 " Elevate your privileges
 cnoremap sudow w !sudo tee % >/dev/null
-
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
-let g:airline#extensions#tabline#fnamemod = ':t' " Show just the filename
-
-" Changing encoding menu {
-set wcm=<Tab>
-menu Encoding.utf-8 :e ++enc=utf8 <CR>
-menu Encoding.windows-1251 :e ++enc=cp1251<CR>
-menu Encoding.koi8-r :e ++enc=koi8-r<CR>
-menu Encoding.cp866 :e ++enc=cp866<CR>
-" }
-map <leader>en :emenu Encoding.<TAB>
 
 " Walking around your windows
 " Move the cursor to the window left of the current one
@@ -119,23 +108,6 @@ nmap <leader>q :bp <BAR> bd #<CR>
 "nmap <leader>p :tabp<CR>
 " New tab
 "nmap <leader>t :tabnew<CR>
-
-"imap <C-b> <left>
-"imap <C-f> <right>
-
-" Disable arrow keys
-"map <up> <nop>
-"map <down> <nop>
-"map <left> <nop>
-"map <right> <nop>
-"imap <up> <nop>
-"imap <down> <nop>
-"imap <left> <nop>
-"imap <right> <nop>
-
-" Make < and > shifts keep selection
-"vnoremap < <gv
-"vnoremap > >gv
 
 " Русская раскладка клавиатуры
   map ё `
