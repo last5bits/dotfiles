@@ -19,6 +19,11 @@ set foldlevelstart=1
 
 colorscheme elflord
 
+" File encryption {
+set cm=blowfish2 " Stronger
+autocmd BufReadPost * if &key != "" | set noswapfile nowritebackup noundofile viminfo= nobackup noshelltemp history=0 secure | endif
+" }
+
 " Highlight a word without moving the cursor
 nnoremap * :keepjumps normal! mi*`i<CR>
 
