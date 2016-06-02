@@ -17,8 +17,12 @@ set number " Line numbers, please
 set foldmethod=indent " Let's try folding out
 set foldlevelstart=1
 
+colorscheme elflord
+
 " File encryption {
-set cm=blowfish2 " Stronger
+if v:version >= 704 && has('patch399')
+    set cm=blowfish2 " Stronger
+endif
 autocmd BufReadPost * if &key != "" | set noswapfile nowritebackup noundofile viminfo= nobackup noshelltemp history=0 secure | endif
 " }
 
