@@ -17,7 +17,7 @@ set number " Line numbers, please
 set foldmethod=indent " Let's try folding out
 set foldlevelstart=1
 
-colorscheme elflord
+colorscheme elflady
 
 " File encryption {
 if v:version >= 704 && has('patch399')
