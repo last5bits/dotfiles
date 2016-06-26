@@ -14,6 +14,8 @@ local menubar = require("menubar")
 local cal = require("cal")
 -- Keyboard layout switcher
 local kbdd = require("kbdd")
+-- Battery indicator
+local assault = require('assault')
 
 
 -- {{{ Error handling
@@ -86,7 +88,7 @@ end
 
 
 -- Themes define colours, icons, and wallpapers
-theme_dir = awful.util.getdir("config") .. "/themes/winterlooks/"
+theme_dir = awful.util.getdir("config") .. "/themes/zenburn/"
 beautiful.init(theme_dir .. "theme.lua")
 
 -- Default modkey.
@@ -115,37 +117,11 @@ local layouts =
 -- }}}
 
 -- {{{ Wallpaper
---if beautiful.wallpaper then
-    --for s = 1, screen.count() do
-        --gears.wallpaper.maximized(beautiful.wallpaper, s, true)
-    --end
---end
--- }}}
-
--- {{{ Random Wallpapers
--- Get the list of files from a directory. Must be all images or folders and non-empty. 
-    function scanDir(directory)
-	local i, fileList, popen = 0, {}, io.popen
-	for filename in popen([[find "]] ..directory.. [[" -type f]]):lines() do
-	    i = i + 1
-	    fileList[i] = filename
-	end
-	return fileList
+if beautiful.wallpaper then
+    for s = 1, screen.count() do
+        gears.wallpaper.maximized(beautiful.wallpaper, s, true)
     end
-    wallpaperList = scanDir(home_dir .. "/.wallpapers")
-
-    if #wallpaperList > 0 then
-        for s = 1, screen.count() do
-        -- Apply a random wallpaper on startup.
-            gears.wallpaper.maximized(wallpaperList[math.random(1, #wallpaperList)], s, true)
-        end
-    else
-        if beautiful.wallpaper then
-            for s = 1, screen.count() do
-                gears.wallpaper.maximized(beautiful.wallpaper, s, true)
-            end
-        end
-    end
+end
 -- }}}
 
 -- {{{ Tags
@@ -185,7 +161,14 @@ cal.register(mytextclock, "<b>%s</b>")
 
 -- Create keyboard layout indicator
 mylayouticon = kbdd.kbdwidget()
-kbdd.set_icon_dir(theme_dir .. "icons/layouts/")
+kbdd.set_icon_dir(theme_dir .. "kblayouts/")
+
+-- Create battery indicator
+myassault = assault({
+    critical_level = 0.10
+    , height = 11
+    , width = 18
+    })
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -264,6 +247,7 @@ for s = 1, screen.count() do
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
     right_layout:add(mylayouticon)
+    right_layout:add(myassault)
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
 
@@ -279,9 +263,9 @@ end
 
 -- {{{ Mouse bindings
 root.buttons(awful.util.table.join(
-    awful.button({ }, 3, function () mymainmenu:toggle() end),
-    awful.button({ }, 4, awful.tag.viewnext),
-    awful.button({ }, 5, awful.tag.viewprev)
+    awful.button({ }, 3, function () mymainmenu:toggle() end)
+    --, awful.button({ }, 4, awful.tag.viewnext)
+    --, awful.button({ }, 5, awful.tag.viewprev)
 ))
 -- }}}
 
@@ -322,8 +306,8 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "F1", function () awful.util.spawn(web_browser) end),
     awful.key({ modkey,           }, "F2", function () awful.util.spawn(terminal .. " -e " .. wifi_manager) end),
     awful.key({ modkey,           }, "F3", function () awful.util.spawn(im_client) end),
-    awful.key({ modkey,           }, "F4", function () awful.util.spawn(terminal .. " -e mc") end),
-    awful.key({ modkey, "Shift"   }, "Return", function () awful.util.spawn(terminal .. " -e mc") end),
+    awful.key({ modkey,           }, "F4", function () awful.util.spawn(terminal .. " -e " .. home_dir .. "/bin/mc") end),
+    awful.key({ modkey, "Shift"   }, "Return", function () awful.util.spawn(terminal .. " -e " .. home_dir .. "/bin/mc") end),
     awful.key({ modkey,           }, "F5", function () awful.util.spawn(music_player) end),
     awful.key({ modkey,           }, "F6", function () awful.util.spawn(music_toggle) end),
     awful.key({ modkey,           }, "c", function () awful.util.spawn(music_toggle) end),
@@ -338,12 +322,16 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "`", function () awful.screen.focus_relative( 1) end),
 
     -- Multimedia keys
-    awful.key({ }, "XF86Display", function () awful.util.spawn("toggle_display") end),
-    awful.key({ }, "XF86AudioMute", function () awful.util.spawn("amixer set Master toggle") end),
-    awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn("amixer set Master 4dB-") end),
-    awful.key({ }, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer set Master 4dB+") end),
-    awful.key({ modkey, }, "Up", function () awful.util.spawn("amixer set Master 5%+") end),
+    --awful.key({ }, "XF86Display", function () awful.util.spawn("toggle_display") end),
+    awful.key({ }, "XF86AudioMute", function () awful.util.spawn("pactl set-sink-mute 0 toggle") end),
+    awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn("amixer set Master 5%-") end),
+    awful.key({ }, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer set Master 5%+") end),
+    awful.key({ }, "XF86AudioMicMute", function () awful.util.spawn("pactl set-source-mute 1 toggle") end),
+    awful.key({ }, "XF86Launch1", function () awful.util.spawn("toggle-pavucontrol") end),
     awful.key({ modkey, }, "Down", function () awful.util.spawn("amixer set Master 5%-") end),
+    awful.key({ modkey, }, "Up", function () awful.util.spawn("amixer set Master 5%+") end),
+
+    awful.key({ }, "XF86TouchpadToggle", function () awful.util.spawn("toggle_touchpad") end),
 
     awful.key({ modkey, }, "e", function () awful.util.spawn(terminal .. " -e " .. editor) end),
 
@@ -359,6 +347,28 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1)         end),
     awful.key({ modkey,           }, "space", function () awful.layout.inc(layouts,  1) end),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
+
+    -- Move client left/right
+    awful.key({ modkey, "Shift"   }, "Left",
+       function (c)
+          local curidx = awful.tag.getidx()
+          if curidx == 1 then
+              awful.client.movetotag(tags[client.focus.screen][#tags[client.focus.screen]])
+          else
+              awful.client.movetotag(tags[client.focus.screen][curidx - 1])
+          end
+          awful.tag.viewidx(-1)
+      end),
+    awful.key({ modkey, "Shift"   }, "Right",
+      function (c)
+          local curidx = awful.tag.getidx()
+          if curidx == #tags[client.focus.screen] then
+              awful.client.movetotag(tags[client.focus.screen][1])
+          else
+              awful.client.movetotag(tags[client.focus.screen][curidx + 1])
+          end
+          awful.tag.viewidx(1)
+      end),
 
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
@@ -440,6 +450,140 @@ clientbuttons = awful.util.table.join(
     awful.button({ }, 1, function (c) client.focus = c; c:raise() end),
     awful.button({ modkey }, 1, awful.mouse.client.move),
     awful.button({ modkey }, 3, awful.mouse.client.resize))
+
+-- {{{ Switch the monitors
+
+-- Get active outputs
+local function outputs()
+   local outputs = {}
+   local xrandr = io.popen("xrandr -q")
+   if xrandr then
+       for line in xrandr:lines() do
+       output = line:match("^([%w-]+) connected ")
+       if output then
+         outputs[#outputs + 1] = output
+       end
+     end
+     xrandr:close()
+   end
+
+   return outputs
+end
+
+local function arrange(out)
+   -- We need to enumerate all the way to combinate output. We assume
+   -- we want only an horizontal layout.
+   local choices  = {}
+   local previous = { {} }
+   for i = 1, #out do
+      -- Find all permutation of length `i`: we take the permutation
+      -- of length `i-1` and for each of them, we create new
+      -- permutations by adding each output at the end of it if it is
+      -- not already present.
+      local new = {}
+      for _, p in pairs(previous) do
+        for _, o in pairs(out) do
+           if not awful.util.table.hasitem(p, o) then
+              new[#new + 1] = awful.util.table.join(p, {o})
+           end
+	    end
+      end
+      choices = awful.util.table.join(choices, new)
+      previous = new
+   end
+
+   return choices
+end
+
+-- Build available choices
+local function menu()
+   local menu = {}
+   local out = outputs()
+   local choices = arrange(out)
+
+   for _, choice in pairs(choices) do
+      local cmd = "xrandr"
+      -- Enabled outputs
+      for i, o in pairs(choice) do
+         cmd = cmd .. " --output " .. o .. " --auto"
+         if i > 1 then
+            cmd = cmd .. " --above " .. choice[i-1]
+         end
+      end
+      -- Disabled outputs
+      for _, o in pairs(out) do
+        if not awful.util.table.hasitem(choice, o) then
+           cmd = cmd .. " --output " .. o .. " --off"
+        end
+      end
+
+      local label = ""
+      if #choice == 1 then
+        label = 'Only <span weight="bold">' .. choice[1] .. '</span>'
+      else
+        for i, o in pairs(choice) do
+           if i > 1 then label = label .. " + " end
+           label = label .. '<span weight="bold">' .. o .. '</span>'
+        end
+      end
+
+      menu[#menu + 1] = {label
+        , cmd
+        , "/usr/share/icons/Tango/32x32/devices/display.png"}
+   end
+
+   return menu
+end
+
+-- Display xrandr notifications from choices
+local state = { iterator = nil, timer = nil, cid = nil }
+local function xrandr()
+   -- Stop any previous timer
+   if state.timer then
+      state.timer:stop()
+      state.timer = nil
+   end
+
+   -- Build the list of choices
+   if not state.iterator then
+      state.iterator = awful.util.table.iterate(menu(),
+					function() return true end)
+   end
+
+   -- Select one and display the appropriate notification
+   local next  = state.iterator()
+   local label, action, icon
+   if not next then
+      label, icon = "Keep the current configuration", "/usr/share/icons/Tango/32x32/devices/display.png"
+      state.iterator = nil
+   else
+      label, action, icon = unpack(next)
+   end
+   state.cid = naughty.notify({ text = label,
+				icon = icon,
+				timeout = 4,
+				screen = mouse.screen, -- Important, not all screens may be visible
+				font = "Free Sans 18",
+				replaces_id = state.cid }).id
+
+   -- Setup the timer
+   state.timer = timer { timeout = 3 }
+   state.timer:connect_signal("timeout",
+     function()
+        state.timer:stop()
+        state.timer = nil
+        state.iterator = nil
+        if action then
+          awful.util.spawn(action, false)
+        end
+     end)
+   state.timer:start()
+end
+
+globalkeys = awful.util.table.join(
+   globalkeys,
+   awful.key({}, "XF86Display", xrandr))
+-- }}}
 
 -- Set keys
 root.keys(globalkeys)
