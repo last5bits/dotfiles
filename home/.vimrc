@@ -19,6 +19,11 @@ set foldlevelstart=1
 
 colorscheme elflady
 
+" mouse in tmux
+if &term =~ '^screen'
+    set ttymouse=xterm2
+endif
+
 " File encryption {
 if v:version >= 704 && has('patch399')
     set cm=blowfish2 " Stronger
