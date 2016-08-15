@@ -3,6 +3,9 @@ PATH="$PATH:$HOME/bin"
 source ~/.zshrc_specific
 source ~/.homesick/repos/homeshick/homeshick.sh
 
+# vim as a man-pager
+export MANPAGER="env MAN_PN=1 vim -M +MANPAGER -"
+
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
@@ -45,6 +48,28 @@ alias info="info --vi-keys"
 alias wcc="wicd-curses"
 alias rustime="export TZ=\"Europe/Moscow\" && date && unset TZ"
 alias s="sync"
+
+## start ssh-agent if it's not already running
+#function start-ssh-agent() {
+    #if [ -z "$SSH_AUTH_SOCK" ] ; then
+        #eval $(ssh-agent -s)
+    #fi
+#}
+
+## ssh-add my github key
+#function add-key-github() {
+    #start-ssh-agent
+    #ssh-add -t 3600 ~/.ssh/github/id_rsa
+#}
+
+## ssh-add my uw key
+#function add-key-uw() {
+    #start-ssh-agent
+    #ssh-add -t 3600 ~/.ssh/id_rsa
+#}
+
+# kill the ssh-agent on exit
+trap '[[ -n "$SSH_AGENT_PID" ]] && eval `ssh-agent -k`' 0
 
 # A shortcut function that simplifies usage of xclip.
 # - Accepts input from either stdin (pipe), or params.
