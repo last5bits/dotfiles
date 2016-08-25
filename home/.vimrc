@@ -15,7 +15,6 @@ set hlsearch " Search higlights matched string
 set t_Co=256 " Airline forced me to do it
 set number " Line numbers, please
 set foldmethod=indent " Let's try folding out
-set foldlevelstart=1
 
 colorscheme elflady
 
