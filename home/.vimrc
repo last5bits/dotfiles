@@ -33,6 +33,12 @@ autocmd BufReadPost * if &key != "" | set noswapfile nowritebackup noundofile vi
 " Highlight a word without moving the cursor
 nnoremap * :keepjumps normal! mi*`i<CR>
 
+" Syntastic
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 " File encoding menu {
 nmap <leader>e :emenu Encoding.<TAB>
 set wcm=<Tab>
