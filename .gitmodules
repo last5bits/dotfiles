@@ -37,3 +37,6 @@
 [submodule "home/.vim/bundle/vim-bracketed-paste"]
 	path = home/.vim/bundle/vim-bracketed-paste
 	url = https://github.com/ConradIrwin/vim-bracketed-paste.git
+[submodule "home/.vim/bundle/syntastic"]
+	path = home/.vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
