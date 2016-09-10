@@ -49,24 +49,24 @@ alias wcc="wicd-curses"
 alias rustime="export TZ=\"Europe/Moscow\" && date && unset TZ"
 alias s="sync"
 
-## start ssh-agent if it's not already running
-#function start-ssh-agent() {
-    #if [ -z "$SSH_AUTH_SOCK" ] ; then
-        #eval $(ssh-agent -s)
-    #fi
-#}
+# start ssh-agent if it's not already running
+function start-ssh-agent() {
+    if [ -z "$SSH_AUTH_SOCK" ] ; then
+        eval $(ssh-agent -s)
+    fi
+}
 
-## ssh-add my github key
-#function add-key-github() {
-    #start-ssh-agent
-    #ssh-add -t 3600 ~/.ssh/github/id_rsa
-#}
+# ssh-add my github key
+function add-key-github() {
+    start-ssh-agent
+    ssh-add -t 3600 ~/.ssh/github/id_rsa
+}
 
-## ssh-add my uw key
-#function add-key-uw() {
-    #start-ssh-agent
-    #ssh-add -t 3600 ~/.ssh/id_rsa
-#}
+# ssh-add my uw key
+function add-key-uw() {
+    start-ssh-agent
+    ssh-add -t 3600 ~/.ssh/id_rsa
+}
 
 # kill the ssh-agent on exit
 trap '[[ -n "$SSH_AGENT_PID" ]] && eval `ssh-agent -k`' 0
