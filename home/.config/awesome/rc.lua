@@ -331,7 +331,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, }, "Down", function () awful.util.spawn("amixer set Master 5%-") end),
     awful.key({ modkey, }, "Up", function () awful.util.spawn("amixer set Master 5%+") end),
 
-    awful.key({ }, "XF86TouchpadToggle", function () awful.util.spawn("toggle_touchpad") end),
+    awful.key({ }, "XF86TouchpadToggle", function () awful.util.spawn("toggle-touchpad") end),
 
     awful.key({ modkey, }, "e", function () awful.util.spawn(terminal .. " -e " .. editor) end),
 
