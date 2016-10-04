@@ -7,16 +7,35 @@ set shiftwidth=4 " Same thing with << and >>
 set mousehide " Hiding mouse cursor while typing
 set mouse=a " Mouse support is on
 set smartindent " Smart autoindenting when starting a new line
-set linebreak
 set noswapfile
 set scrolloff=3
 set hidden " Modified buffers are hidden automatically
 set hlsearch " Search higlights matched string
 set t_Co=256 " Airline forced me to do it
 set number " Line numbers, please
-set foldmethod=indent " Let's try folding out
+set lazyredraw " don't bother updating screen during macro playback
+
+if has('folding')
+  set foldmethod=indent    " not as cool as syntax, but faster
+  set foldlevelstart=99    " start unfolded
+endif
+
+if v:version > 703 || v:version == 703 && has('patch541')
+  set formatoptions+=j    " remove comment leader when joining comment lines
+endif
+
+let mapleader=' '
 
 colorscheme elflady
+
+if has('linebreak')
+    set linebreak   " wrap long lines at characters in 'breakat'
+    set breakindent   " indent wrapped lines to match start
+    if exists('&breakindentopt')
+        set breakindentopt=shift:4  " emphasize broken lines by indenting them
+    endif
+    let &showbreak='⤷ '    " ARROW POINTING DOWNWARDS THEN CURVING RIGHTWARDS (U+2937, UTF-8: E2 A4 B7)
+endif
 
 " mouse in tmux
 if &term =~ '^screen'
@@ -34,10 +53,12 @@ autocmd BufReadPost * if &key != "" | set noswapfile nowritebackup noundofile vi
 nnoremap * :keepjumps normal! mi*`i<CR>
 
 " Syntastic
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+nmap <leader>s :SyntasticCheck<CR>
 
 " File encoding menu {
 nmap <leader>e :emenu Encoding.<TAB>
@@ -52,7 +73,6 @@ let g:startify_custom_header = [] " Disable cowsay for startify
 let g:tex_flavor='latex' " TeX instead of PlainTeX
 let delimitMate_expand_cr = 1
 let g:livepreview_previewer = 'zathura'
-let mapleader=' '
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
