@@ -1,0 +1,3 @@
+[submodule "home/.config/awesome/pomodoro"]
+	path = home/.config/awesome/pomodoro
+	url = git://github.com/nikolavp/awesome-pomodoro.git
