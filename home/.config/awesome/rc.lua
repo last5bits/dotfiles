@@ -91,6 +91,11 @@ end
 theme_dir = awful.util.getdir("config") .. "/themes/zenburn/"
 beautiful.init(theme_dir .. "theme.lua")
 
+local pomodoro = require("pomodoro")
+-- Remove the text "Pomodoro: "
+pomodoro.format = function (t) return t end
+pomodoro.init()
+
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
 -- If you do not like this or do not have such a key,
@@ -247,6 +252,8 @@ for s = 1, screen.count() do
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
     right_layout:add(mylayouticon)
+    right_layout:add(pomodoro.icon_widget)
+    right_layout:add(pomodoro.widget)
     right_layout:add(myassault)
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])

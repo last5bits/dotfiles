@@ -98,3 +98,6 @@
 	path = home/.vim/bundle/nvim-lspconfig
 	url = https://github.com/neovim/nvim-lspconfig.git
 	update = rebase
+[submodule "home/.config/awesome/pomodoro"]
+	path = home/.config/awesome/pomodoro
+	url = git://github.com/nikolavp/awesome-pomodoro.git
