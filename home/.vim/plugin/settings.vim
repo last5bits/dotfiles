@@ -43,3 +43,7 @@ if v:version >= 704 && has('patch399')
     set cm=blowfish2 " Stronger
 endif
 autocmd BufReadPost * if &key != "" | set noswapfile nowritebackup noundofile viminfo= nobackup noshelltemp history=0 secure | endif
+
+if has('virtualedit')
+    set virtualedit=block
+endif
