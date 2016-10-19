@@ -4,6 +4,9 @@ nnoremap * :keepjumps normal! mi*`i<CR>
 " Make the current file executable
 nmap <leader>x :w<cr>:!chmod 755 %<cr>:e<cr>
 
+" Repeat last macro if in a normal buffer.
+nnoremap <expr> <CR> empty(&buftype) ? '@@' : '<CR>'
+
 " Walking around your windows
 " Move the cursor to the window left of the current one
 noremap  <leader>h :wincmd h<CR>
