@@ -47,3 +47,5 @@ autocmd BufReadPost * if &key != "" | set noswapfile nowritebackup noundofile vi
 if has('virtualedit')
     set virtualedit=block
 endif
+
+let g:netrw_banner = 0 " Disable header in netrw
