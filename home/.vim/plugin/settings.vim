@@ -39,7 +39,7 @@ if &term =~ '^screen'
 endif
 
 " File encryption
-if v:version >= 704 && has('patch399')
+if (v:version >= 704 && has('patch399')) || v:version >=800
     set cm=blowfish2 " Stronger
 endif
 autocmd BufReadPost * if &key != "" | set noswapfile nowritebackup noundofile viminfo= nobackup noshelltemp history=0 secure | endif
