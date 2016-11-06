@@ -12,6 +12,7 @@ SAVEHIST=1000
 
 setopt hist_ignore_all_dups
 setopt autocd
+setopt extendedglob
 unsetopt beep
 bindkey -e
 
