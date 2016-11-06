@@ -12,8 +12,6 @@ local naughty = require("naughty")
 local menubar = require("menubar")
 -- Pop-up calendar
 local cal = require("cal")
--- Keyboard layout switcher
-local kbdd = require("kbdd")
 -- Battery indicator
 local assault = require('assault')
 
@@ -164,10 +162,6 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 mytextclock = awful.widget.textclock()
 cal.register(mytextclock, "<b>%s</b>")
 
--- Create keyboard layout indicator
-mylayouticon = kbdd.kbdwidget()
-kbdd.set_icon_dir(theme_dir .. "kblayouts/")
-
 -- Create battery indicator
 myassault = assault({
     critical_level = 0.10
@@ -251,7 +245,6 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
-    --right_layout:add(mylayouticon)
     right_layout:add(pomodoro.icon_widget)
     right_layout:add(pomodoro.widget)
     right_layout:add(myassault)
