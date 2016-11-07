@@ -25,10 +25,15 @@ endif
 
 if has('linebreak')
     set linebreak   " wrap long lines at characters in 'breakat'
-    set breakindent   " indent wrapped lines to match start
+
+    if v:version > 703 || v:version == 703 && has('patch429')
+        set breakindent   " indent wrapped lines to match start
+    endif
+
     if exists('&breakindentopt')
         set breakindentopt=shift:4  " emphasize broken lines by indenting them
     endif
+
     " ARROW POINTING DOWNWARDS THEN CURVING RIGHTWARDS (U+2937, UTF-8: E2 A4 B7)
     let &showbreak='⤷ '
 endif
