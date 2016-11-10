@@ -3,6 +3,10 @@ set nocompatible
 let mapleader=' '
 
 colorscheme elflady
+" Use another scheme in vimdiff
+if &diff
+    colorscheme blue
+endif
 
 " Syntastic
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
