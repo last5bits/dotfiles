@@ -26,9 +26,11 @@ endif
 if has('linebreak')
     set linebreak   " wrap long lines at characters in 'breakat'
 
-    if v:version > 703 || v:version == 703 && has('patch429')
+    try
         set breakindent   " indent wrapped lines to match start
-    endif
+      catch /E518:/
+        " Unknown option: breakindent
+    endtry
 
     if exists('&breakindentopt')
         set breakindentopt=shift:4  " emphasize broken lines by indenting them
