@@ -205,7 +205,9 @@ mytasklist.buttons = awful.util.table.join(
                                                   instance:hide()
                                                   instance = nil
                                               else
-                                                  instance = awful.menu.clients({ width=250 })
+                                                  instance = awful.menu.clients({
+                                                      theme = { width = 250 }
+                                                  })
                                               end
                                           end),
                      awful.button({ }, 4, function ()
@@ -590,12 +592,14 @@ root.keys(globalkeys)
 -- }}}
 
 -- {{{ Rules
+-- Rules to apply to new clients (through the "manage" signal).
 awful.rules.rules = {
     -- All clients will match this rule.
     { rule = { },
       properties = { border_width = beautiful.border_width,
                      border_color = beautiful.border_normal,
                      focus = awful.client.focus.filter,
+                     raise = true,
                      keys = clientkeys,
                      buttons = clientbuttons,
                      size_hints_honor = false } },
