@@ -12,7 +12,7 @@
 set -g status-interval 1
 
 # Basic status bar colors
-set -g status-fg colour238
+set -g status-fg colour245
 set -g status-bg colour233
 
 # Left side of status bar
@@ -51,7 +51,7 @@ set -g pane-border-fg colour235
 
 # Active pane border
 set -g pane-active-border-bg default
-set -g pane-active-border-fg colour240
+set -g pane-active-border-fg colour250
 
 # Pane number indicator
 set -g display-panes-colour colour233
