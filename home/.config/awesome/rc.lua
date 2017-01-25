@@ -370,7 +370,7 @@ globalkeys = awful.util.table.join(
 
     -- User-defined hotkeys
     awful.key({ modkey,    "Shift"}, "p",      toggle_pomodoro,
-              {description = "turn display(s) off", group = "custom"}),
+              {description = "show/hide the pomodoro widget", group = "custom"}),
     awful.key({ modkey,           }, "d",      function () awful.spawn(display_off) end,
               {description = "turn display(s) off", group = "custom"}),
     awful.key({ modkey,           }, "F1",     function () awful.spawn(web_browser) end,
