@@ -395,8 +395,8 @@ globalkeys = awful.util.table.join(
               {description = "run python interpreter", group = "custom"}),
     awful.key({ modkey,           }, "F11",    function () awful.spawn(terminal .. " -e htop") end,
               {description = "run htop", group = "custom"}),
-    --awful.key({ modkey,           }, "F12",    function () awful.spawn(xlocker) end,
-              --{description = "run screen locker", group = "custom"}),
+    awful.key({ modkey,           }, "F12",    function () awful.spawn(xlocker) end,
+              {description = "run screen locker", group = "custom"}),
     awful.key({ modkey, "Shift"   }, "Return", function () awful.spawn(terminal .. " -e 'sh -c \"tmux attach || tmux new\"'") end,
               {description = "run tmux", group = "custom"}),
     awful.key({                   }, "Print",  function () awful.spawn("xfce4-screenshooter") end,
@@ -408,6 +408,7 @@ globalkeys = awful.util.table.join(
     awful.key({         }, "XF86AudioRaiseVolume", function () awful.spawn("amixer set Master 5%+") end),
     awful.key({         }, "XF86AudioMicMute", function () awful.spawn("pactl set-source-mute 1 toggle") end),
     awful.key({         }, "XF86Launch1", function () awful.spawn("toggle-pavucontrol") end),
+    awful.key({         }, "XF86ScreenSaver", function () awful.spawn(xlocker) end),
     awful.key({         }, "XF86TouchpadToggle", function () awful.spawn("toggle-touchpad") end),
 
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
