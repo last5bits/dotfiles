@@ -26,6 +26,7 @@ theme.bg_systray = theme.bg_normal
 -- }}}
 
 -- {{{ Borders
+theme.useless_gap   = 0
 theme.border_width  = 2
 theme.border_normal = "#3F3F3F"
 theme.border_focus  = "#6F6F6F"
@@ -96,11 +97,18 @@ theme.layout_max        = "/usr/share/awesome/themes/zenburn/layouts/max.png"
 theme.layout_fullscreen = "/usr/share/awesome/themes/zenburn/layouts/fullscreen.png"
 theme.layout_magnifier  = "/usr/share/awesome/themes/zenburn/layouts/magnifier.png"
 theme.layout_floating   = "/usr/share/awesome/themes/zenburn/layouts/floating.png"
+theme.layout_cornernw   = "/usr/share/awesome/themes/zenburn/layouts/cornernw.png"
+theme.layout_cornerne   = "/usr/share/awesome/themes/zenburn/layouts/cornerne.png"
+theme.layout_cornersw   = "/usr/share/awesome/themes/zenburn/layouts/cornersw.png"
+theme.layout_cornerse   = "/usr/share/awesome/themes/zenburn/layouts/cornerse.png"
 -- }}}
 
 -- {{{ Titlebar
 theme.titlebar_close_button_focus  = "/usr/share/awesome/themes/zenburn/titlebar/close_focus.png"
 theme.titlebar_close_button_normal = "/usr/share/awesome/themes/zenburn/titlebar/close_normal.png"
+
+theme.titlebar_minimize_button_normal = "/usr/share/awesome/themes/default/titlebar/minimize_normal.png"
+theme.titlebar_minimize_button_focus  = "/usr/share/awesome/themes/default/titlebar/minimize_focus.png"
 
 theme.titlebar_ontop_button_focus_active  = "/usr/share/awesome/themes/zenburn/titlebar/ontop_focus_active.png"
 theme.titlebar_ontop_button_normal_active = "/usr/share/awesome/themes/zenburn/titlebar/ontop_normal_active.png"
@@ -125,3 +133,5 @@ theme.titlebar_maximized_button_normal_inactive = "/usr/share/awesome/themes/zen
 -- }}}
 
 return theme
+
+-- vim: filetype=lua:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:textwidth=80
