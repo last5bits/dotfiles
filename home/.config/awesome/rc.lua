@@ -97,6 +97,11 @@ local pomodoro = require("pomodoro")
 -- Remove the text "Pomodoro: "
 pomodoro.format = function (t) return t end
 pomodoro.init()
+spacer_pomodoro_widget = spacer({text = "  "})
+-- Hide the widgets
+pomodoro.icon_widget.visible = false
+pomodoro.widget.visible = false
+spacer_pomodoro_widget.visible = false
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -277,7 +282,7 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             pomodoro.icon_widget,
             pomodoro.widget,
-            spacer_widget,
+            spacer_pomodoro_widget ,
             myassault,
             spacer_widget,
             layout = wibox.layout.fixed.horizontal,
@@ -298,6 +303,13 @@ root.buttons(awful.util.table.join(
     --, awful.button({ }, 5, awful.tag.viewprev)
 ))
 -- }}}
+
+-- Hide/show the pomodoro widget
+local function toggle_pomodoro()
+    pomodoro.icon_widget.visible = not pomodoro.icon_widget.visible 
+    pomodoro.widget.visible = not pomodoro.widget.visible 
+    spacer_pomodoro_widget.visible = not spacer_pomodoro_widget.visible
+end
 
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
@@ -357,6 +369,8 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),
 
     -- User-defined hotkeys
+    awful.key({ modkey,    "Shift"}, "p",      toggle_pomodoro,
+              {description = "turn display(s) off", group = "custom"}),
     awful.key({ modkey,           }, "d",      function () awful.spawn(display_off) end,
               {description = "turn display(s) off", group = "custom"}),
     awful.key({ modkey,           }, "F1",     function () awful.spawn(web_browser) end,
