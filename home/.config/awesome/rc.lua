@@ -183,8 +183,6 @@ myassault = assault({
     , width = 18
     })
 
-spacer_widget = spacer({text = "  "})
-
 -- Create a wibox for each screen and add it
 local taglist_buttons = awful.util.table.join(
                     awful.button({ }, 1, function(t) t:view_only() end),
@@ -284,11 +282,9 @@ awful.screen.connect_for_each_screen(function(s)
             pomodoro.widget,
             spacer_pomodoro_widget ,
             myassault,
-            spacer_widget,
             layout = wibox.layout.fixed.horizontal,
             --mykeyboardlayout,
             wibox.widget.systray(),
-            spacer_widget,
             mytextclock,
             s.mylayoutbox,
         },
