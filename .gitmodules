@@ -40,3 +40,6 @@
 [submodule "home/.vim/bundle/syntastic"]
 	path = home/.vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "home/.vim/bundle/asyncrun.vim"]
+	path = home/.vim/bundle/asyncrun.vim
+	url = https://github.com/skywind3000/asyncrun.vim.git
