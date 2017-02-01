@@ -1,6 +1,8 @@
 " Highlight a word without moving the cursor
 nnoremap * :keepjumps normal! mi*`i<CR>
 
+nmap <leader>qf :call asyncrun#quickfix_toggle(8)<cr>
+
 " Make the current file executable
 nmap <leader>x :w<cr>:!chmod 755 %<cr>:e<cr>
 
