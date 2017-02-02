@@ -36,10 +36,9 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
 let g:airline#extensions#tabline#fnamemod = ':t' " Show just the filename
 
-" ack.vim: if you see silver_searcher -- use it ffs
-if executable('ag')
-    let g:ackprg = 'ag --vimgrep'
-endif
+" Grepper settings
+let g:grepper           = {}
+let g:grepper.next_tool = '<tab>'
 
 " Pathogen hacks
 runtime bundle/vim-pathogen/autoload/pathogen.vim
