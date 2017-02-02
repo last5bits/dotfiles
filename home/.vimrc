@@ -44,6 +44,7 @@ endif
 " Pathogen hacks
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
+Helptags
 
 " asyncrun + airline
 let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status}'])
