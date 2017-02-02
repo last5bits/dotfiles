@@ -43,3 +43,6 @@
 [submodule "home/.vim/bundle/asyncrun.vim"]
 	path = home/.vim/bundle/asyncrun.vim
 	url = https://github.com/skywind3000/asyncrun.vim.git
+[submodule "home/.vim/bundle/vim-grepper"]
+	path = home/.vim/bundle/vim-grepper
+	url = https://github.com/mhinz/vim-grepper.git
