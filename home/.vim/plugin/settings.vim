@@ -56,3 +56,8 @@ if has('virtualedit')
 endif
 
 let g:netrw_banner = 0 " Disable header in netrw
+
+" Only allow errors reported by syntastic
+let g:syntastic_quiet_messages = {
+    \ "!level":  "errors"
+    \ }

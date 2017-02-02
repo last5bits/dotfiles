@@ -12,6 +12,10 @@ nnoremap <leader>*  :Grepper -cword -noprompt<cr>
 " Make the current file executable
 nmap <leader>x :w<cr>:!chmod 755 %<cr>:e<cr>
 
+" Syntastic mappings
+nmap <leader>ss :w<cr>:SyntasticCheck<cr>
+nmap <leader>sr :SyntasticReset<cr>
+
 " Repeat last macro if in a normal buffer.
 nnoremap <expr> <CR> empty(&buftype) ? '@@' : '<CR>'
 
