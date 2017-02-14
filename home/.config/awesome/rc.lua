@@ -399,7 +399,7 @@ globalkeys = awful.util.table.join(
               {description = "run htop", group = "custom"}),
     awful.key({ modkey,           }, "F12",    lock_x,
               {description = "run screen locker", group = "custom"}),
-    awful.key({ modkey, "Shift"   }, "Return", function () awful.spawn(terminal .. " -e 'sh -c \"tmux attach || tmux new\"'") end,
+    awful.key({ modkey, "Shift"   }, "Return", function () awful.spawn(terminal .. " -e 'sh -c \"tmux attach || tmux new -s misc\"'") end,
               {description = "run tmux", group = "custom"}),
     awful.key({                   }, "Print",  function () awful.spawn("xfce4-screenshooter") end,
               {description = "run screenshooter", group = "custom"}),
