@@ -2,7 +2,7 @@
 nnoremap * :keepjumps normal! mi*`i<CR>
 
 " Toggle the asyncrun quickfix window
-nmap <leader>qf :call asyncrun#quickfix_toggle(8)<cr>
+nmap <leader>f :call asyncrun#quickfix_toggle(8)<cr>
 
 " Grepper mappings
 nnoremap <leader>ga :Grepper <cr>
