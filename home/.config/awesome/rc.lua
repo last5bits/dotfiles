@@ -16,6 +16,8 @@ local cal = require("cal")
 local assault = require('assault')
 -- Spacer widget
 local spacer = require('spacer')
+require("widgets/brightness")
+require("widgets/volume")
 
 
 -- {{{ Error handling
@@ -97,11 +99,13 @@ local pomodoro = require("pomodoro")
 -- Remove the text "Pomodoro: "
 pomodoro.format = function (t) return t end
 pomodoro.init()
-spacer_pomodoro_widget = spacer({text = "  "})
+spacer_pomodoro_widget = spacer({text = " : "})
 -- Hide the widgets
 pomodoro.icon_widget.visible = false
 pomodoro.widget.visible = false
 spacer_pomodoro_widget.visible = false
+
+spacer = spacer({text = " : "})
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -282,6 +286,12 @@ awful.screen.connect_for_each_screen(function(s)
             pomodoro.widget,
             spacer_pomodoro_widget ,
             myassault,
+            spacer,
+            brightness_icon,
+            brightness_widget,
+            spacer,
+            volume_widget,
+            spacer,
             layout = wibox.layout.fixed.horizontal,
             --mykeyboardlayout,
             wibox.widget.systray(),
