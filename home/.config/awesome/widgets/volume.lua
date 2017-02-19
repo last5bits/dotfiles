@@ -1,3 +1,5 @@
+--Courtesy of https://github.com/streetturtle
+
 local awful = require("awful")
 local wibox = require("wibox")
 local watch = require("awful.widget.watch")

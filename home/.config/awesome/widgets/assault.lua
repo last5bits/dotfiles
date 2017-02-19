@@ -1,3 +1,5 @@
+--Courtesy of https://github.com/NuckChorris
+
 local setmetatable = setmetatable
 local ipairs = ipairs
 local math = math

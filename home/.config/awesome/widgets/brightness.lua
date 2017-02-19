@@ -1,3 +1,5 @@
+--Courtesy of https://github.com/streetturtle
+
 local wibox = require("wibox")
 local awful = require("awful")
 local gears = require("gears")
