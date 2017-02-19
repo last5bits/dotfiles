@@ -13,7 +13,7 @@ local hotkeys_popup = require("awful.hotkeys_popup").widget
 -- Pop-up calendar
 local cal = require("cal")
 -- Battery indicator
-local assault = require('assault')
+local assault = require('widgets/assault')
 -- Spacer widget
 local spacer = require('spacer')
 require("widgets/brightness")
