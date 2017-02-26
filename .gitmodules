@@ -101,3 +101,6 @@
 [submodule "home/.config/awesome/pomodoro"]
 	path = home/.config/awesome/pomodoro
 	url = git://github.com/nikolavp/awesome-pomodoro.git
+[submodule "home/.tmux/plugins/tpm"]
+	path = home/.tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
