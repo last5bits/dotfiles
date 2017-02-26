@@ -1,0 +1,8 @@
+[include]
+    path = .gitconfig-local
+[push]
+	default = simple
+[alias]
+    lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+[pull]
+	rebase = true
