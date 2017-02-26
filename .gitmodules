@@ -16,9 +16,6 @@
 [submodule "home/.vim/bundle/delimitMate"]
 	path = home/.vim/bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate.git
-[submodule "home/.vim/bundle/vim-startify"]
-	path = home/.vim/bundle/vim-startify
-	url = https://github.com/mhinz/vim-startify
 [submodule "home/.vim/bundle/vim-latex-live-preview"]
 	path = home/.vim/bundle/vim-latex-live-preview
 	url = https://github.com/xuhdev/vim-latex-live-preview.git

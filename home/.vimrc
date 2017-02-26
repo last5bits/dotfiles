@@ -28,8 +28,6 @@ menu Encoding.windows-1251 :e ++enc=cp1251<CR>
 menu Encoding.koi8-r :e ++enc=koi8-r<CR>
 menu Encoding.cp866 :e ++enc=cp866<CR>
 
-let g:startify_custom_header = [] " Disable cowsay for startify
-
 let g:tex_flavor='latex' " TeX instead of PlainTeX
 
 let delimitMate_expand_cr = 1 " Turn on the expansion of <CR>
