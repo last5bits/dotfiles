@@ -7,6 +7,3 @@
 [submodule "home/.tmux/plugins/tmux-yank"]
 	path = home/.tmux/plugins/tmux-yank
 	url = https://github.com/tmux-plugins/tmux-yank.git
-[submodule "home/.tmux/plugins/tmux-resurrect"]
-	path = home/.tmux/plugins/tmux-resurrect
-	url = https://github.com/tmux-plugins/tmux-resurrect.git
