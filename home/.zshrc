@@ -1,6 +1,6 @@
 export EDITOR="vim"
 PATH="$PATH:$HOME/bin"
-source ~/.zshrc_specific
+source ~/.zshrc-local
 source ~/.homesick/repos/homeshick/homeshick.sh
 
 # vim as a man-pager
