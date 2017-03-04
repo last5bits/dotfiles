@@ -11,11 +11,11 @@ local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup").widget
 -- Pop-up calendar
-local cal = require("cal")
+local cal = require("misc/cal")
 -- Battery indicator
 local assault = require('widgets/assault')
 -- Spacer widget
-local spacer = require('spacer')
+local spacer = require('misc/spacer')
 require("widgets/brightness")
 require("widgets/volume")
 
