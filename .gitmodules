@@ -40,3 +40,6 @@
 [submodule "home/.vim/bundle/vim-grepper"]
 	path = home/.vim/bundle/vim-grepper
 	url = https://github.com/mhinz/vim-grepper.git
+[submodule "home/.vim/bundle/vim-unimpaired"]
+	path = home/.vim/bundle/vim-unimpaired
+	url = https://github.com/tpope/vim-unimpaired.git
