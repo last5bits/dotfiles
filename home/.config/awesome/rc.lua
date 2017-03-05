@@ -16,6 +16,8 @@ local cal = require("misc/cal")
 local assault = require('widgets/assault')
 -- Spacer widget
 local spacer = require('misc/spacer')
+-- Change volume of particular client windows
+local client_volume = require('misc/client_volume')
 require("widgets/brightness")
 require("widgets/volume")
 
@@ -419,6 +421,10 @@ globalkeys = awful.util.table.join(
               {description = "run tmux", group = "custom"}),
     awful.key({                   }, "Print",  function () awful.spawn("xfce4-screenshooter") end,
               {description = "run screenshooter", group = "custom"}),
+    awful.key({ modkey, "Ctrl"    }, "Up",      client_volume.up,
+              {description="client volume up", group="custom"}),
+    awful.key({ modkey, "Ctrl"    }, "Down",    client_volume.down,
+              {description="client volume up", group="custom"}),
 
     -- Multimedia keys
     awful.key({         }, "XF86AudioMute", function () awful.spawn("pactl set-sink-mute 0 toggle") end),
