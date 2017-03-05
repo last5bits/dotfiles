@@ -49,45 +49,51 @@ end
 -- This is used later as the default terminal and editor to run.
 home_dir = os.getenv("HOME")
 
--- default_apps.lua would be similar to this
--- local default_apps = {}
--- function default_apps.terminal() return "sakura" end
--- ...
--- return default_apps
+-- default_apps.lua should be similar to this {{
+    --local default_apps = {}
+    --function default_apps.get()
+        --return {
+            --terminal = "termite"
+            --, editor = os.getenv("EDITOR") or "vim"
+            --...
+        --}
+    --end
+     --return default_apps
+-- }}
 default_apps_path = awful.util.getdir("config") .. "/" .. "default_apps.lua"
 if awful.util.file_readable(default_apps_path) then
     local default_apps = require("default_apps")
-    terminal = default_apps.terminal()
-    editor = default_apps.editor()
-    display_off = default_apps.display_off()
-    web_browser = default_apps.web_browser()
-    wifi_manager = default_apps.wifi_manager()
-    im_client = default_apps.im_client()
-    email_client = default_apps.email_client()
-    shutdown_dialog = default_apps.shutdown_dialog()
-    xlocker = default_apps.xlocker()
+    local apps = default_apps.get()
+
+    terminal = apps["terminal"]
+    editor = apps["editor"]
+    display_off = apps["display_off"]
+    web_browser = apps["web_browser"]
+    wifi_manager = apps["wifi_manager"]
+    email_client = apps["email_client"]
+    shutdown_dialog = apps["shutdown_dialog"]
+    xlocker = apps["xlocker"]
 
     -- Music player commands
-    music_player = default_apps.music_player()
-    music_toggle = default_apps.music_toggle()
-    music_next   = default_apps.music_next()
-    music_prev   = default_apps.music_prev()
+    music_player = apps["music_player"]
+    music_toggle = apps["music_toggle"]
+    music_next   = apps["music_next"]
+    music_prev   = apps["music_prev"]
 else
-    terminal = "sakura"
+    terminal = "termite"
     editor = os.getenv("EDITOR") or "vim"
     display_off = "dispoff"
-    web_browser = "google-chrome-stable"
+    web_browser = "google-chrome-beta"
     wifi_manager = "wifi-menu"
-    im_client = "pidgin"
     email_client = "thunderbird"
     shutdown_dialog = "farewell"
     xlocker = "slock"
 
     -- Music player commands
-    music_player = terminal .. " -e ncmpcpp"
-    music_toggle = "ncmpcpp toggle"
-    music_next   = "ncmpcpp next"
-    music_prev   = "ncmpcpp prev"
+    music_player = "spotify"
+    music_toggle = "playerctl play-pause"
+    music_next   = "playerctl next"
+    music_prev   = "playerctl previous"
 end
 
 
