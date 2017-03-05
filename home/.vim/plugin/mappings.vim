@@ -44,3 +44,5 @@ nmap <leader>p :bprev<CR>
 nmap <leader>t :enew<CR>
 " Close current buffer
 nmap <leader>q :bp <BAR> bd #<CR>
+
+"nnoremap <C-[> :CtrlPBuffer<CR>
