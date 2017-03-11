@@ -43,3 +43,6 @@
 [submodule "home/.vim/bundle/vim-unimpaired"]
 	path = home/.vim/bundle/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
+[submodule "home/.vim/bundle/a.vim"]
+	path = home/.vim/bundle/a.vim
+	url = https://github.com/vim-scripts/a.vim.git
