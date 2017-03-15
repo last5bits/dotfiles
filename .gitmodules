@@ -107,3 +107,6 @@
 [submodule "home/.tmux/plugins/tmux-yank"]
 	path = home/.tmux/plugins/tmux-yank
 	url = https://github.com/tmux-plugins/tmux-yank.git
+[submodule "home/.tmux/plugins/tmux_mode_indicator"]
+	path = home/.tmux/plugins/tmux_mode_indicator
+	url = https://github.com/dominikduda/tmux_mode_indicator.git
