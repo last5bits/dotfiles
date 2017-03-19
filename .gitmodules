@@ -49,3 +49,6 @@
 [submodule "home/.vim/bundle/vimtex"]
 	path = home/.vim/bundle/vimtex
 	url = https://github.com/lervag/vimtex.git
+[submodule "home/.vim/bundle/ultisnips"]
+	path = home/.vim/bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
