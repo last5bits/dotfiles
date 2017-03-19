@@ -46,3 +46,4 @@ nmap <leader>t :enew<CR>
 nmap <leader>q :bp <BAR> bd #<CR>
 
 "nnoremap <C-[> :CtrlPBuffer<CR>
+inoremap <S-TAB> <C-X><C-O>
