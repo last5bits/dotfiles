@@ -49,3 +49,6 @@
 [submodule "home/.vim/bundle/python-mode"]
 	path = home/.vim/bundle/python-mode
 	url = https://github.com/python-mode/python-mode.git
+[submodule "home/.vim/bundle/vimtex"]
+	path = home/.vim/bundle/vimtex
+	url = https://github.com/lervag/vimtex.git
