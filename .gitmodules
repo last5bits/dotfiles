@@ -40,9 +40,6 @@
 [submodule "home/.vim/bundle/vim-unimpaired"]
 	path = home/.vim/bundle/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
-[submodule "home/.vim/bundle/uCpp.vim"]
-	path = home/.vim/bundle/uCpp.vim
-	url = https://github.com/flxf/uCpp.vim.git
 [submodule "home/.vim/bundle/python-mode"]
 	path = home/.vim/bundle/python-mode
 	url = https://github.com/python-mode/python-mode.git
