@@ -81,3 +81,9 @@ let g:pymode_rope_complete_on_dot = 0
 let g:pymode_lint_cwindow = 0
 " Auto-hide preview window on completion
 set completeopt=menu
+
+" UltiSnips settings
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsEditSplit="vertical"
