@@ -2,6 +2,7 @@ export EDITOR="vim"
 PATH="$PATH:$HOME/bin"
 source ~/.zshrc-local
 source ~/.homesick/repos/homeshick/homeshick.sh
+source ~/.aliases
 
 # vim as a man-pager
 export MANPAGER="env MAN_PN=1 vim -M +MANPAGER -"
