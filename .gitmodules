@@ -55,3 +55,6 @@
 [submodule "home/.vim/bundle/vim-gutentags"]
 	path = home/.vim/bundle/vim-gutentags
 	url = https://github.com/ludovicchabant/vim-gutentags.git
+[submodule "home/.vim/bundle/vim-fswitch"]
+	path = home/.vim/bundle/vim-fswitch
+	url = https://github.com/derekwyatt/vim-fswitch.git
