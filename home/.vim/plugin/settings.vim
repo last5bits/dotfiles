@@ -87,3 +87,7 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
+
+" Gutentags settings
+let g:gutentags_project_root = [".vimrc-local"]
+let g:gutentags_ctags_tagfile = ".tags"
