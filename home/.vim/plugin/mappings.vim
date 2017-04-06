@@ -47,3 +47,6 @@ nmap <leader>q :bp <BAR> bd #<CR>
 
 "nnoremap <C-[> :CtrlPBuffer<CR>
 inoremap <S-TAB> <C-X><C-O>
+
+" Open the definition in a vertical split
+map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
