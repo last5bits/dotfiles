@@ -58,3 +58,6 @@
 [submodule "home/.vim/bundle/vim-fswitch"]
 	path = home/.vim/bundle/vim-fswitch
 	url = https://github.com/derekwyatt/vim-fswitch.git
+[submodule "home/.vim/bundle/tagbar"]
+	path = home/.vim/bundle/tagbar
+	url = https://github.com/majutsushi/tagbar.git
