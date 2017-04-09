@@ -1,0 +1,8 @@
+####### General Settings ############
+set adjust-open width
+
+###### Colorscheme ############
+set recolor-lightcolor      "#3f3f3f"
+set recolor-darkcolor       "#ffffff"
+set recolor                 "true"
+set recolor-keephue         "true"
