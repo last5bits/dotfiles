@@ -10,8 +10,7 @@ clickable_url = true
 font = UbuntuMono derivative Powerline 12
 scrollback_lines = 1000
 search_wrap = true
-#icon_name = terminal
-#geometry = 640x480
+icon_name = terminal
 
 # "system", "on" or "off"
 cursor_blink = system
@@ -29,10 +28,6 @@ cursor_shape = block
 #modify_other_keys = false
 
 [colors]
-;cursor = #424242
-;foreground = #000000
-;foreground_bold = #000000
-;background = #ffffff
 foreground = #dcdccc
 foreground_bold = #ffffff
 background = #3f3f3f
