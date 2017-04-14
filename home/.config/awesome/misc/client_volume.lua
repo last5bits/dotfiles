@@ -1,4 +1,5 @@
 -- Change the volume of a particular window, based on PulseAudio's pactl
+-- Alexey Zhikhartsev <last [digit five] bits at gmail dot com>
 --
 -- Put the following in your rc.lua:
 -- local client_volume = require('client_volume')
