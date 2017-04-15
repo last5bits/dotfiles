@@ -53,3 +53,6 @@ hi link SpecialChar	Special
 hi link Delimiter	Special
 hi link SpecialComment Special
 hi link Debug		Special
+
+" Make the cursor line grey rather than underline
+hi CursorLine cterm=NONE ctermbg=darkgrey ctermfg=NONE
