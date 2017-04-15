@@ -13,6 +13,8 @@ set hlsearch " Search higlights matched string
 set t_Co=256 " Airline forced me to do it
 set number " Line numbers, please
 set lazyredraw " Don't bother updating screen during macro playback
+set cursorline " highlight current line
+"set cursorcolumn " highlight current column
 
 if has('folding')
   set foldmethod=indent    " not as cool as syntax, but faster
