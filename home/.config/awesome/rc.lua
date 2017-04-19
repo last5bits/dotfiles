@@ -22,6 +22,7 @@ local client_volume = require('misc/client_volume')
 local xrandr = require('misc/xrandr')
 require("widgets/brightness")
 require("widgets/volume")
+local net_widgets = require("net_widgets")
 
 
 -- {{{ Error handling
@@ -116,6 +117,10 @@ pomodoro.widget.visible = false
 spacer_pomodoro_widget.visible = false
 
 spacer = spacer({text = " : "})
+
+net_wireless = net_widgets.wireless({indent = 0, font = "monospace", popup_position = "bottom_right", timeout = 3})
+net_wired = net_widgets.indicator({indent = 0, font = "monospace", popup_position = "bottom_right", timeout = 3, hidedisconnected = true})
+net_internet = net_widgets.internet({indent = 0, timeout = 3})
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -301,6 +306,10 @@ awful.screen.connect_for_each_screen(function(s)
             brightness_widget,
             spacer,
             volume_widget,
+            spacer,
+            net_internet,
+            net_wired,
+            net_wireless,
             spacer,
             layout = wibox.layout.fixed.horizontal,
             --mykeyboardlayout,
