@@ -12,4 +12,4 @@
 	url = https://github.com/dominikduda/tmux_mode_indicator.git
 [submodule "home/.config/awesome/net_widgets"]
 	path = home/.config/awesome/net_widgets
-	url = git@github.com:last5bits/net_widgets.git
+	url = https://github.com/last5bits/net_widgets.git
