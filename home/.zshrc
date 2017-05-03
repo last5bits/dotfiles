@@ -4,9 +4,6 @@ source ~/.zshrc-local
 source ~/.homesick/repos/homeshick/homeshick.sh
 source ~/.aliases
 
-# vim as a man-pager
-export MANPAGER="env MAN_PN=1 vim -M +MANPAGER -"
-
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
