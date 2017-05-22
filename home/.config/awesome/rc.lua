@@ -106,7 +106,7 @@ end
 theme_dir = awful.util.getdir("config") .. "/themes/zenburn/"
 beautiful.init(theme_dir .. "theme.lua")
 
-local pomodoro = require("pomodoro")
+local pomodoro = require("pomodoro/init")
 -- Remove the text "Pomodoro: "
 pomodoro.format = function (t) return t end
 pomodoro.init()
