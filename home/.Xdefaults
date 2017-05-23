@@ -47,3 +47,19 @@ URxvt.url-launcher: google-chrome
 
 URxvt.matcher.button: 1
 
+! {{
+! Rebinding copy & paste in urxvt
+! https://stackoverflow.com/questions/39884093/rebinding-copy-paste-in-urxvt
+! Disable ISO 14755 unicode input so we can use Ctrl-Shift bindings
+URxvt.iso14755:        false
+URxvt.iso14755_52:     false
+
+! Disable Ctrl-Alt-c & Ctrl-Alt-v bindings (optional)
+URxvt.keysym.C-M-c:    builtin-string:
+URxvt.keysym.C-M-v:    builtin-string:
+
+! Bind Ctrl-Shift-c & Ctrl-Shift-v to copy and paste
+! I don't know why, but I needed to use hex keysym values to get it to work
+URxvt.keysym.C-S-0x43: eval:selection_to_clipboard
+URxvt.keysym.C-S-0x56: eval:paste_clipboard
+! }}
