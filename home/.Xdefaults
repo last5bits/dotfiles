@@ -16,11 +16,11 @@
 *.color2:      #33ff00
 *.color10:     #33ff00
 ! yellow
-*.color3:      #ff0099
-*.color11:     #ff0099
+*.color3:      #b58900
+*.color11:     #b58900
 ! blue
-*.color4:      #0066ff
-*.color12:     #0066ff
+*.color4:      #506070
+*.color12:     #506070
 ! magenta
 *.color5:      #cc00ff
 *.color13:     #cc00ff
@@ -36,7 +36,7 @@ URxvt*scrollBar_right:   false
 
 URxvt*transparent:       false
 
-URxvt.font: xft:Ubuntu Mono derivative Powerline:pixelsize=14
+URxvt.font: xft:Ubuntu Mono derivative Powerline:pixelsize=17
 URxvt.letterSpace: 0
 
 *antialias:  true
