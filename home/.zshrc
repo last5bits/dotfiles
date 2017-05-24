@@ -25,8 +25,10 @@ compinit
 prompt redhat
 
 autoload -U colors && colors
-PROMPT="[%{$fg_bold[default]%}%n%{$reset_color%}@%{$fg_bold[default]%}%m%{$reset_color%} %1~]%{$reset_color%}%(#.#.$) "
-RPROMPT="[%{$fg_bold[default]%}%?%{$reset_color%}] "
+
+# Conditional expressions in prompts
+# https://www-s.acm.illinois.edu/workshops/zsh/prompt/conditionals.html
+PROMPT="[%{$fg_bold[default]%}%n%{$reset_color%}@%{$fg_bold[default]%}%m%{$reset_color%} %1~%{$fg_bold[default]%}%(?,, %?)%{$reset_color%}]%{$reset_color%}%(#.#.$) "
 
 # Open current line in $EDITOR
 autoload -U edit-command-line
