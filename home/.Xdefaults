@@ -1,51 +1,35 @@
-##### THIS FILE IS BEING CURRENTLY MANAGED BY URXVTCONFIG #####
-##### CHANGES DONE TO THIS FILE MANUALLY MAY AFFECT THE FUNCTIONALITY ######
-##### PROCEED WITH CAUTION! #####
-
-! special colors
-*.foreground:  #d0d0d0
-*.background:  #000000
-*.cursorColor:  #d0d0d0
-! black
-*.color0:      #000000
-*.color8:      #808080
-! red
-*.color1:      #ff0000
-*.color9:      #ff0000
-! green
-*.color2:      #33ff00
-*.color10:     #33ff00
-! yellow
-*.color3:      #b58900
-*.color11:     #b58900
-! blue
-*.color4:      #506070
-*.color12:     #506070
-! magenta
-*.color5:      #cc00ff
-*.color13:     #cc00ff
-! cyan
-*.color6:      #00ffff
-*.color14:     #00ffff
-! white
-*.color7:      #d0d0d0
-*.color15:     #ffffff
+#include ".Xresources.d/termite-color-scheme"
 
 URxvt*scrollBar:         false
 URxvt*scrollBar_right:   false
-
 URxvt*transparent:       false
+URxvt.visualBell: true
 
+! {{
+! Font
 URxvt.font: xft:Ubuntu Mono derivative Powerline:pixelsize=17
-URxvt.letterSpace: 0
-
+URxvt.letterSpace: -1
 *antialias:  true
 *autohint:   true
+! }}
 
-URxvt.perl-ext-common: default,matcher
-URxvt.url-launcher: google-chrome
+! {{
+! Font size hotkeys
+URxvt.perl-ext-common:  ...,font-size
+URxvt.keysym.C-plus:    perl:font-size:increase
+URxvt.keysym.C-minus:   perl:font-size:decrease
+URxvt.keysym.C-S-Up:    perl:font-size:incglobal
+URxvt.keysym.C-S-Down:  perl:font-size:decglobal
+! }}
 
-URxvt.matcher.button: 1
+! {{
+! Clickable URLs
+URxvt.perl-ext-common:   default,matcher
+URxvt.url-launcher:     /usr/bin/xdg-open
+URxvt.matcher.button:   1
+URxvt.keysym.C-Delete:  perl:matcher:last
+URxvt.keysym.M-Delete:  perl:matcher:list
+! }}
 
 ! {{
 ! Rebinding copy & paste in urxvt
