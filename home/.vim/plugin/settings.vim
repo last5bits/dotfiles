@@ -15,6 +15,7 @@ set number " Line numbers, please
 set lazyredraw " Don't bother updating screen during macro playback
 set cursorline " highlight current line
 "set cursorcolumn " highlight current column
+set nowrapscan " Do not continue the search from the top again
 
 if has('folding')
   set foldmethod=indent    " not as cool as syntax, but faster
