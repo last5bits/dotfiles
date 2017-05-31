@@ -40,7 +40,10 @@ if has('linebreak')
     endif
 
     " ARROW POINTING DOWNWARDS THEN CURVING RIGHTWARDS (U+2937, UTF-8: E2 A4 B7)
-    let &showbreak='⤷ '
+    "let &showbreak='⤷ '
+
+    " RIGHTWARDS ARROW WITH HOOK (U+21aa, 8618)
+    let &showbreak='↪ '
 endif
 
 " Mouse in tmux
