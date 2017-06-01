@@ -342,6 +342,13 @@ local function lock_x()
     awful.spawn(xlocker)
 end
 
+local function show_time()
+    local os = os
+    time_text = os.date("%a %b %d, %H:%M")
+    notif_id = naughty.notify({ text = time_text
+        , replaces_id = notif_id }).id
+end
+
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
@@ -401,6 +408,8 @@ globalkeys = awful.util.table.join(
               {description = "quit awesome", group = "awesome"}),
 
     -- User-defined hotkeys
+    awful.key({ modkey,    "Ctrl"}, "t",      show_time,
+              {description = "show current time in a notification pop-up", group = "custom"}),
     awful.key({ modkey,    "Shift"}, "p",      toggle_pomodoro,
               {description = "show/hide the pomodoro widget", group = "custom"}),
     awful.key({ modkey,           }, "d",      function () awful.spawn(display_off) end,
