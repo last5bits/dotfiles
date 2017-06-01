@@ -1,8 +1,9 @@
-export EDITOR="vim"
-PATH="$PATH:$HOME/bin"
 source ~/.zshrc-local
 source ~/.homesick/repos/homeshick/homeshick.sh
 source ~/.aliases
+
+export PATH="$PATH:$HOME/.bin"
+export EDITOR="vim"
 
 HISTFILE=~/.histfile
 HISTSIZE=1000
