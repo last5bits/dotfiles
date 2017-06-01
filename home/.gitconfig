@@ -9,5 +9,7 @@
     supdate = submodule foreach git pull origin master
 	last = log -1 HEAD
 	dlast = diff HEAD~1 HEAD
+    yr = yank --remote
+    yb = yank --branch
 [pull]
 	rebase = true
