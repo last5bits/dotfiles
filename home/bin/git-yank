@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Copyright 2017 Alexey Zhikhartsev <last [digit five] bits at gmail dot com>
+
+set -e # exit if a command returns with non-zero
+set -u # exit if a variable is not set
+
+opt="${1?Specify what to copy to the clipboard (--remote or --branch)}"
+
+case "$opt" in
+    "--remote")
+        remote="${2:-origin}"
+        to_yank="$(git ls-remote --get-url $remote)"
+        ;;
+    "--branch")
+        to_yank="$(git rev-parse --abbrev-ref HEAD)"
+        ;;
+esac
+
+echo -n "$to_yank" | xclip -selection clipboard
+echo "Yanked '$to_yank' to clipboard"
