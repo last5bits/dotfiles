@@ -85,7 +85,7 @@ if awful.util.file_readable(default_apps_path) then
     music_next   = apps["music_next"]
     music_prev   = apps["music_prev"]
 else
-    terminal = "termite"
+    terminal = "urxvt"
     editor = os.getenv("EDITOR") or "vim"
     display_off = "dispoff"
     web_browser = "google-chrome-beta"
@@ -169,8 +169,7 @@ end
 -- Create a launcher widget and a main menu
 myawesomemenu = {
    { "hotkeys", function() return false, hotkeys_popup.show_help end},
-   { "manual", terminal .. " -e \"man awesome\"" },
-   { "edit config", terminal .. " -e \"" .. editor .. " " .. awesome.conffile .. "\""},
+   { "manual", terminal .. " -e man awesome" },
    { "restart", awesome.restart },
    { "quit", function() awesome.quit() end}
 }
@@ -432,13 +431,13 @@ globalkeys = awful.util.table.join(
               {description = "next track", group = "custom"}),
     awful.key({ modkey,           }, "F9",     function () awful.spawn(shutdown_dialog) end,
               {description = "run shutdown dialog", group = "custom"}),
-    awful.key({ modkey,           }, "F10",    function () awful.spawn(terminal .. " -e 'python -q'") end,
+    awful.key({ modkey,           }, "F10",    function () awful.spawn(terminal .. " -e python -q") end,
               {description = "run python interpreter", group = "custom"}),
     awful.key({ modkey,           }, "F11",    function () awful.spawn(terminal .. " -e htop") end,
               {description = "run htop", group = "custom"}),
     awful.key({ modkey,           }, "F12",    lock_x,
               {description = "run screen locker", group = "custom"}),
-    awful.key({ modkey, "Shift"   }, "Return", function () awful.spawn(terminal .. " -e 'sh -c \"tmux attach || tmux new -s misc\"'") end,
+    awful.key({ modkey, "Shift"   }, "Return", function () awful.spawn(terminal .. " -e sh -c \"tmux attach || tmux new -s misc\"") end,
               {description = "run tmux", group = "custom"}),
     awful.key({                   }, "Print",  function () awful.spawn("xfce4-screenshooter") end,
               {description = "run screenshooter", group = "custom"}),
