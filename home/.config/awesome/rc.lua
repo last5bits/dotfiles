@@ -345,7 +345,8 @@ local function show_time()
     local os = os
     time_text = os.date("%a %b %d, %H:%M")
     notif_id = naughty.notify({ text = time_text
-        , replaces_id = notif_id }).id
+        , replaces_id = notif_id
+        , position = "bottom_right" }).id
 end
 
 -- {{{ Key bindings
@@ -407,7 +408,7 @@ globalkeys = awful.util.table.join(
               {description = "quit awesome", group = "awesome"}),
 
     -- User-defined hotkeys
-    awful.key({ modkey,    "Ctrl"}, "t",      show_time,
+    awful.key({ modkey,    "Mod1"}, "space",      show_time,
               {description = "show current time in a notification pop-up", group = "custom"}),
     awful.key({ modkey,    "Shift"}, "p",      toggle_pomodoro,
               {description = "show/hide the pomodoro widget", group = "custom"}),
@@ -444,7 +445,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Ctrl"    }, "Up",      client_volume.up,
               {description="client volume up", group="custom"}),
     awful.key({ modkey, "Ctrl"    }, "Down",    client_volume.down,
-              {description="client volume up", group="custom"}),
+              {description="client volume down", group="custom"}),
 
     -- Multimedia keys
     awful.key({         }, "XF86AudioMute", function () awful.spawn("pactl set-sink-mute 0 toggle") end),
