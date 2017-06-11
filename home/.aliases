@@ -1,3 +1,5 @@
 alias t="touch"
+alias jc="journalctl -e -o short-full"
+alias sc="sudo systemctl"
 
 # vim: set filetype=sh:
