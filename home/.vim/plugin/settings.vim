@@ -14,8 +14,8 @@ set t_Co=256 " Airline forced me to do it
 set number " Line numbers, please
 set lazyredraw " Don't bother updating screen during macro playback
 set cursorline " highlight current line
-"set cursorcolumn " highlight current column
 set nowrapscan " Do not continue the search from the top again
+set autoread " Update an open buffer if it has been changed externally
 
 if has('folding')
   set foldmethod=indent    " not as cool as syntax, but faster
