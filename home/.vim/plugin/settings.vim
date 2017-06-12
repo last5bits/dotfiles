@@ -16,6 +16,8 @@ set lazyredraw " Don't bother updating screen during macro playback
 set cursorline " highlight current line
 set nowrapscan " Do not continue the search from the top again
 set autoread " Update an open buffer if it has been changed externally
+set ignorecase
+set infercase " This and the above for convenient search and completion
 
 if has('folding')
   set foldmethod=indent    " not as cool as syntax, but faster
