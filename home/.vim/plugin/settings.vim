@@ -103,3 +103,6 @@ let g:gutentags_ctags_tagfile = ".tags"
 " FSwitch settings
 au! BufEnter *.cpp,*.cc,*.c let b:fswitchdst = 'h,hpp'    | let b:fswitchlocs = 'reg:/src/include/,../include,./'
 au! BufEnter *.h,*.hpp      let b:fswitchdst = 'cpp,cc,c' | let b:fswitchlocs = 'reg:/include/src/,../src,./'
+
+" CtrlP settings
+let g:ctrlp_extensions = ['tag']
