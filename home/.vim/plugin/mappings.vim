@@ -45,7 +45,6 @@ nmap <leader>t :enew<CR>
 " Close current buffer
 nmap <leader>q :bp <BAR> bd #<CR>
 
-"nnoremap <C-[> :CtrlPBuffer<CR>
 inoremap <S-TAB> <C-X><C-O>
 
 " Switch to the file and load it into the current window
