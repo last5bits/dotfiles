@@ -1,4 +1,3 @@
-source ~/.zshrc-local
 source ~/.homesick/repos/homeshick/homeshick.sh
 source ~/.aliases
 
@@ -115,3 +114,5 @@ alias cbssh="cbf ~/.ssh/id_rsa.pub"
 alias cbwd="pwd | cb"
 # Copy most recent command in bash history
 alias cbhs="cat $HISTFILE | tail -n 1 | cb"
+
+source ~/.zshrc-local
