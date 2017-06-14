@@ -10,7 +10,7 @@ endif
 
 " Change the colorscheme in Gdiff
 au FilterWritePre * if &diff | colorscheme blue | endif
-noremap <leader>o :only<CR>:colorscheme elflady<CR>
+noremap <leader>o :only<CR>:colorscheme elflady<CR>:redraw!<CR>
 
 " Syntastic
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
