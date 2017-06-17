@@ -58,3 +58,6 @@
 [submodule "home/.vim/bundle/tagbar"]
 	path = home/.vim/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
+[submodule "home/.vim/bundle/vim-gnupg"]
+	path = home/.vim/bundle/vim-gnupg
+	url = https://github.com/jamessan/vim-gnupg.git
