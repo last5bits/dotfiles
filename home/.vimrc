@@ -43,6 +43,11 @@ let g:grepper           = {}
 let g:grepper.next_tool = '<tab>'
 
 " Pathogen hacks
+let g:pathogen_disabled = []
+if v:version < '704'
+    call add(g:pathogen_disabled, 'vim-gutentags')
+    call add(g:pathogen_disabled, 'ultisnips')
+endif
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 Helptags
