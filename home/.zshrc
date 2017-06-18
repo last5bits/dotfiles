@@ -44,9 +44,6 @@ alias ды="ls -h --color --group-directories-first"
 alias св="cd"
 alias p="ping google.com"
 alias gdb="gdb -silent"
-alias info="info --vi-keys"
-alias wcc="wicd-curses"
-alias s="sync"
 
 # start ssh-agent if it's not already running
 function start-ssh-agent() {
