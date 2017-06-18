@@ -46,7 +46,6 @@ alias p="ping google.com"
 alias gdb="gdb -silent"
 alias info="info --vi-keys"
 alias wcc="wicd-curses"
-alias rustime="export TZ=\"Europe/Moscow\" && date && unset TZ"
 alias s="sync"
 
 # start ssh-agent if it's not already running
