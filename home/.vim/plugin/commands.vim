@@ -7,6 +7,3 @@ command! PrettyJson %!python -m json.tool
 
 " Opens help in the same buffer
 command! -nargs=1 -complete=help H :enew | :set buftype=help | :h <args>
-
-" Elevate your privileges
-command Sudow w !sudo tee % >/dev/null

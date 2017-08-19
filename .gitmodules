@@ -64,3 +64,6 @@
 [submodule "home/.vim/bundle/vim-lion"]
 	path = home/.vim/bundle/vim-lion
 	url = https://github.com/tommcdo/vim-lion.git
+[submodule "home/.vim/bundle/vim-eunuch"]
+	path = home/.vim/bundle/vim-eunuch
+	url = https://github.com/tpope/vim-eunuch.git
