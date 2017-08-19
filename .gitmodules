@@ -67,3 +67,6 @@
 [submodule "home/.vim/bundle/vim-eunuch"]
 	path = home/.vim/bundle/vim-eunuch
 	url = https://github.com/tpope/vim-eunuch.git
+[submodule "home/.vim/bundle/nvim-completion-manager"]
+	path = home/.vim/bundle/nvim-completion-manager
+	url = https://github.com/roxma/nvim-completion-manager.git
