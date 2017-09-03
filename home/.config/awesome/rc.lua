@@ -192,7 +192,13 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 -- {{{ Wibar
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
+
+-- Create calendars
+cal_args = { spacing = 0, start_sunday = true }
 cal.register(mytextclock, "<b>%s</b>")
+--month_calendar = awful.widget.calendar_popup.month(cal_args)
+--month_calendar:attach( mytextclock, "br" )
+year_calendar = awful.widget.calendar_popup.year(cal_args)
 
 -- Create battery indicator
 myassault = assault({
@@ -341,10 +347,18 @@ local function lock_x()
     awful.spawn(xlocker)
 end
 
-local function show_time()
-    local os = os
-    time_text = os.date("%a %b %d, %H:%M")
-    notif_id = naughty.notify({ text = time_text
+local function show_time_and_charge()
+    --local os = os
+    local time_text = os.date("%a %b %d, %H:%M")
+
+    local handle = io.popen("acpi -b | cut -d' ' -f4")
+    local charge_text  = handle:read("*a")
+    charge_text = charge_text:sub(1, #charge_text - 1)
+    handle:close()
+
+    local notif_text = string.format("Charge: %s %s", charge_text, time_text)
+
+    notif_id = naughty.notify({ text = notif_text
         , replaces_id = notif_id
         , position = "bottom_right" }).id
 end
@@ -408,7 +422,7 @@ globalkeys = awful.util.table.join(
               {description = "quit awesome", group = "awesome"}),
 
     -- User-defined hotkeys
-    awful.key({ modkey,    "Mod1"}, "space",      show_time,
+    awful.key({ modkey,    "Mod1"}, "space",      show_time_and_charge,
               {description = "show current time in a notification pop-up", group = "custom"}),
     awful.key({ modkey,    "Shift"}, "p",      toggle_pomodoro,
               {description = "show/hide the pomodoro widget", group = "custom"}),
@@ -446,6 +460,8 @@ globalkeys = awful.util.table.join(
               {description="client volume up", group="custom"}),
     awful.key({ modkey, "Ctrl"    }, "Down",    client_volume.down,
               {description="client volume down", group="custom"}),
+    awful.key({ modkey, "Control" }, "c",  function () year_calendar:toggle() end,
+              {description="show year calendar", group="custom"}),
 
     -- Multimedia keys
     awful.key({         }, "XF86AudioMute", function () awful.spawn("pactl set-sink-mute 0 toggle") end),
