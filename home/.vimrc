@@ -50,6 +50,7 @@ if v:version < '704'
 endif
 if !has('nvim')
     call add(g:pathogen_disabled, 'nvim-completion-manager')
+    call add(g:pathogen_disabled, 'clang_complete')
 endif
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
