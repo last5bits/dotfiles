@@ -11,3 +11,5 @@
     yb = yank --branch
 [pull]
 	rebase = true
+[commit]
+	verbose = true
