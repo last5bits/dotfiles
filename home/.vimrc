@@ -48,6 +48,9 @@ if v:version < '704'
     call add(g:pathogen_disabled, 'vim-gutentags')
     call add(g:pathogen_disabled, 'ultisnips')
 endif
+if v:version <= 703 && !has('patch544')
+    call add(g:pathogen_disabled, 'vimtex')
+endif
 if !has('nvim')
     call add(g:pathogen_disabled, 'nvim-completion-manager')
     call add(g:pathogen_disabled, 'clang_complete')
