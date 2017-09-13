@@ -48,6 +48,9 @@ if v:version < '704'
     call add(g:pathogen_disabled, 'vim-gutentags')
     call add(g:pathogen_disabled, 'ultisnips')
 endif
+if !has('nvim')
+    call add(g:pathogen_disabled, 'nvim-completion-manager')
+endif
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 Helptags
