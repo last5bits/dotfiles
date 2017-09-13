@@ -2,8 +2,6 @@
     path = .gitconfig-local
 [core]
 	excludesfile = ~/.gitignore
-[push]
-	default = simple
 [alias]
     lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     supdate = submodule foreach git pull origin master
