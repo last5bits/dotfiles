@@ -118,7 +118,7 @@ spacer_pomodoro_widget.visible = false
 
 spacer = spacer({text = " : "})
 
-net_wireless = net_widgets.wireless({indent = 0, font = "monospace", popup_position = "bottom_right", popup_signal = true, timeout = 3})
+net_wireless = net_widgets.wireless({indent = 0, font = "monospace", popup_position = "bottom_right", popup_signal = true, timeout = 3, hide_when_rfkill_blocked = true})
 net_wired = net_widgets.indicator({interfaces = {"eth0"}, indent = 0, font = "monospace", popup_position = "bottom_right", timeout = 3, hidedisconnected = true})
 net_internet = net_widgets.internet({indent = 0, timeout = 3})
 
