@@ -52,3 +52,6 @@ nmap <silent> <Leader>a :FSHere<cr>
 
 " Open the tag bar
 nmap <F8> :TagbarToggle<CR>
+
+" Open the fuzzy searcher through current bufs
+nmap <leader>b :CtrlPBuffer<cr>
