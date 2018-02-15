@@ -8,4 +8,7 @@ if has('autocmd')
             autocmd CursorHold * silent! checktime
         augroup END
     endif
+
+    " Open quick-fix window for vim-fugitive automatically
+    autocmd QuickFixCmdPost *grep* cwindow
 endif
