@@ -73,3 +73,6 @@
 [submodule "home/.vim/bundle/clang_complete"]
 	path = home/.vim/bundle/clang_complete
 	url = https://github.com/roxma/clang_complete.git
+[submodule "home/.vim/bundle/vim-vinegar"]
+	path = home/.vim/bundle/vim-vinegar
+	url = https://github.com/tpope/vim-vinegar.git
