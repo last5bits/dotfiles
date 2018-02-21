@@ -8,7 +8,6 @@ set mouse=a " Mouse support is on
 set smartindent " Smart autoindenting when starting a new line
 set noswapfile " Avoid creating a swapfile
 set scrolloff=3 " Number of lines to keep above and below the cursor
-set hidden " Modified buffers are hidden automatically
 set hlsearch " Search higlights matched string
 set t_Co=256 " Airline forced me to do it
 set number " Line numbers, please
