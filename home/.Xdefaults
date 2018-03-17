@@ -15,11 +15,12 @@ URxvt.letterSpace: 0
 
 ! {{
 ! Font size hotkeys
-URxvt.perl-ext-common:  ...,font-size
-URxvt.keysym.C-plus:    perl:font-size:increase
-URxvt.keysym.C-minus:   perl:font-size:decrease
-URxvt.keysym.C-S-Up:    perl:font-size:incglobal
-URxvt.keysym.C-S-Down:  perl:font-size:decglobal
+URxvt.perl-ext-common:    font-size
+URxvt.keysym.C-equal:     font-size:increase
+URxvt.keysym.C-minus:     font-size:decrease
+URxvt.keysym.C-S-Up:      font-size:incglobal
+URxvt.keysym.C-S-Down:    font-size:decglobal
+URxvt.keysym.C-0:         font-size:reset
 ! }}
 
 ! {{
@@ -43,7 +44,7 @@ URxvt.keysym.C-M-c:    builtin-string:
 URxvt.keysym.C-M-v:    builtin-string:
 
 ! Bind Ctrl-Shift-c & Ctrl-Shift-v to copy and paste
-! I don't know why, but I needed to use hex keysym values to get it to work
+! I do not know why, but I needed to use hex keysym values to get it to work
 URxvt.keysym.C-S-0x43: eval:selection_to_clipboard
 URxvt.keysym.C-S-0x56: eval:paste_clipboard
 ! }}
