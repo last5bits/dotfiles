@@ -76,3 +76,6 @@
 [submodule "home/.vim/bundle/vim-vinegar"]
 	path = home/.vim/bundle/vim-vinegar
 	url = https://github.com/tpope/vim-vinegar.git
+[submodule "home/.vim/bundle/vim-DrawIt"]
+	path = home/.vim/bundle/vim-DrawIt
+	url = https://github.com/hrj/vim-DrawIt.git
