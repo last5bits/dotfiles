@@ -351,7 +351,7 @@ local function show_time_and_charge()
     --local os = os
     local time_text = os.date("%a %b %d, %H:%M")
 
-    local handle = io.popen("acpi -b | cut -d' ' -f4")
+    local handle = io.popen("acpi -b | head -n1 | cut -d' ' -f4")
     local charge_text  = handle:read("*a")
     charge_text = charge_text:sub(1, #charge_text - 1)
     handle:close()
