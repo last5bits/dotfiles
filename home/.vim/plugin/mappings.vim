@@ -43,7 +43,7 @@ nmap <leader>p :bprev<CR>
 " New empty buffer
 nmap <leader>t :enew<CR>
 " Close current buffer
-nmap <leader>q :bp <BAR> bd #<CR>
+nmap <leader>q :bp <BAR> bwipeout #<CR>
 
 inoremap <S-TAB> <C-X><C-O>
 
