@@ -7,9 +7,6 @@
 [submodule "home/.vim/bundle/vim-airline"]
 	path = home/.vim/bundle/vim-airline
 	url = https://github.com/bling/vim-airline
-[submodule "home/.vim/bundle/cool.vim"]
-	path = home/.vim/bundle/cool.vim
-	url = https://github.com/vim-scripts/cool.vim
 [submodule "home/.vim/bundle/delimitMate"]
 	path = home/.vim/bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate.git
@@ -25,9 +22,6 @@
 [submodule "home/.vim/bundle/vim-bracketed-paste"]
 	path = home/.vim/bundle/vim-bracketed-paste
 	url = https://github.com/ConradIrwin/vim-bracketed-paste.git
-[submodule "home/.vim/bundle/syntastic"]
-	path = home/.vim/bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
 [submodule "home/.vim/bundle/asyncrun.vim"]
 	path = home/.vim/bundle/asyncrun.vim
 	url = https://github.com/skywind3000/asyncrun.vim.git
@@ -67,15 +61,12 @@
 [submodule "home/.vim/bundle/vim-eunuch"]
 	path = home/.vim/bundle/vim-eunuch
 	url = https://github.com/tpope/vim-eunuch.git
-[submodule "home/.vim/bundle/nvim-completion-manager"]
-	path = home/.vim/bundle/nvim-completion-manager
-	url = https://github.com/roxma/nvim-completion-manager.git
-[submodule "home/.vim/bundle/clang_complete"]
-	path = home/.vim/bundle/clang_complete
-	url = https://github.com/roxma/clang_complete.git
 [submodule "home/.vim/bundle/vim-vinegar"]
 	path = home/.vim/bundle/vim-vinegar
 	url = https://github.com/tpope/vim-vinegar.git
 [submodule "home/.vim/bundle/vim-DrawIt"]
 	path = home/.vim/bundle/vim-DrawIt
 	url = https://github.com/hrj/vim-DrawIt.git
+[submodule "home/.vim/bundle/ale"]
+	path = home/.vim/bundle/ale
+	url = https://github.com/w0rp/ale.git
