@@ -465,10 +465,12 @@ globalkeys = awful.util.table.join(
 
     -- Multimedia keys
     awful.key({         }, "XF86AudioMute", function () awful.spawn("pactl set-sink-mute 0 toggle") end),
-    awful.key({         }, "XF86AudioLowerVolume", function () awful.spawn("amixer set Master 5%-") end),
-    awful.key({         }, "XF86AudioRaiseVolume", function () awful.spawn("amixer set Master 5%+") end),
+    awful.key({         }, "XF86AudioLowerVolume", function () awful.spawn("pactl set-sink-volume 0 -10%") end),
+    awful.key({         }, "XF86AudioRaiseVolume", function () awful.spawn("pactl set-sink-volume 0 +10%") end),
+    awful.key({         }, "XF86MonBrightnessDown", function () awful.spawn("xbacklight -dec 10") end),
+    awful.key({         }, "XF86MonBrightnessUp", function () awful.spawn("xbacklight -inc 10") end),
     awful.key({         }, "XF86AudioMicMute", function () awful.spawn("pactl set-source-mute 1 toggle") end),
-    awful.key({         }, "XF86Launch1", function () awful.spawn("toggle-pavucontrol") end),
+    awful.key({         }, "XF86Tools", function () awful.spawn("toggle-pavucontrol") end),
     awful.key({         }, "XF86ScreenSaver", lock_x),
     awful.key({         }, "XF86TouchpadToggle", function () awful.spawn("toggle-touchpad") end),
     awful.key({         }, "XF86Display", xrandr.switch),
