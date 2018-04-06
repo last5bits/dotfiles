@@ -1,5 +1,6 @@
 ####### General Settings ############
 set adjust-open width
+set font "Ubuntu Mono normal 15"
 
 ###### Colorscheme ############
 set recolor-lightcolor      "#3f3f3f"
