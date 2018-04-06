@@ -44,6 +44,9 @@ nmap <leader>p :bprev<CR>
 nmap <leader>t :enew<CR>
 " Close current buffer
 nmap <leader>q :bp <BAR> bwipeout #<CR>
+" Close all windows except the current one
+noremap <leader>o :only<CR>
+
 
 inoremap <S-TAB> <C-X><C-O>
 
