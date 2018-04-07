@@ -9,7 +9,7 @@ set smartindent " Smart autoindenting when starting a new line
 set noswapfile " Avoid creating a swapfile
 set scrolloff=3 " Number of lines to keep above and below the cursor
 set hlsearch " Search higlights matched string
-set t_Co=256 " Airline forced me to do it
+set t_Co=256 " 256 colors
 set number " Line numbers, please
 set lazyredraw " Don't bother updating screen during macro playback
 set cursorline " highlight current line
@@ -108,3 +108,19 @@ au! BufEnter *.h,*.hpp      let b:fswitchdst = 'cpp,cc,c' | let b:fswitchlocs = 
 
 " CtrlP settings
 let g:ctrlp_extensions = ['tag']
+
+" Grepper settings
+let g:grepper           = {}
+let g:grepper.next_tool = '<tab>'
+
+" Airline settings
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1 " Enable the list of buffers
+let g:airline#extensions#tabline#fnamemod = ':t' " Show just the filename
+let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status}'])
+
+" Latex
+let g:tex_flavor='latex' " TeX instead of PlainTeX
+let g:livepreview_previewer = 'zathura' " Default PDF viewer for latex
+
+let delimitMate_expand_cr = 1 " Turn on the expansion of <CR>

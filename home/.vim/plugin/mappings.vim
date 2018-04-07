@@ -47,7 +47,6 @@ nmap <leader>q :bp <BAR> bwipeout #<CR>
 " Close all windows except the current one
 noremap <leader>o :only<CR>
 
-
 inoremap <S-TAB> <C-X><C-O>
 
 " Switch to the file and load it into the current window
