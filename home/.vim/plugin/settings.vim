@@ -19,8 +19,12 @@ set ignorecase
 set infercase " This and the above for convenient search and completion
 
 if has('folding')
-  set foldmethod=indent    " not as cool as syntax, but faster
-  set foldlevelstart=99    " start unfolded
+  if has('windows')
+    set fillchars+=fold:·             " MIDDLE DOT (U+00B7, UTF-8: C2 B7)
+  endif
+  set foldmethod=indent               " not as cool as syntax, but faster
+  set foldlevelstart=99               " start unfolded
+  set foldtext=functions#foldtext()
 endif
 
 if v:version > 703 || v:version == 703 && has('patch541')
