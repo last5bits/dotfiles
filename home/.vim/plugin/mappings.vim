@@ -12,10 +12,6 @@ nnoremap <leader>*  :Grepper -cword -noprompt<cr>
 " Make the current file executable
 nmap <leader>x :w<cr>:!chmod 755 %<cr>:e<cr>
 
-" Syntastic mappings
-nmap <leader>ss :w<cr>:SyntasticCheck<cr>
-nmap <leader>sr :SyntasticReset<cr>
-
 " Repeat last macro if in a normal buffer.
 nnoremap <expr> <CR> empty(&buftype) ? '@@' : '<CR>'
 
@@ -46,8 +42,6 @@ nmap <leader>t :enew<CR>
 nmap <leader>q :bp <BAR> bwipeout #<CR>
 " Close all windows except the current one
 noremap <leader>o :only<CR>
-
-inoremap <S-TAB> <C-X><C-O>
 
 " Switch to the file and load it into the current window
 nmap <silent> <Leader>a :FSHere<cr>

@@ -1,16 +1,6 @@
 set nocompatible
-
 let mapleader=' '
-
 colorscheme elflady
-
-" File encoding menu
-nmap <leader>e :emenu Encoding.<TAB>
-set wcm=<Tab>
-menu Encoding.utf-8 :e ++enc=utf8 <CR>
-menu Encoding.windows-1251 :e ++enc=cp1251<CR>
-menu Encoding.koi8-r :e ++enc=koi8-r<CR>
-menu Encoding.cp866 :e ++enc=cp866<CR>
 
 " Pathogen hacks
 let g:pathogen_disabled = []
@@ -20,10 +10,6 @@ if v:version < '704'
 endif
 if v:version <= 703 && !has('patch544')
     call add(g:pathogen_disabled, 'vimtex')
-endif
-if !has('nvim')
-    call add(g:pathogen_disabled, 'nvim-completion-manager')
-    call add(g:pathogen_disabled, 'clang_complete')
 endif
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()

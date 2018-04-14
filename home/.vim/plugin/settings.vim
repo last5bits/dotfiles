@@ -1,22 +1,22 @@
 set showtabline=1 " Show me your tab line
-set tabstop=4 " One tabulation equals four spaces
-set expandtab " No tabs, only spaces
+set tabstop=4     " One tabulation equals four spaces
+set expandtab     " No tabs, only spaces
 set softtabstop=4 " Moving text blocks four spaces by < and > in visual
-set shiftwidth=4 " Same thing with << and >>
-set mousehide " Hiding mouse cursor while typing
-set mouse=a " Mouse support is on
-set smartindent " Smart autoindenting when starting a new line
-set noswapfile " Avoid creating a swapfile
-set scrolloff=3 " Number of lines to keep above and below the cursor
-set hlsearch " Search higlights matched string
-set t_Co=256 " 256 colors
-set number " Line numbers, please
-set lazyredraw " Don't bother updating screen during macro playback
-set cursorline " highlight current line
-set nowrapscan " Do not continue the search from the top again
-set autoread " Update an open buffer if it has been changed externally
-set ignorecase
-set infercase " This and the above for convenient search and completion
+set shiftwidth=4  " Same thing with << and >>
+set mousehide     " Hiding mouse cursor while typing
+set mouse=a       " Mouse support is on
+set smartindent   " Smart autoindenting when starting a new line
+set noswapfile    " Avoid creating a swapfile
+set scrolloff=3   " Number of lines to keep above and below the cursor
+set hlsearch      " Search higlights matched string
+set t_Co=256      " 256 colors
+set number        " Line numbers, please
+set lazyredraw    " Don't bother updating screen during macro playback
+set cursorline    " highlight current line
+set nowrapscan    " Do not continue the search from the top again
+set autoread      " Update an open buffer if it has been changed externally
+set ignorecase    " Ignore lower/upper case in searches
+set infercase     " This and the above for convenient search and completion
 
 if has('folding')
   if has('windows')
@@ -74,8 +74,6 @@ endif
 if has('virtualedit')
     set virtualedit=block
 endif
-
-let g:netrw_banner = 0 " Disable header in netrw
 
 " Only allow errors reported by syntastic
 let g:syntastic_quiet_messages = {
