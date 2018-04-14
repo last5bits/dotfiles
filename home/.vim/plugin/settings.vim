@@ -45,7 +45,13 @@ if has('linebreak')
     "let &showbreak='⤷ '
 
     " RIGHTWARDS ARROW WITH HOOK (U+21aa, 8618)
-    let &showbreak='↪ '
+    " let &showbreak='↪ '
+
+    " DOWNWARDS ARROW 8595 0x2193
+    " let &showbreak='↓ '
+
+    " SOUTH EAST ARROW 8600 0x2198
+     let &showbreak='↘ '
 endif
 
 " Mouse in tmux
