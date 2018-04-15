@@ -3,7 +3,7 @@
 [core]
 	excludesfile = ~/.gitignore
 [alias]
-    lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    lg = log --graph --pretty=format:'%Cred%h%Creset - %Cgreen(%ad)%C(yellow)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit --date=local
     supdate = submodule foreach git pull origin master
 	last = log -1 HEAD
 	dlast = diff HEAD~1 HEAD
