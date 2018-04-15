@@ -423,7 +423,7 @@ globalkeys = awful.util.table.join(
 
     -- User-defined hotkeys
     awful.key({ modkey,    "Mod1"}, "space",      show_time_and_charge,
-              {description = "show current time in a notification pop-up", group = "custom"}),
+              {description = "show current time", group = "custom"}),
     awful.key({ modkey,    "Shift"}, "p",      toggle_pomodoro,
               {description = "show/hide the pomodoro widget", group = "custom"}),
     awful.key({ modkey,           }, "d",      function () awful.spawn(display_off) end,
