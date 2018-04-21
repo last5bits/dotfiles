@@ -31,3 +31,6 @@ endfunction
 command! IgnoreHexDiff set diffexpr=IgnoreDiff('0x[0-9a-fA-F]+') | diffupdate
 command! IgnoreDecimalDiff set diffexpr=IgnoreDiff('\\.\\d+') | diffupdate
 command! NormalDiff set diffexpr= | diffupdate
+
+" Invoke cppman in a new tmux window
+command! -nargs=+ Cppman silent! call system("tmux new-window cppman " . expand(<q-args>))
