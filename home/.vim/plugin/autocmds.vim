@@ -11,4 +11,7 @@ if has('autocmd')
 
     " Open quick-fix window for vim-fugitive automatically
     autocmd QuickFixCmdPost *grep* cwindow
+    
+    " Use Shift-K to open cppman
+    autocmd FileType cpp nnoremap <silent><buffer> K <Esc>:Cppman <cword><CR>
 endif
