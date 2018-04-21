@@ -23,7 +23,7 @@ if has('folding')
     set fillchars+=fold:·             " MIDDLE DOT (U+00B7, UTF-8: C2 B7)
   endif
   set foldmethod=indent               " not as cool as syntax, but faster
-  set foldlevelstart=99               " start unfolded
+  set nofoldenable                    " start unfolded
   set foldtext=functions#foldtext()
 endif
 
