@@ -78,6 +78,7 @@ if awful.util.file_readable(default_apps_path) then
     email_client = apps["email_client"]
     shutdown_dialog = apps["shutdown_dialog"]
     xlocker = apps["xlocker"]
+    screenshooter = apps["screenshooter"]
 
     -- Music player commands
     music_player = apps["music_player"]
@@ -93,6 +94,7 @@ else
     email_client = "thunderbird"
     shutdown_dialog = "farewell"
     xlocker = "slock"
+    screenshooter = "flameshot gui"
 
     -- Music player commands
     music_player = "spotify"
@@ -454,8 +456,8 @@ globalkeys = awful.util.table.join(
               {description = "run screen locker", group = "custom"}),
     awful.key({ modkey, "Shift"   }, "Return", function () awful.spawn(terminal .. " -e sh -c \"tmux attach || tmux new -s misc\"") end,
               {description = "run tmux", group = "custom"}),
-    awful.key({                   }, "Print",  function () awful.spawn("xfce4-screenshooter") end,
-              {description = "run screenshooter", group = "custom"}),
+    awful.key({                   }, "Print",  function () awful.spawn(screenshooter) end,
+              {description = "make a screenshot", group = "custom"}),
     awful.key({ modkey, "Ctrl"    }, "Up",      client_volume.up,
               {description="client volume up", group="custom"}),
     awful.key({ modkey, "Ctrl"    }, "Down",    client_volume.down,
