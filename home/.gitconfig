@@ -1,15 +1,19 @@
 [include]
     path = .gitconfig-local
 [core]
-	excludesfile = ~/.gitignore
+    excludesfile = ~/.gitignore
 [alias]
     lg = log --graph --pretty=format:'%Cred%h%Creset - %Cgreen(%ad)%C(yellow)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit --date=local
     supdate = submodule foreach git pull origin master
-	last = log -1 HEAD
-	dlast = diff HEAD~1 HEAD
+    last = log -1 HEAD
+    dlast = diff HEAD~1 HEAD
     yr = yank --remote
     yb = yank --branch
 [pull]
-	rebase = true
+    rebase = true
 [commit]
 	verbose = true
+[mergetool]
+    prompt = false
+[merge]
+    tool = vimdiff
