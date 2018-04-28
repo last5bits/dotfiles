@@ -5,8 +5,10 @@ colorscheme elflady
 " Pathogen hacks
 let g:pathogen_disabled = []
 if v:version < '704'
-    call add(g:pathogen_disabled, 'vim-gutentags')
     call add(g:pathogen_disabled, 'ultisnips')
+endif
+if v:version < '800'
+    call add(g:pathogen_disabled, 'vim-gutentags')
 endif
 if v:version <= 703 && !has('patch544')
     call add(g:pathogen_disabled, 'vimtex')
