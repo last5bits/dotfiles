@@ -132,3 +132,9 @@ let g:tex_flavor='latex' " TeX instead of PlainTeX
 let g:livepreview_previewer = 'zathura' " Default PDF viewer for latex
 
 let delimitMate_expand_cr = 1 " Turn on the expansion of <CR>
+
+" vim-quickfix
+let g:qf_auto_open_quickfix = 0 " Do not open the quickfix window automatically
+" Do not automatically adjust the height of location/quickfix windows to 10 lines.
+" Already handled by vim-grepper.
+let g:qf_auto_resize = 0
