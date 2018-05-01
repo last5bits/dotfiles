@@ -31,3 +31,15 @@ function! functions#plaintext() abort
     nnoremap <buffer> j gj
     nnoremap <buffer> k gk
 endfunction
+
+function! functions#toggle_eventignore() abort
+    if has('autocmd')
+        if &eventignore == ""
+            set eventignore=TextChanged,InsertLeave,FocusLost,CursorHold
+        else
+            set eventignore=
+        endif
+    else
+        echoerr "No 'autocmd' functionality available"
+    endif
+endfunction

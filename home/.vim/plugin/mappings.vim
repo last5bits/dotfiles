@@ -15,6 +15,9 @@ nmap <leader>x :w<cr>:!chmod 755 %<cr>:e<cr>
 " Repeat last macro if in a normal buffer.
 nnoremap <expr> <CR> empty(&buftype) ? '@@' : '<CR>'
 
+" Toggle whether autocmd events should be ignored
+nnoremap <leader>e :call functions#toggle_eventignore()<CR>
+
 " Walking around your windows
 " Move the cursor to the window left of the current one
 noremap  <leader>h :wincmd h<CR>
