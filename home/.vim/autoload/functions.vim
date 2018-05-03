@@ -39,6 +39,7 @@ function! functions#toggle_eventignore() abort
         else
             set eventignore=
         endif
+        set eventignore?
     else
         echoerr "No 'autocmd' functionality available"
     endif
