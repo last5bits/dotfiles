@@ -14,4 +14,9 @@ if has('autocmd')
     
     " Use Shift-K to open cppman
     autocmd FileType cpp nnoremap <silent><buffer> K <Esc>:Cppman <cword><CR>
+
+    " Exclude private files from being saved in the undodir
+    augroup skipUndoFile
+        autocmd BufReadPre,FileReadPre $HOME/Private/* setlocal noundofile
+    augroup END
 endif
