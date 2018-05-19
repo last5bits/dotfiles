@@ -16,12 +16,12 @@ local cal = require("misc/cal")
 local assault = require('widgets/assault')
 -- Spacer widget
 local spacer = require('misc/spacer')
+local volume = require('misc/volume')
 -- Change volume of particular client windows
 local client_volume = require('misc/client_volume')
 -- Switch monitors
 local xrandr = require('misc/xrandr')
 require("widgets/brightness")
-require("widgets/volume")
 local net_widgets = require("net_widgets")
 
 
@@ -312,8 +312,6 @@ awful.screen.connect_for_each_screen(function(s)
             brightness_icon,
             brightness_widget,
             spacer,
-            volume_widget,
-            spacer,
             net_internet,
             net_wired,
             net_wireless,
@@ -341,12 +339,6 @@ local function toggle_pomodoro()
     pomodoro.icon_widget.visible = not pomodoro.icon_widget.visible 
     pomodoro.widget.visible = not pomodoro.widget.visible 
     spacer_pomodoro_widget.visible = not spacer_pomodoro_widget.visible
-end
-
--- Power off the display and lock the screen
-local function lock_x()
-    awful.spawn(display_off)
-    awful.spawn(xlocker)
 end
 
 local function show_time_and_charge()
@@ -452,7 +444,7 @@ globalkeys = awful.util.table.join(
               {description = "run python interpreter", group = "custom"}),
     awful.key({ modkey,           }, "F11",    function () awful.spawn(terminal .. " -e htop") end,
               {description = "run htop", group = "custom"}),
-    awful.key({ modkey,           }, "F12",    lock_x,
+    awful.key({ modkey,           }, "F12",    function () awful.spawn(xlocker) end,
               {description = "run screen locker", group = "custom"}),
     awful.key({ modkey, "Shift"   }, "Return", function () awful.spawn(terminal .. " -e sh -c \"tmux attach || tmux new -s misc\"") end,
               {description = "run tmux", group = "custom"}),
@@ -466,16 +458,21 @@ globalkeys = awful.util.table.join(
               {description="show year calendar", group="custom"}),
 
     -- Multimedia keys
-    awful.key({         }, "XF86AudioMute", function () awful.spawn("pactl set-sink-mute 0 toggle") end),
-    awful.key({         }, "XF86AudioLowerVolume", function () awful.spawn("pactl set-sink-volume 0 -10%") end),
-    awful.key({         }, "XF86AudioRaiseVolume", function () awful.spawn("pactl set-sink-volume 0 +10%") end),
-    awful.key({         }, "XF86MonBrightnessDown", function () awful.spawn("xbacklight -dec 10") end),
-    awful.key({         }, "XF86MonBrightnessUp", function () awful.spawn("xbacklight -inc 10") end),
-    awful.key({         }, "XF86AudioMicMute", function () awful.spawn("pactl set-source-mute 1 toggle") end),
-    awful.key({         }, "XF86Tools", function () awful.spawn("toggle-pavucontrol") end),
-    awful.key({         }, "XF86ScreenSaver", lock_x),
-    awful.key({         }, "XF86TouchpadToggle", function () awful.spawn("toggle-touchpad") end),
-    awful.key({         }, "XF86Display", xrandr.switch),
+    -- Run the following to identify multimedia keys:
+    -- xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
+    awful.key({}, "XF86AudioMute", volume.toggle_mute),
+    awful.key({}, "XF86AudioLowerVolume", volume.down),
+    awful.key({}, "XF86AudioRaiseVolume", volume.up),
+    awful.key({}, "XF86AudioMicMute", volume.mic_toggle_mute),
+    awful.key({}, "XF86MonBrightnessDown", function () awful.spawn("xbacklight -dec 10") end),
+    awful.key({}, "XF86MonBrightnessUp", function () awful.spawn("xbacklight -inc 10") end),
+    awful.key({}, "XF86Display", function () awful.spawn("xfce4-display-settings --minimal") end),
+    awful.key({}, "XF86Tools", function () awful.spawn("toggle-pavucontrol") end),
+    -- awful.key({}, "XF86Search", function () awful.spawn("") end),
+    -- awful.key({}, "XF86LaunchA", function () awful.spawn("") end),
+    -- awful.key({}, "XF86Explorer", function () awful.spawn("") end),
+    -- awful.key({}, "XF86ScreenSaver", function () awful.spawn(xlocker) end),
+    -- awful.key({}, "XF86TouchpadToggle", function () awful.spawn("toggle-touchpad") end),
 
     awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.05)          end,
               {description = "increase master width factor", group = "layout"}),
