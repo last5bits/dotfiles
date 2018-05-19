@@ -12,7 +12,7 @@ brightness_icon = wibox.widget {
         image = "/usr/share/icons/Adwaita/scalable/status/display-brightness-symbolic.svg",
         widget = wibox.widget.imagebox,
     },
-    layout = wibox.container.margin(brightness_icon, 0, 2, 3, 3)
+    layout = wibox.container.margin(brightness_icon, 2, 4, 5, 5)
 }
 
 watch(
