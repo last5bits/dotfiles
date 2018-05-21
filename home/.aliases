@@ -1,6 +1,7 @@
 alias t="touch"
 alias jc="journalctl -e -o short-full"
-alias sc="sudo systemctl"
+alias sc="systemctl"
+alias scu="systemctl --user"
 alias rdate="TZ=\"Europe/Moscow\" date"
 alias hcd="homeshick cd"
 
