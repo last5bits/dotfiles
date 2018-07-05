@@ -44,7 +44,7 @@ nmap <leader>t :enew<CR>
 " Close current buffer
 nmap <leader>q :bp <BAR> bwipeout #<CR>
 " Close all windows except the current one
-noremap <leader>o :only<CR>
+noremap <leader>o :windo diffoff<CR>:only<CR>
 
 " Switch to the file and load it into the current window
 nmap <silent> <Leader>a :FSHere<cr>
