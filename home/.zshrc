@@ -53,15 +53,9 @@ function start-ssh-agent() {
 }
 
 # ssh-add my github key
-function add-key-github() {
+function gh() {
     start-ssh-agent
     ssh-add -t 3600 ~/.ssh/github/id_rsa
-}
-
-# ssh-add my uw key
-function add-key-uw() {
-    start-ssh-agent
-    ssh-add -t 3600 ~/.ssh/id_rsa
 }
 
 # kill the ssh-agent on exit
