@@ -10,6 +10,7 @@
 theme = {}
 theme.dir = os.getenv("HOME") .. "/.config/awesome/themes"
 theme.wallpaper = theme.dir .. "/zenburn/background.png"
+theme.notification_icon_size = 48
 -- }}}
 
 -- {{{ Styles
