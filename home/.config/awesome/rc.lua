@@ -353,6 +353,7 @@ local function show_time_and_charge()
     local notif_text = string.format("Charge: %s %s", charge_text, time_text)
 
     notif_id = naughty.notify({ text = notif_text
+        , font = "sans 13"
         , replaces_id = notif_id
         , position = "bottom_right" }).id
 end
