@@ -1,1 +1,1 @@
-set nonumber
+setlocal nonumber
