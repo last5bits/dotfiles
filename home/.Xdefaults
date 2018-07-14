@@ -7,7 +7,7 @@ URxvt.visualBell: true
 
 ! {{
 ! Font
-URxvt.font: xft:Ubuntu Mono derivative Powerline:pixelsize=17
+URxvt.font: xft:Ubuntu Mono derivative Powerline:pixelsize=18:minspace=False, xft:DejaVu Sans:pixelsize=13
 URxvt.letterSpace: 0
 *antialias:  true
 *autohint:   true
