@@ -1,8 +1,11 @@
 ####### General Settings ############
 set adjust-open width
-set font "Ubuntu Mono normal 15"
+set font "sans 11"
+set scroll-full-overlap     "0.1"
+set scroll-page-aware       "true"
+set statusbar-home-tilde    "true"
 
-###### Colorscheme ############
+####### Colorscheme ############
 set recolor-lightcolor      "#3f3f3f"
 set recolor-darkcolor       "#ffffff"
 set recolor                 "true"
