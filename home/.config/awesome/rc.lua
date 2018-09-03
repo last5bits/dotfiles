@@ -16,7 +16,7 @@ local cal = require("misc/cal")
 local assault = require('widgets/assault')
 -- Spacer widget
 local spacer = require('misc/spacer')
-local volume = require('misc/volume')
+local audio = require('misc/audio')
 -- Change volume of particular client windows
 local client_volume = require('misc/client_volume')
 -- Switch monitors
@@ -461,15 +461,15 @@ globalkeys = awful.util.table.join(
     -- Multimedia keys
     -- Run the following to identify multimedia keys:
     -- xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
-    awful.key({}, "XF86AudioMute", volume.toggle_mute),
-    awful.key({}, "XF86AudioLowerVolume", volume.down),
-    awful.key({}, "XF86AudioRaiseVolume", volume.up),
-    awful.key({}, "XF86AudioMicMute", volume.mic_toggle_mute),
+    awful.key({}, "XF86AudioMute", audio.toggle_mute),
+    awful.key({}, "XF86AudioLowerVolume", audio.volume_down),
+    awful.key({}, "XF86AudioRaiseVolume", audio.volume_up),
+    awful.key({}, "XF86AudioMicMute", audio.mic_toggle_mute),
     awful.key({}, "XF86MonBrightnessDown", function () awful.spawn("xbacklight -dec 10") end),
     awful.key({}, "XF86MonBrightnessUp", function () awful.spawn("xbacklight -inc 10") end),
     awful.key({}, "XF86Display", function () awful.spawn("xfce4-display-settings --minimal") end),
     awful.key({}, "XF86Tools", function () awful.spawn("toggle-pavucontrol") end),
-    awful.key({}, "XF86Search", volume.switch_default_sink),
+    awful.key({}, "XF86Search", audio.switch_default_sink),
     -- awful.key({}, "XF86LaunchA", function () awful.spawn("") end),
     -- awful.key({}, "XF86Explorer", function () awful.spawn("") end),
     -- awful.key({}, "XF86ScreenSaver", function () awful.spawn(xlocker) end),

@@ -1,4 +1,4 @@
-local volume = {}
+local audio = {}
 
 local awful = require("awful")
 local naughty = require("naughty")
@@ -12,25 +12,25 @@ local function show_volume(output)
     notif_id = naughty.notify({ text = volume_msg, replaces_id = notif_id }).id
 end
 
-function volume.up()
+function audio.volume_up()
     awful.spawn("pamixer --allow-boost --gamma 2.0 --increase 5")
     awful.spawn.easy_async("pamixer --get-volume", show_volume)
 end
 
-function volume.down()
+function audio.volume_down()
     awful.spawn("pamixer --allow-boost --gamma 2.0 --decrease 5")
     awful.spawn.easy_async("pamixer --get-volume", show_volume)
 end
 
-function volume.toggle_mute()
+function audio.toggle_mute()
     awful.spawn("pamixer --toggle-mute")
 end
 
-function volume.mic_toggle_mute()
+function audio.mic_toggle_mute()
     awful.spawn("pamixer --default-source --toggle-mute")
 end
 
-function volume.switch_default_sink()
+function audio.switch_default_sink()
    local pamixer = io.popen("pamixer --list-sinks")
 
    -- Compile a sink menu
@@ -60,4 +60,4 @@ function volume.switch_default_sink()
    menu_iterator.iterate(menu, timeout, card_icon_path)
 end
 
-return volume
+return audio
