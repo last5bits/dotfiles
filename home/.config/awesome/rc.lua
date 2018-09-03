@@ -469,7 +469,7 @@ globalkeys = awful.util.table.join(
     awful.key({}, "XF86MonBrightnessUp", function () awful.spawn("xbacklight -inc 10") end),
     awful.key({}, "XF86Display", function () awful.spawn("xfce4-display-settings --minimal") end),
     awful.key({}, "XF86Tools", function () awful.spawn("toggle-pavucontrol") end),
-    -- awful.key({}, "XF86Search", function () awful.spawn("") end),
+    awful.key({}, "XF86Search", volume.switch_default_sink),
     -- awful.key({}, "XF86LaunchA", function () awful.spawn("") end),
     -- awful.key({}, "XF86Explorer", function () awful.spawn("") end),
     -- awful.key({}, "XF86ScreenSaver", function () awful.spawn(xlocker) end),
