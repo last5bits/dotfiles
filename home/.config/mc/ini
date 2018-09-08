@@ -158,31 +158,6 @@ select_flags=6
 [HotlistConfig]
 expanded_view_of_groups=0
 
-[terminal:screen-256color]
-f1=\\eOP
-f2=\\eOQ
-f3=\\eOR
-f4=\\eOS
-f5=\\e[15~
-f6=\\e[17~
-f7=\\e[18~
-f8=\\e[19~
-f9=\\e[20~
-f10=\\e[21~
-f11=\\e[23~
-f12=\\e[24~
-f13=\\e[1\;2R
-f14=\\e[1\;2S
-f15=\\e[15\;2~
-f16=\\e[17\;2~
-f17=\\e[18\;2~
-f18=\\e[19\;2~
-f19=\\e[20\;2~
-f20=\\e[21\;2~
-complete=\\e^i
-backtab=\\e[Z
-backspace=^?
-
 [Panelize]
 Find *.orig after patching=find . -name \\*.orig -print
 Find SUID and SGID programs=find . \\( \\( -perm -04000 -a -perm /011 \\) -o \\( -perm -02000 -a -perm /01 \\) \\) -print
