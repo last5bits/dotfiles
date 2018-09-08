@@ -2,15 +2,15 @@
 -- Alexey Zhikhartsev <last [digit five] bits at gmail dot com>
 --
 -- Put the following in your rc.lua:
--- local client_volume = require('client_volume')
+-- local client_audio = require('client_audio')
 --
 -- And add these into the key bindings list:
--- awful.key({ modkey, "Ctrl"    }, "Up",      client_volume.up,
+-- awful.key({ modkey, "Ctrl"    }, "Up",      client_audio.up,
 --          {description="client volume up", group="custom"}),
--- awful.key({ modkey, "Ctrl"    }, "Down",    client_volume.down,
+-- awful.key({ modkey, "Ctrl"    }, "Down",    client_audio.down,
 --          {description="client volume up", group="custom"}),
 
-local client_volume = {}
+local client_audio = {}
 
 local awful = require("awful")
 local naughty = require("naughty")
@@ -108,12 +108,53 @@ local function down(output)
     end
 end
 
-function client_volume.up()
+local function switch_default_sink(output)
+    local c = client.focus
+    if c then
+        id = get_sink_input_id(output, c.pid)
+        if id ~= -1 then
+            -- naughty.notify({ text = string.format("%d!", id) })
+            local pamixer = io.popen("pamixer --list-sinks")
+
+            -- Compile a sink menu
+            local menu = {}
+            for line in pamixer:lines() do
+               -- [alex@lenovski ~]$ pamixer --list-sinks
+               -- Sinks:
+               -- 0 "alsa_output.pci-0000_00_1b.0.analog-stereo" "Built-in Audio Analog Stereo"
+               -- 1 "alsa_output.pci-0000_00_03.0.hdmi-stereo" "Built-in Audio Digital Stereo (HDMI)"
+               if string.match(line, "^[%d+]") then
+                  -- Notification message
+                  local sink_name = string.match(line, "^[%d+] \".+\" \"(.+)\"")
+                  local msg = string.format("Client's default sink: %s", sink_name)
+
+                  -- Callback command
+                  local sink = string.match(line, "^[%d+] \"(.+)\" \".+\"")
+                  local cmd = string.format("pactl move-sink-input %d %s", id, sink)
+
+                  table.insert(menu, {msg, {function() awful.spawn(cmd) end}})
+               end
+            end
+
+            -- Iterate over the menu
+            local timeout = 2
+            local menu_iterator = require("lain.util.menu_iterator")
+            local card_icon_path = "/usr/share/icons/gnome/48x48/devices/audio-card.png"
+            menu_iterator.iterate(menu, timeout, card_icon_path)
+        end
+    end
+end
+
+function client_audio.up()
     awful.spawn.easy_async("pactl list sink-inputs", up)
 end
 
-function client_volume.down()
+function client_audio.down()
     awful.spawn.easy_async("pactl list sink-inputs", down)
 end
 
-return client_volume
+function client_audio.switch_default_sink()
+    awful.spawn.easy_async("pactl list sink-inputs", switch_default_sink)
+end
+
+return client_audio
