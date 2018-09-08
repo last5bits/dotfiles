@@ -54,17 +54,18 @@ end
 -- This is used later as the default terminal and editor to run.
 home_dir = os.getenv("HOME")
 
--- default_apps.lua should be similar to this {{
-    --local default_apps = {}
-    --function default_apps.get()
-        --return {
-            --terminal = "termite"
-            --, editor = os.getenv("EDITOR") or "vim"
-            --...
-        --}
-    --end
-     --return default_apps
--- }}
+--[[
+   [ default_apps.lua should be similar to this
+   [ local default_apps = {}
+   [ function default_apps.get()
+   [     return {
+   [         terminal = "termite"
+   [         , editor = os.getenv("EDITOR") or "vim"
+   [         ...
+   [     }
+   [ end
+   [ return default_apps
+   ]]
 default_apps_path = awful.util.getdir("config") .. "/" .. "default_apps.lua"
 if awful.util.file_readable(default_apps_path) then
     local default_apps = require("default_apps")
@@ -418,17 +419,13 @@ globalkeys = awful.util.table.join(
 
     -- User-defined hotkeys
     awful.key({ modkey,    "Mod1"}, "space",      show_time_and_charge,
-              {description = "show current time", group = "custom"}),
+              {description = "show current time and battery charge", group = "custom"}),
     awful.key({ modkey,    "Shift"}, "p",      toggle_pomodoro,
               {description = "show/hide the pomodoro widget", group = "custom"}),
     awful.key({ modkey,           }, "d",      function () awful.spawn(display_off) end,
               {description = "turn display(s) off", group = "custom"}),
     awful.key({ modkey,           }, "F1",     function () awful.spawn(web_browser) end,
               {description = "run web browser", group = "custom"}),
-    awful.key({ modkey,           }, "F2",     function () awful.spawn(terminal .. " -e " .. wifi_manager) end,
-              {description = "run wifi manager", group = "custom"}),
-    awful.key({ modkey,           }, "F4",     function () awful.spawn(email_client) end,
-              {description = "run email client", group = "custom"}),
     awful.key({ modkey,           }, "F5",     function () awful.spawn(music_player) end,
               {description = "run music player", group = "custom"}),
     awful.key({ modkey,           }, "F6",     function () awful.spawn(music_toggle) end,
@@ -441,14 +438,10 @@ globalkeys = awful.util.table.join(
               {description = "next track", group = "custom"}),
     awful.key({ modkey,           }, "F9",     function () awful.spawn(shutdown_dialog) end,
               {description = "run shutdown dialog", group = "custom"}),
-    awful.key({ modkey,           }, "F10",    function () awful.spawn(terminal .. " -e python -q") end,
-              {description = "run python interpreter", group = "custom"}),
-    awful.key({ modkey,           }, "F11",    function () awful.spawn(terminal .. " -e htop") end,
-              {description = "run htop", group = "custom"}),
     awful.key({ modkey,           }, "F12",    function () awful.spawn(xlocker) end,
               {description = "run screen locker", group = "custom"}),
     awful.key({ modkey, "Shift"   }, "Return", function () awful.spawn(terminal .. " -e sh -c \"tmux attach || tmux new -s misc\"") end,
-              {description = "run tmux", group = "custom"}),
+              {description = "open tmux", group = "custom"}),
     awful.key({                   }, "Print",  function () awful.spawn(screenshooter) end,
               {description = "make a screenshot", group = "custom"}),
     awful.key({ modkey, "Ctrl"    }, "Up",      client_volume.up,
