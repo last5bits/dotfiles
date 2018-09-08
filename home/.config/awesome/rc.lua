@@ -25,7 +25,7 @@ local assault = require('widgets/assault')
 local spacer = require('misc/spacer')
 local audio = require('misc/audio')
 -- Change volume of particular client windows
-local client_volume = require('misc/client_volume')
+local client_audio = require('misc/client_audio')
 -- Switch monitors
 local xrandr = require('misc/xrandr')
 require("widgets/brightness")
@@ -456,9 +456,9 @@ globalkeys = gears.table.join(
               {description = "open tmux", group = "custom"}),
     awful.key({                   }, "Print",  function () awful.spawn(screenshooter) end,
               {description = "make a screenshot", group = "custom"}),
-    awful.key({ modkey, "Ctrl"    }, "Up",      client_volume.up,
+    awful.key({ modkey, "Ctrl"    }, "Up",      client_audio.up,
               {description="client volume up", group="custom"}),
-    awful.key({ modkey, "Ctrl"    }, "Down",    client_volume.down,
+    awful.key({ modkey, "Ctrl"    }, "Down",    client_audio.down,
               {description="client volume down", group="custom"}),
     awful.key({ modkey, "Control" }, "c",  function () year_calendar:toggle() end,
               {description="show year calendar", group="custom"}),
@@ -475,7 +475,7 @@ globalkeys = gears.table.join(
     awful.key({}, "XF86Display", function () awful.spawn("xfce4-display-settings --minimal") end),
     awful.key({}, "XF86Tools", function () awful.spawn("toggle-pavucontrol") end),
     awful.key({}, "XF86Search", audio.switch_default_sink),
-    -- awful.key({}, "XF86LaunchA", function () awful.spawn("") end),
+    awful.key({}, "XF86LaunchA", function () client_audio.switch_default_sink() end),
     -- awful.key({}, "XF86Explorer", function () awful.spawn("") end),
     -- awful.key({}, "XF86ScreenSaver", function () awful.spawn(xlocker) end),
     -- awful.key({}, "XF86TouchpadToggle", function () awful.spawn("toggle-touchpad") end),
