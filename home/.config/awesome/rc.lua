@@ -25,7 +25,6 @@ local assault = require('widgets/assault')
 local spacer = require('misc/spacer')
 local audio = require('misc/audio')
 -- Change volume of particular client windows
-local client_audio = require('misc/client_audio')
 -- Switch monitors
 local xrandr = require('misc/xrandr')
 require("widgets/brightness")
@@ -456,9 +455,9 @@ globalkeys = gears.table.join(
               {description = "open tmux", group = "custom"}),
     awful.key({                   }, "Print",  function () awful.spawn(screenshooter) end,
               {description = "make a screenshot", group = "custom"}),
-    awful.key({ modkey, "Ctrl"    }, "Up",      client_audio.up,
+    awful.key({ modkey, "Ctrl"    }, "Up",      audio.client_up,
               {description="client volume up", group="custom"}),
-    awful.key({ modkey, "Ctrl"    }, "Down",    client_audio.down,
+    awful.key({ modkey, "Ctrl"    }, "Down",    audio.client_down,
               {description="client volume down", group="custom"}),
     awful.key({ modkey, "Control" }, "c",  function () year_calendar:toggle() end,
               {description="show year calendar", group="custom"}),
@@ -469,13 +468,13 @@ globalkeys = gears.table.join(
     awful.key({}, "XF86AudioMute", audio.toggle_mute),
     awful.key({}, "XF86AudioLowerVolume", audio.volume_down),
     awful.key({}, "XF86AudioRaiseVolume", audio.volume_up),
-    awful.key({}, "XF86AudioMicMute", audio.mic_toggle_mute),
+    awful.key({}, "XF86AudioMicMute", audio.toggle_mic_mute),
     awful.key({}, "XF86MonBrightnessDown", function () awful.spawn("xbacklight -dec 10") end),
     awful.key({}, "XF86MonBrightnessUp", function () awful.spawn("xbacklight -inc 10") end),
     awful.key({}, "XF86Display", function () awful.spawn("xfce4-display-settings --minimal") end),
     awful.key({}, "XF86Tools", function () awful.spawn("toggle-pavucontrol") end),
     awful.key({}, "XF86Search", audio.switch_default_sink),
-    awful.key({}, "XF86LaunchA", function () client_audio.switch_default_sink() end),
+    awful.key({}, "XF86LaunchA", function () audio.client_switch_sink() end),
     -- awful.key({}, "XF86Explorer", function () awful.spawn("") end),
     -- awful.key({}, "XF86ScreenSaver", function () awful.spawn(xlocker) end),
     -- awful.key({}, "XF86TouchpadToggle", function () awful.spawn("toggle-touchpad") end),
