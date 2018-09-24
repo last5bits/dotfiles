@@ -100,7 +100,7 @@
 	update = rebase
 [submodule "home/.config/awesome/pomodoro"]
 	path = home/.config/awesome/pomodoro
-	url = git://github.com/nikolavp/awesome-pomodoro.git
+	url = https://github.com/nikolavp/awesome-pomodoro.git
 [submodule "home/.tmux/plugins/tmux-sensible"]
 	path = home/.tmux/plugins/tmux-sensible
 	url = https://github.com/tmux-plugins/tmux-sensible
