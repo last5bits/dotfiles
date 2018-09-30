@@ -79,3 +79,6 @@
 [submodule "home/.vim/bundle/vim-sleuth"]
 	path = home/.vim/bundle/vim-sleuth
 	url = https://github.com/tpope/vim-sleuth.git
+[submodule "home/.vim/bundle/vim-bookmarks"]
+	path = home/.vim/bundle/vim-bookmarks
+	url = https://github.com/MattesGroeger/vim-bookmarks.git
