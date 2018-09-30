@@ -1,6 +1,3 @@
-" Highlight a word without moving the cursor
-nnoremap * :keepjumps normal! mi*`i<CR>
-
 " Toggle the asyncrun quickfix window
 nmap <leader>f :call asyncrun#quickfix_toggle(8)<cr>
 

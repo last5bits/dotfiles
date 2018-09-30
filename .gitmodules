@@ -88,3 +88,6 @@
 [submodule "home/.vim/bundle/vim-signature"]
 	path = home/.vim/bundle/vim-signature
 	url = https://github.com/kshenoy/vim-signature.git
+[submodule "home/.vim/bundle/vim-star-search"]
+	path = home/.vim/bundle/vim-star-search
+	url = https://github.com/roszcz/Vim-Star-Search.git
