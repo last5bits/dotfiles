@@ -34,3 +34,6 @@ command! NormalDiff set diffexpr= | diffupdate
 
 " Invoke cppman in a new tmux window
 command! -nargs=+ Cppman silent! call system("tmux new-window cppman " . expand(<q-args>))
+
+" Use AsyncRun when doing Make
+command! -bang -nargs=* -complete=file Make AsyncRun -program=make @ <args>
