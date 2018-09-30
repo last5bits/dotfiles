@@ -143,3 +143,6 @@ let delimitMate_expand_cr = 1 " Turn on the expansion of <CR>
 " vim-table-mode
 let g:table_mode_corner='|' " Markdown-compatible
 let g:table_mode_map_prefix = '<Leader>T'
+
+" vim-lion
+let g:lion_squeeze_spaces = 1
