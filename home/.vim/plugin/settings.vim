@@ -18,6 +18,12 @@ set autoread      " Update an open buffer if it has been changed externally
 set ignorecase    " Ignore lower/upper case in searches
 set infercase     " This and the above for convenient search and completion
 
+" Set it for delimitMate specifically. Otherwise, startup warnings appear:
+" `delimitMate: There seems to be some incompatibility with your settings that
+" may interfer with the expansion of <CR>. See :help 'delimitMate_expand_cr'
+" for details.`
+set backspace=indent,eol,start
+
 if has('folding')
   if has('windows')
     set fillchars+=fold:·             " MIDDLE DOT (U+00B7, UTF-8: C2 B7)
@@ -131,6 +137,7 @@ let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status
 let g:tex_flavor='latex' " TeX instead of PlainTeX
 let g:livepreview_previewer = 'zathura' " Default PDF viewer for latex
 
+" delimitMate
 let delimitMate_expand_cr = 1 " Turn on the expansion of <CR>
 
 " vim-quickfix
