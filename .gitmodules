@@ -67,9 +67,6 @@
 [submodule "home/.vim/bundle/ale"]
 	path = home/.vim/bundle/ale
 	url = https://github.com/w0rp/ale.git
-[submodule "home/.vim/bundle/vim-qf"]
-	path = home/.vim/bundle/vim-qf
-	url = https://github.com/romainl/vim-qf.git
 [submodule "home/.vim/bundle/vim-makery"]
 	path = home/.vim/bundle/vim-makery
 	url = https://github.com/igemnace/vim-makery.git
