@@ -25,9 +25,6 @@
 [submodule "home/.vim/bundle/asyncrun.vim"]
 	path = home/.vim/bundle/asyncrun.vim
 	url = https://github.com/skywind3000/asyncrun.vim.git
-[submodule "home/.vim/bundle/vim-grepper"]
-	path = home/.vim/bundle/vim-grepper
-	url = https://github.com/mhinz/vim-grepper.git
 [submodule "home/.vim/bundle/vim-unimpaired"]
 	path = home/.vim/bundle/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
@@ -91,3 +88,6 @@
 [submodule "home/.vim/bundle/vim-rsi"]
 	path = home/.vim/bundle/vim-rsi
 	url = https://github.com/tpope/vim-rsi.git
+[submodule "home/.vim/bundle/ferret"]
+	path = home/.vim/bundle/ferret
+	url = https://github.com/wincent/ferret.git

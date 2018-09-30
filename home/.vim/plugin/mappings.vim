@@ -4,11 +4,6 @@ nnoremap * :keepjumps normal! mi*`i<CR>
 " Toggle the asyncrun quickfix window
 nmap <leader>f :call asyncrun#quickfix_toggle(8)<cr>
 
-" Grepper mappings
-nnoremap <leader>ga :Grepper <cr>
-nnoremap <leader>gs :Grepper -side<cr>
-nnoremap <leader>*  :Grepper -cword -noprompt<cr>
-
 " Make the current file executable
 nmap <leader>x :w<cr>:!chmod 755 %<cr>:e<cr>
 
@@ -58,4 +53,4 @@ nmap <leader>Mt <Plug>MarkToggle
 " Supress startup warnings.
 nmap <leader>Mn <Plug>MarkSearchNext
 nmap <leader>Mc <Plug>MarkClear
-nmap <leader>Mcn <Plug>MarkSearchCurrentNext
+nmap <leader>Mr <Plug>MarkRegex
