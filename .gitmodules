@@ -82,3 +82,9 @@
 [submodule "home/.vim/bundle/vim-bookmarks"]
 	path = home/.vim/bundle/vim-bookmarks
 	url = https://github.com/MattesGroeger/vim-bookmarks.git
+[submodule "home/.vim/bundle/vim-mark"]
+	path = home/.vim/bundle/vim-mark
+	url = https://github.com/inkarkat/vim-mark.git
+[submodule "home/.vim/bundle/vim-ingo-library"]
+	path = home/.vim/bundle/vim-ingo-library
+	url = https://github.com/inkarkat/vim-ingo-library.git

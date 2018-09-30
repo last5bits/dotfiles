@@ -54,3 +54,10 @@ nmap <F8> :TagbarToggle<CR>
 
 " Open the fuzzy searcher through current bufs
 nmap <leader>b :CtrlPBuffer<cr>
+
+" Mappings for vim-mark.
+nmap <leader>Mt <Plug>MarkToggle
+" Supress startup warnings.
+nmap <leader>Mn <Plug>MarkSearchNext
+nmap <leader>Mc <Plug>MarkClear
+nmap <leader>Mcn <Plug>MarkSearchCurrentNext
