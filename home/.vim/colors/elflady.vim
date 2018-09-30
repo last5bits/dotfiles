@@ -29,6 +29,7 @@ hi SpellCap   term=reverse ctermbg=12 ctermfg=Black gui=undercurl guisp=Blue
 hi SpellRare  term=reverse ctermbg=13 ctermfg=Black gui=undercurl guisp=Magenta
 hi SpellLocal term=underline ctermbg=14 ctermfg=Black gui=undercurl guisp=Cyan
 hi MatchParen term=bold ctermfg=White ctermbg=Black guibg=DarkCyan
+hi SignatureMarkText ctermfg=LightYellow
 
 " Common groups that link to default highlighting.
 " You can specify other highlighting easily.
