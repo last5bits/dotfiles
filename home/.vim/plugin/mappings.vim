@@ -28,13 +28,13 @@ noremap  <leader>k :wincmd k<CR>
 " Move the cursor to the window right of the current one
 noremap  <leader>l :wincmd l<CR>
 " Close the window below this one
-noremap  <leader>cj :wincmd j<CR>:close<CR>
+noremap  <leader>Cj :wincmd j<CR>:close<CR>
 " Close the window above this one
-noremap  <leader>ck :wincmd k<CR>:close<CR>
+noremap  <leader>Ck :wincmd k<CR>:close<CR>
 " Close the window to the left of this one
-noremap  <leader>ch :wincmd h<CR>:close<CR>
+noremap  <leader>Ch :wincmd h<CR>:close<CR>
 " Close the window to the right of this one
-noremap  <leader>cl :wincmd l<CR>:close<CR>
+noremap  <leader>Cl :wincmd l<CR>:close<CR>
 " Next buffer
 nmap <leader>n :bnext<CR>
 " Previous buffer
