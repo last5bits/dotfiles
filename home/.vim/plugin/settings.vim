@@ -145,3 +145,7 @@ let g:qf_auto_open_quickfix = 0 " Do not open the quickfix window automatically
 " Do not automatically adjust the height of location/quickfix windows to 10 lines.
 " Already handled by vim-grepper.
 let g:qf_auto_resize = 0
+
+" vim-table-mode
+let g:table_mode_corner='|' " Markdown-compatible
+let g:table_mode_map_prefix = '<Leader>T'
