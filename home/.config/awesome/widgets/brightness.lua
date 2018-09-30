@@ -9,7 +9,7 @@ brightness_widget = wibox.widget.textbox()
 
 brightness_icon = wibox.widget {
     {
-        image = "/usr/share/icons/Adwaita/scalable/status/display-brightness-symbolic.svg",
+        image = "/usr/share/icons/gnome-colors-common/scalable/notifications/notification-display-brightness-high.svg",
         widget = wibox.widget.imagebox,
     },
     layout = wibox.container.margin(brightness_icon, 2, 4, 5, 5)
