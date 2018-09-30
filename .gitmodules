@@ -88,3 +88,6 @@
 [submodule "home/.vim/bundle/vim-ingo-library"]
 	path = home/.vim/bundle/vim-ingo-library
 	url = https://github.com/inkarkat/vim-ingo-library.git
+[submodule "home/.vim/bundle/vim-rsi"]
+	path = home/.vim/bundle/vim-rsi
+	url = https://github.com/tpope/vim-rsi.git
