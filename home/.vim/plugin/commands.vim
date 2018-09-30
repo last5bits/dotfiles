@@ -37,3 +37,12 @@ command! -nargs=+ Cppman silent! call system("tmux new-window cppman " . expand(
 
 " Use AsyncRun when doing Make
 command! -bang -nargs=* -complete=file Make AsyncRun -program=make @ <args>
+
+" Just like windo, but restore the current window when done.
+" http://vim.wikia.com/wiki/Windo_and_restore_current_window
+function! WinDo(command)
+  let currwin=winnr()
+  execute 'windo ' . a:command
+  execute currwin . 'wincmd w'
+endfunction
+com! -nargs=+ -complete=command W call WinDo(<q-args>)
