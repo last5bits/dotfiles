@@ -39,8 +39,6 @@ noremap  <leader>cl :wincmd l<CR>:close<CR>
 nmap <leader>n :bnext<CR>
 " Previous buffer
 nmap <leader>p :bprev<CR>
-" New empty buffer
-nmap <leader>t :enew<CR>
 " Close current buffer
 nmap <leader>q :bp <BAR> bwipeout #<CR>
 " Close all windows except the current one
@@ -49,8 +47,8 @@ noremap <leader>o :windo diffoff<CR>:only<CR>
 " Switch to the file and load it into the current window
 nmap <silent> <Leader>a :FSHere<cr>
 
-" Open the tag bar
-nmap <F8> :TagbarToggle<CR>
+" Open Tagbar.
+nmap <leader>t :TagbarOpen<CR>
 
 " Open the fuzzy searcher through current bufs
 nmap <leader>b :CtrlPBuffer<cr>
