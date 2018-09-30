@@ -51,3 +51,6 @@ nmap <leader>Mt <Plug>MarkToggle
 nmap <leader>Mn <Plug>MarkSearchNext
 nmap <leader>Mc <Plug>MarkClear
 nmap <leader>Mr <Plug>MarkRegex
+
+" Search for visually selected text.
+vnoremap * y/<C-R>"<CR>
