@@ -17,3 +17,7 @@
     prompt = false
 [merge]
     tool = vimdiff
+[status]
+    submoduleSummary = true
+[diff]
+    submodule = log
