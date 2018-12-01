@@ -1,0 +1,45 @@
+#!/usr/bin/env python3
+# Kindle the fireplace by pressing a hotkey.
+# Copyright: Alexey Zhikhartsev <last [digit five] bits [at] gmail [dot] com>
+
+from pathlib import Path
+import os
+import shlex
+import signal
+import subprocess
+import tempfile
+
+fireplace_path = os.path.join(Path.home(), "Videos", "Ambient",
+                              "Relaxing Fire Burning", "fire.mp4")
+pid_file = Path(os.path.join(tempfile.gettempdir(), "fireplace-pid"))
+
+
+def pid_exists(pid):
+    """ Check for the existence of a unix pid. """
+    try:
+        os.kill(pid, 0)
+    except OSError:
+        return False
+    else:
+        return True
+
+
+def start_fire():
+    """ Start the fire and create a new pid file. """
+    cmd = shlex.split("vlc --loop --fullscreen \'%s\'" % fireplace_path)
+    p = subprocess.Popen(cmd, shell=False)
+    pid_file.write_text(str(p.pid))
+
+
+# Looks like the fire has already been kindled.
+if pid_file.is_file():
+    pid = int(pid_file.read_text())
+    if pid_exists(pid):
+        # Put it out.
+        os.kill(pid, signal.SIGTERM)
+        pid_file.unlink()
+    else:
+        # The file is there but the fire is not.
+        start_fire()
+else:
+    start_fire()
