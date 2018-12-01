@@ -475,7 +475,7 @@ globalkeys = gears.table.join(
     awful.key({}, "XF86Tools", function () awful.spawn("toggle-pavucontrol") end),
     awful.key({}, "XF86Search", audio.switch_default_sink),
     awful.key({}, "XF86LaunchA", function () audio.client_switch_sink() end),
-    -- awful.key({}, "XF86Explorer", function () awful.spawn("") end),
+    awful.key({}, "XF86Explorer", function () awful.spawn("ignite") end),
     -- awful.key({}, "XF86ScreenSaver", function () awful.spawn(xlocker) end),
     -- awful.key({}, "XF86TouchpadToggle", function () awful.spawn("toggle-touchpad") end),
 
