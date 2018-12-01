@@ -65,8 +65,10 @@ if has('linebreak')
 endif
 
 " Mouse in tmux
-if &term =~ '^screen'
-    set ttymouse=xterm2
+if !has('nvim')
+    if &term =~ '^screen'
+        set ttymouse=xterm2
+    endif
 endif
 
 " File encryption
@@ -151,3 +153,6 @@ if executable('ag')
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 endif
+
+" Opt out of running in NeoVim terminal emulator
+let g:fugitive_force_bang_command = 1
