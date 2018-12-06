@@ -44,3 +44,13 @@ function! functions#toggle_eventignore() abort
         echoerr "No 'autocmd' functionality available"
     endif
 endfunction
+
+function! functions#get_clang_format_path()
+  if filereadable("/usr/share/vim/addons/syntax/clang-format.py")
+    return "/usr/share/vim/addons/syntax/clang-format.py"
+  elseif filereadable("/usr/share/clang/clang-format.py")
+    return "/usr/share/clang/clang-format.py"
+  else
+    return ""
+  endif
+endfunction
