@@ -17,6 +17,13 @@ if has('autocmd')
         autocmd FileType cpp nnoremap <silent><buffer> K <Esc>:Cppman <cword><CR>
     augroup END
 
+    augroup diffing
+        autocmd!
+        " Disable syntax when diffing
+        au FilterWritePost * if &diff | silent setlocal syntax=OFF |endif
+        au BufEnter * if !&diff | silent setlocal syntax=ON |endif
+    augroup END
+
     augroup qf
         autocmd!
         " Exclude quickfix buffer from :bnext and :bprev
