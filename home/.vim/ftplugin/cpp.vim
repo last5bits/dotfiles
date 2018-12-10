@@ -11,4 +11,4 @@ if v:version >=800
   packadd termdebug
 endif
 
-execute 'map <C-K> :pyf ' . functions#get_clang_format_path() . '<CR>'
+execute 'map <buffer> <C-K> :pyf ' . functions#get_clang_format_path() . '<CR>'
