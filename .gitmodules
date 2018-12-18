@@ -91,3 +91,6 @@
 [submodule "home/.vim/bundle/vim-star-search"]
 	path = home/.vim/bundle/vim-star-search
 	url = https://github.com/roszcz/Vim-Star-Search.git
+[submodule "home/.vim/bundle/vim-searchindex"]
+	path = home/.vim/bundle/vim-searchindex
+	url = https://github.com/google/vim-searchindex.git
