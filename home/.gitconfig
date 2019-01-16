@@ -9,6 +9,7 @@
     dlast = diff HEAD~1 HEAD
     yr = yank --remote
     yb = yank --branch
+    sshow = show --pretty="" --name-only
 [pull]
     rebase = true
 [commit]
