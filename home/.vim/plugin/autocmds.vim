@@ -15,6 +15,13 @@ if has('autocmd')
         autocmd FileType netrw nnoremap <buffer> g~ :Gedit :/<CR>
         " Use Shift-K to open cppman
         autocmd FileType cpp nnoremap <silent><buffer> K <Esc>:Cppman <cword><CR>
+        " Poor man vim-rooter, git only, using fugitive
+        autocmd BufLeave * let b:last_cwd = getcwd()
+        autocmd BufEnter * if exists('b:last_cwd')
+                        \|   execute 'lcd' b:last_cwd
+                        \| else
+                        \|   silent! Glcd
+                        \| endif
     augroup END
 
     augroup diffing
