@@ -122,10 +122,6 @@ let g:gutentags_ctags_tagfile = ".tags"
 au! BufEnter *.cpp,*.cc,*.c let b:fswitchdst = 'h,hpp'    | let b:fswitchlocs = 'reg:#lib#include/llvm#'
 au! BufEnter *.h,*.hpp      let b:fswitchdst = 'cpp,cc,c' | let b:fswitchlocs = 'reg:#include/llvm#lib#'
 
-" Grepper settings
-let g:grepper           = {}
-let g:grepper.next_tool = '<tab>'
-
 " Airline settings
 let g:airline_powerline_fonts = 1
 let g:airline_extensions = ["branch", "tabline", "ctrlp", "quickfix"]
