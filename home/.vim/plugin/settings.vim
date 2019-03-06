@@ -152,6 +152,12 @@ elseif executable('rg')
   let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
   let g:ctrlp_use_caching = 0
 endif
+let g:ctrlp_prompt_mappings = {
+  \ 'PrtSelectMove("j")':   ['<c-n>', '<down>'],
+  \ 'PrtSelectMove("k")':   ['<c-p>', '<up>'],
+  \ 'PrtHistory(-1)':       ['<m-p>'],
+  \ 'PrtHistory(1)':        ['<m-n>'],
+  \ }
 
 " Opt out of running in NeoVim terminal emulator
 let g:fugitive_force_bang_command = 1
