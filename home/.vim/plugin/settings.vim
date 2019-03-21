@@ -13,6 +13,7 @@ set t_Co=256      " 256 colors
 set number        " Line numbers, please
 set lazyredraw    " Don't bother updating screen during macro playback
 set cursorline    " highlight current line
+set cursorcolumn  " highlight current column
 set nowrapscan    " Do not continue the search from the top again
 set autoread      " Update an open buffer if it has been changed externally
 set ignorecase    " Ignore lower/upper case in searches
