@@ -20,15 +20,15 @@ require("awful.hotkeys_popup.keys")
 -- Pop-up calendar
 local cal = require("misc/cal")
 -- Battery indicator
-local assault = require('widgets/assault')
+-- local assault = require('widgets/assault')
 -- Spacer widget
 local spacer = require('misc/spacer')
 local audio = require('misc/audio')
 -- Change volume of particular client windows
 -- Switch monitors
 local xrandr = require('misc/xrandr')
-require("widgets/brightness")
 local net_widgets = require("net_widgets")
+local lain = require("lain")
 
 
 -- {{{ Error handling
@@ -206,12 +206,12 @@ cal.register(mytextclock, "<b>%s</b>")
 --month_calendar:attach( mytextclock, "br" )
 year_calendar = awful.widget.calendar_popup.year(cal_args)
 
--- Create battery indicator
-myassault = assault({
-    critical_level = 0.10
-    , height = 11
-    , width = 18
-    })
+local mybattery = lain.widget.bat({
+    timeout = 5,
+    settings = function()
+        widget:set_markup(" ↯ " .. bat_now.perc)
+    end
+})
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -319,15 +319,10 @@ awful.screen.connect_for_each_screen(function(s)
             pomodoro.icon_widget,
             pomodoro.widget,
             spacer_pomodoro_widget ,
-            myassault,
-            spacer,
-            brightness_icon,
-            brightness_widget,
-            spacer,
+            mybattery,
             net_internet,
             net_wired,
             net_wireless,
-            spacer,
             layout = wibox.layout.fixed.horizontal,
             --mykeyboardlayout,
             wibox.widget.systray(),
