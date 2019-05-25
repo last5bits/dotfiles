@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+if [ -z $1 ]; then
+    pacmd list-sinks | egrep "index:|name:"
+    exit
+fi
+
+# pacmd list-sinks | grep name: | grep $1 | cut -d ' ' -f 2
+sink="$(pamixer --list-sinks | egrep "^0|[1-9][0-9]* .*" | cut -d '"' -f 2 | grep $1)"
+echo "Setting $sink as default"
+pacmd set-default-sink $sink
+
+for playing in $(pacmd list-sink-inputs | awk '$1 == "index:" {print $2}')
+do
+    pacmd move-sink-input $playing $sink >/dev/null 2>&1
+done
