@@ -23,6 +23,7 @@ local cal = require("misc/cal")
 -- local assault = require('widgets/assault')
 -- Spacer widget
 local spacer = require('misc/spacer')
+local sinker = require('widgets/sinker')
 local audio = require('misc/audio')
 -- Change volume of particular client windows
 -- Switch monitors
@@ -123,6 +124,8 @@ pomodoro.widget.visible = false
 spacer_pomodoro_widget.visible = false
 
 spacer = spacer({text = " : "})
+
+sinker = sinker()
 
 net_wireless = net_widgets.wireless({indent = 0, font = "monospace", popup_position = "bottom_right", popup_signal = true, timeout = 3, hide_when_rfkill_blocked = true})
 net_wired = net_widgets.indicator({interfaces = {"eth0"}, indent = 0, font = "monospace", popup_position = "bottom_right", timeout = 3, hidedisconnected = true})
@@ -424,6 +427,8 @@ globalkeys = gears.table.join(
               {description = "quit awesome", group = "awesome"}),
 
     -- Custom hotkeys
+    awful.key({ modkey,           }, "a",      function () sinker:show() end,
+              {description="change pulseaudio sink", group="custom"}),
     awful.key({ modkey,    "Mod1"}, "space",      show_time_and_charge,
               {description = "show current time and battery charge", group = "custom"}),
     awful.key({ modkey,    "Shift"}, "p",      toggle_pomodoro,
