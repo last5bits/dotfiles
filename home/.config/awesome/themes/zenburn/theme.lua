@@ -7,7 +7,7 @@ local themes_path = require("gears.filesystem").get_themes_dir()
 local dpi = require("beautiful.xresources").apply_dpi
 
 -- {{{ Main
-theme = {}
+local theme = {}
 theme.dir = os.getenv("HOME") .. "/.config/awesome/themes"
 theme.wallpaper = theme.dir .. "/zenburn/background.png"
 theme.notification_icon_size = 48
