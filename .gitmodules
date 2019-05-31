@@ -94,3 +94,6 @@
 [submodule "home/.vim/bundle/vim-searchindex"]
 	path = home/.vim/bundle/vim-searchindex
 	url = https://github.com/google/vim-searchindex.git
+[submodule "home/.vim/bundle/linediff.vim"]
+	path = home/.vim/bundle/linediff.vim
+	url = https://github.com/AndrewRadev/linediff.vim.git
