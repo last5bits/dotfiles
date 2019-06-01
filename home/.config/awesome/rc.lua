@@ -671,13 +671,21 @@ awful.rules.rules = {
       }, properties = { floating = true }},
 
     -- Add titlebars to normal clients and dialogs
-    --{ rule_any = {type = { "normal", "dialog" }
-      --}, properties = { titlebars_enabled = true }
-    --},
+    { rule_any = {type = { "dialog" }
+      }, properties = { titlebars_enabled = true }
+    },
 
     -- Set Firefox to always map on the tag named "2" on screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { screen = 1, tag = "2" } },
+    { rule = { class = "Firefox" },
+      properties = { screen = 1, tag = "1", floating = false } },
+    { rule = { class = "Steam" },
+      properties = { screen = 1, tag = "7" } },
+    { rule = { class = "qBittorrent", type="normal" },
+      properties = { screen = 1, tag = "8", maximized = true } },
+    { rule = { class = "spotify" },
+      properties = { screen = 1, tag = "9", maximized = true } },
+    { rule = { class = "OxygenNotIncluded" },
+      properties = { floating = false } },
 }
 -- }}}
 
