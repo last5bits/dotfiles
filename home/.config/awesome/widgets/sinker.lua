@@ -19,8 +19,8 @@ local function get_sinks()
     -- 1 "alsa_output.pci-0000_00_03.0.hdmi-stereo" "Built-in Audio Digital Stereo (HDMI)"
     if string.match(line, "^[%d+]") then
       -- Notification message
-      local sink_full = string.match(line, "^[%d+] \"(.+)\" \".+\"")
-      local sink_title = string.match(line, "^[%d+] \".+\" \"(.+)\"")
+      local sink_full = string.match(line, "^[%d]+ \"(.+)\" \".+\"")
+      local sink_title = string.match(line, "^[%d]+ \".+\" \"(.+)\"")
       table.insert(sinks, { full_name = sink_full, title = sink_title })
     end
   end
