@@ -32,11 +32,11 @@ local function get_sink_menu(get_cmd, get_msg)
       -- 1 "alsa_output.pci-0000_00_03.0.hdmi-stereo" "Built-in Audio Digital Stereo (HDMI)"
       if string.match(line, "^[%d+]") then
          -- Notification message
-         local sink_name = string.match(line, "^[%d+] \".+\" \"(.+)\"")
+         local sink_name = string.match(line, "^[%d]+ \".+\" \"(.+)\"")
          local msg = get_msg(sink_name)
 
          -- Callback command
-         local sink = string.match(line, "^[%d+] \"(.+)\" \".+\"")
+         local sink = string.match(line, "^[%d]+ \"(.+)\" \".+\"")
          local cmd = get_cmd(id, sink)
 
          table.insert(menu, {msg, {function() awful.spawn(cmd) end}})
