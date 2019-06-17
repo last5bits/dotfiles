@@ -132,9 +132,8 @@ spacer = spacer({text = " : "})
 
 sinker = sinker()
 
-net_wireless = net_widgets.wireless({indent = 0, font = "monospace", popup_position = "bottom_right", popup_signal = true, timeout = 3, hide_when_rfkill_blocked = true})
+net_wireless = net_widgets.wireless({indent = 0, font = "monospace", popup_position = "bottom_right", popup_signal = true, timeout = 3})
 net_wired = net_widgets.indicator({interfaces = {"eth0"}, indent = 0, font = "monospace", popup_position = "bottom_right", timeout = 3, hidedisconnected = true})
-net_internet = net_widgets.internet({indent = 0, timeout = 3})
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -304,7 +303,6 @@ screen.connect_signal("request::desktop_decoration", function(s)
             pomodoro.widget,
             spacer_pomodoro_widget ,
             mybattery,
-            net_internet,
             net_wired,
             net_wireless,
             layout = wibox.layout.fixed.horizontal,
