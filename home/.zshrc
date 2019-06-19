@@ -3,6 +3,7 @@ source ~/.aliases
 
 export PATH="$PATH:$HOME/.bin"
 export EDITOR="vim"
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
 HISTFILE=~/.histfile
 HISTSIZE=1000

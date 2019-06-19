@@ -4,6 +4,7 @@ source ~/.aliases
 
 export PATH="$PATH:$HOME/.bin"
 export EDITOR="/usr/bin/vim"
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
 # Prompt {{
 bold=$(tput bold)
