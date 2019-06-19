@@ -55,3 +55,12 @@ function! GitJump(mode)
   execute 'copen'
 endfunction
 com! -nargs=+ -complete=command Gjump call GitJump(<q-args>)
+
+function! EnablePager() abort
+  setlocal tabstop=8
+  setlocal nolist nospell nonumber
+  setlocal readonly nomodifiable
+  setlocal nomodified
+  setlocal buftype=nofile
+endfunction
+command! -nargs=0 PAGER call EnablePager()
