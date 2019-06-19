@@ -4,6 +4,7 @@ source ~/.aliases
 export PATH="$PATH:$HOME/.bin"
 export EDITOR="vim"
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
+export GIT_PAGER="vim - -R -c PAGER -c 'set filetype=git'"
 
 HISTFILE=~/.histfile
 HISTSIZE=1000
