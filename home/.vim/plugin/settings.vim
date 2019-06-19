@@ -161,3 +161,8 @@ let g:ctrlp_prompt_mappings = {
 
 " Opt out of running in NeoVim terminal emulator
 let g:fugitive_force_bang_command = 1
+
+" Ferret
+let g:FerretExecutableArguments = {
+  \   'rg': '--vimgrep --no-heading --max-columns 4096'
+  \ }
