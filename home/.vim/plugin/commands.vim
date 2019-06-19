@@ -46,3 +46,12 @@ function! WinDo(command)
   execute currwin . 'wincmd w'
 endfunction
 com! -nargs=+ -complete=command W call WinDo(<q-args>)
+
+" Jump between interesting locations reported by git.  Note that the git-jump
+" script was modified to print the locations, rather than to open Vim
+" directly.
+function! GitJump(mode)
+  execute 'cexpr ' . 'system("git jump ' . a:mode . '")'
+  execute 'copen'
+endfunction
+com! -nargs=+ -complete=command Gjump call GitJump(<q-args>)
