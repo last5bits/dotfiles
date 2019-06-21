@@ -6,10 +6,12 @@
     lg = log --graph --pretty=format:'%Cred%h%Creset - %Cgreen(%ad)%C(yellow)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit --date=local
     supdate = submodule foreach git pull origin master
     last = log -1 HEAD
+    lasts = log -50 HEAD
     dlast = diff HEAD~1 HEAD
     yr = yank --remote
     yb = yank --branch
     sshow = show --pretty="" --name-only
+    br = "!git --no-pager branch"
 [pull]
     rebase = true
 [commit]
@@ -22,3 +24,5 @@
     submoduleSummary = true
 [diff]
     submodule = log
+[color]
+    pager = no
