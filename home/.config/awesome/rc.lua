@@ -117,6 +117,7 @@ end
 -- Themes define colours, icons, and wallpapers
 theme_dir = awful.util.getdir("config") .. "/themes/zenburn/"
 beautiful.init(theme_dir .. "theme.lua")
+gears.wallpaper.set("#000000")
 
 local pomodoro = require("pomodoro/init")
 -- Remove the text "Pomodoro: "
