@@ -193,7 +193,7 @@ mytextclock = wibox.widget.textclock()
 
 -- Create calendars
 cal_args = { spacing = 0, start_sunday = true }
-cal.register(mytextclock, "<b>%s</b>")
+cal.register(mytextclock)
 --month_calendar = awful.widget.calendar_popup.month(cal_args)
 --month_calendar:attach( mytextclock, "br" )
 year_calendar = awful.widget.calendar_popup.year(cal_args)
