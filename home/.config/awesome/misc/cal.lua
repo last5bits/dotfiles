@@ -82,7 +82,7 @@ function cal.register(mywidget, custom_current_day_format)
 	if custom_current_day_format then current_day_format = custom_current_day_format end
 
 	if not tooltip then
-		tooltip = awful.tooltip({})
+		tooltip = awful.tooltip({ border_width = 1 })
                 function tooltip:update()
                         local month, year = os.date('%m'), os.date('%Y')
                         state = {month, year}
