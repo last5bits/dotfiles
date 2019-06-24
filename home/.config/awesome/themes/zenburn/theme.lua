@@ -61,6 +61,12 @@ theme.titlebar_bg_normal = "#3F3F3F"
 --theme.border_widget    = "#3F3F3F"
 -- }}}
 
+-- {{{ Tooltip
+theme.tooltip_bg = theme.bg_normal
+theme.tooltip_fg = theme.fg_normal
+theme.tooltip_border_color = theme.border_focus
+-- }}}
+
 -- {{{ Mouse finder
 theme.mouse_finder_color = "#CC9393"
 -- mouse_finder_[timeout|animate_timeout|radius|factor]
