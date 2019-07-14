@@ -20,7 +20,7 @@ require("awful.hotkeys_popup.keys")
 -- Pop-up calendar
 local cal = require("misc/cal")
 -- Battery indicator
--- local assault = require('widgets/assault')
+local mybat = require('widgets/mybat')
 -- Spacer widget
 local spacer = require('misc/spacer')
 local sinker = require('widgets/sinker')
@@ -199,12 +199,7 @@ cal.register(mytextclock)
 --month_calendar:attach( mytextclock, "br" )
 year_calendar = awful.widget.calendar_popup.year(cal_args)
 
-local mybattery = lain.widget.bat({
-    timeout = 5,
-    settings = function()
-        widget:set_markup(" ↯ " .. bat_now.perc)
-    end
-})
+local mybattery = mybat()
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
