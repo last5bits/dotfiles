@@ -40,7 +40,7 @@ noremap <silent><leader>o :W diffoff<CR>:syntax on<CR>:setl nocursorbind<CR>:onl
 nmap <silent> <Leader>a :FSHere<cr>
 
 " Tagbar.
-nmap <leader>t :TagbarOpen<CR>
+nmap <leader>t :TagbarToggle<CR>
 nmap <leader>T :TagbarCurrentTag<CR>
 
 " Open the fuzzy searcher through current bufs
