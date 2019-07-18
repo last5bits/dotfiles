@@ -39,8 +39,9 @@ noremap <silent><leader>o :W diffoff<CR>:syntax on<CR>:setl nocursorbind<CR>:onl
 " Switch to the file and load it into the current window
 nmap <silent> <Leader>a :FSHere<cr>
 
-" Open Tagbar.
+" Tagbar.
 nmap <leader>t :TagbarOpen<CR>
+nmap <leader>T :TagbarCurrentTag<CR>
 
 " Open the fuzzy searcher through current bufs
 nmap <leader>b :CtrlPBuffer<cr>
