@@ -82,9 +82,6 @@
 [submodule "home/.vim/bundle/ferret"]
 	path = home/.vim/bundle/ferret
 	url = https://github.com/wincent/ferret.git
-[submodule "home/.vim/bundle/vim-table-mode"]
-	path = home/.vim/bundle/vim-table-mode
-	url = https://github.com/dhruvasagar/vim-table-mode.git
 [submodule "home/.vim/bundle/vim-signature"]
 	path = home/.vim/bundle/vim-signature
 	url = https://github.com/kshenoy/vim-signature.git
