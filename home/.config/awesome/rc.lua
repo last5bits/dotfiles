@@ -196,8 +196,6 @@ cal.register(mytextclock)
 --month_calendar:attach( mytextclock, "br" )
 year_calendar = awful.widget.calendar_popup.year(cal_args)
 
-local mybattery = mybat()
-
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
                     awful.button({ }, 1, function(t) t:view_only() end),
@@ -281,6 +279,10 @@ screen.connect_signal("request::desktop_decoration", function(s)
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "bottom", screen = s })
 
+    -- Create a battery widget; make the screen own it to avoid having
+    -- multiple sets of batteries in the tooltip.
+    s.mybattery = mybat()
+
     -- Add widgets to the wibox
     s.mywibox:setup {
         layout = wibox.layout.align.horizontal,
@@ -295,7 +297,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
             pomodoro.icon_widget,
             pomodoro.widget,
             spacer_pomodoro_widget ,
-            mybattery,
+            s.mybattery,
             net_wired,
             net_wireless,
             layout = wibox.layout.fixed.horizontal,
