@@ -10,7 +10,7 @@ import subprocess
 import tempfile
 
 fireplace_path = os.path.join(Path.home(), "Videos", "Ambient",
-                              "Relaxing Fire Burning", "fire.mp4")
+                              "Relaxing Fire Burning.mp4")
 pid_file = Path(os.path.join(tempfile.gettempdir(), "fireplace-pid"))
 
 
