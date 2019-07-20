@@ -18,8 +18,6 @@ local hotkeys_popup = require("awful.hotkeys_popup").widget
 local cal = require("widgets/cal")
 -- Battery indicator
 local mybat = require('widgets/mybat')
--- Spacer widget
-local spacer = require('misc/spacer')
 local sinker = require('widgets/sinker')
 local audio = require('misc/audio')
 -- Change volume of particular client windows
@@ -115,8 +113,6 @@ end
 theme_dir = awful.util.getdir("config") .. "/themes/zenburn/"
 beautiful.init(theme_dir .. "theme.lua")
 gears.wallpaper.set("#000000")
-
-spacer = spacer({text = " : "})
 
 sinker = sinker()
 
