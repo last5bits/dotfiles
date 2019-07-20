@@ -18,6 +18,8 @@ local hotkeys_popup = require("awful.hotkeys_popup").widget
 local cal = require("widgets/cal")
 -- Battery indicator
 local mybat = require('widgets/mybat')
+-- Pulseaudio volume indicator
+local myvolume = require('widgets/myvolume')
 -- Choose the default pulseaudio sink
 local sinker = require('widgets/sinker')
 -- Change overall/client volume with pulseaudio
@@ -271,6 +273,8 @@ screen.connect_signal("request::desktop_decoration", function(s)
     -- multiple sets of batteries in the tooltip.
     s.mybattery = mybat()
 
+    s.myvolume = myvolume()
+
     -- Add widgets to the wibox
     s.mywibox:setup {
         layout = wibox.layout.align.horizontal,
@@ -283,6 +287,7 @@ screen.connect_signal("request::desktop_decoration", function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             s.mybattery,
+            s.myvolume,
             net_wired,
             net_wireless,
             layout = wibox.layout.fixed.horizontal,
