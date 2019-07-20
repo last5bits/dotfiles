@@ -18,11 +18,13 @@ local hotkeys_popup = require("awful.hotkeys_popup").widget
 local cal = require("widgets/cal")
 -- Battery indicator
 local mybat = require('widgets/mybat')
+-- Choose the default pulseaudio sink
 local sinker = require('widgets/sinker')
+-- Change overall/client volume with pulseaudio
 local audio = require('misc/audio')
--- Change volume of particular client windows
 -- Switch monitors
 local xrandr = require('misc/xrandr')
+-- Network widgets for wireless/wired connections
 local net_widgets = require("net_widgets")
 local lain = require("lain")
 
