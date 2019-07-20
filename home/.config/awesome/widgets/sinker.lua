@@ -33,6 +33,10 @@ local function new(args)
   local pop = awful.popup {
     widget = {
       {
+        {
+          text   = 'dummy',
+          widget = wibox.widget.textbox
+        },
         layout = l
       },
       margins = 5,
