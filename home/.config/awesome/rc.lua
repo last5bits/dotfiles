@@ -25,7 +25,7 @@ local sinker = require('widgets/sinker')
 -- Change overall/client volume with pulseaudio
 local audio = require('misc/audio')
 -- Switch monitors
-local xrandr = require('misc/xrandr')
+local xrandrer = require('widgets/xrandrer')
 -- Network widgets for wireless/wired connections
 local net_widgets = require("net_widgets")
 local lain = require("lain")
@@ -119,6 +119,7 @@ beautiful.init(theme_dir .. "theme.lua")
 gears.wallpaper.set("#000000")
 
 sinker = sinker()
+xrandrer = xrandrer()
 
 net_wireless = net_widgets.wireless({indent = 0, font = "monospace", popup_position = "bottom_right", popup_signal = true, timeout = 3})
 net_wired = net_widgets.indicator({interfaces = {"eth0"}, indent = 0, font = "monospace", popup_position = "bottom_right", timeout = 3, hidedisconnected = true})
@@ -426,7 +427,7 @@ globalkeys = gears.table.join(
     awful.key({}, "XF86AudioMicMute", audio.toggle_mic_mute),
     awful.key({}, "XF86MonBrightnessDown", function () awful.spawn("xbacklight -dec 10") end),
     awful.key({}, "XF86MonBrightnessUp", function () awful.spawn("xbacklight -inc 10") end),
-    awful.key({}, "XF86Display", function () awful.spawn("xfce4-display-settings --minimal") end),
+    awful.key({}, "XF86Display", function () xrandrer:show() end),
     awful.key({}, "XF86Tools", function () awful.spawn("toggle-pavucontrol") end),
     -- awful.key({}, "XF86Search", audio.switch_default_sink),
     -- awful.key({}, "XF86LaunchA", function () audio.client_switch_sink() end),
