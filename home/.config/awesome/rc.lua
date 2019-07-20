@@ -116,16 +116,6 @@ theme_dir = awful.util.getdir("config") .. "/themes/zenburn/"
 beautiful.init(theme_dir .. "theme.lua")
 gears.wallpaper.set("#000000")
 
-local pomodoro = require("pomodoro/init")
--- Remove the text "Pomodoro: "
-pomodoro.format = function (t) return t end
-pomodoro.init()
-spacer_pomodoro_widget = spacer({text = " : "})
--- Hide the widgets
-pomodoro.icon_widget.visible = false
-pomodoro.widget.visible = false
-spacer_pomodoro_widget.visible = false
-
 spacer = spacer({text = " : "})
 
 sinker = sinker()
@@ -294,9 +284,6 @@ screen.connect_signal("request::desktop_decoration", function(s)
         },
         s.mytasklist, -- Middle widget
         { -- Right widgets
-            pomodoro.icon_widget,
-            pomodoro.widget,
-            spacer_pomodoro_widget ,
             s.mybattery,
             net_wired,
             net_wireless,
@@ -317,13 +304,6 @@ root.buttons(gears.table.join(
     --, awful.button({ }, 5, awful.tag.viewprev)
 ))
 -- }}}
-
--- Hide/show the pomodoro widget
-local function toggle_pomodoro()
-    pomodoro.icon_widget.visible = not pomodoro.icon_widget.visible 
-    pomodoro.widget.visible = not pomodoro.widget.visible 
-    spacer_pomodoro_widget.visible = not spacer_pomodoro_widget.visible
-end
 
 local function show_time_and_charge()
     --local os = os
@@ -405,8 +385,6 @@ globalkeys = gears.table.join(
               {description="change pulseaudio sink", group="custom"}),
     awful.key({ modkey,    "Mod1"}, "space",      show_time_and_charge,
               {description = "show current time and battery charge", group = "custom"}),
-    awful.key({ modkey,    "Shift"}, "p",      toggle_pomodoro,
-              {description = "show/hide the pomodoro widget", group = "custom"}),
     awful.key({ modkey,           }, "d",      function () awful.spawn(display_off) end,
               {description = "turn display(s) off", group = "custom"}),
     awful.key({ modkey,           }, "F1",     function () awful.spawn(web_browser) end,
