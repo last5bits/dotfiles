@@ -15,7 +15,7 @@ local naughty = require("naughty")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup").widget
 -- Pop-up calendar
-local cal = require("misc/cal")
+local cal = require("widgets/cal")
 -- Battery indicator
 local mybat = require('widgets/mybat')
 -- Spacer widget
