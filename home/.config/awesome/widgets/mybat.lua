@@ -8,7 +8,7 @@ function mybat.new()
   local mybattery = lain.widget.bat {
     timeout = 5,
     settings = function()
-      widget:set_markup(" ↯ " .. bat_now.perc)
+      widget:set_markup(" ↯" .. bat_now.perc)
       batstat = bat_now
     end
   }
