@@ -11,10 +11,14 @@ function myvolume.new()
       left = tonumber(volume_now.left)
       right = tonumber(volume_now.right)
       vlevel = ""
-      if left == nil or right == nil then
-        vlevel = "N/A"
-      else
+      if left ~= nil and right ~= nil then
         vlevel = (left + right) // 2
+      elseif left == nil and right == nil then
+        vlevel = "N/A"
+      elseif left ~= nil then
+        vlevel = left
+      else
+        vlevel = right
       end
 
       local font_color = beautiful.fg_normal
