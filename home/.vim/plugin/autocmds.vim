@@ -38,4 +38,9 @@ if has('autocmd')
         " Open quick-fix window for vim-fugitive automatically
         autocmd QuickFixCmdPost *grep* cwindow
     augroup END
+
+    augroup netrw-sensible
+        autocmd!
+        autocmd FileType netrw nmap <buffer> <silent> <C-l> <Plug>NetrwRefresh
+    augroup END
 endif
