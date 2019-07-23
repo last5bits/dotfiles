@@ -51,8 +51,8 @@ com! -nargs=+ -complete=command W call WinDo(<q-args>)
 " script was modified to print the locations, rather than to open Vim
 " directly.
 function! GitJump(mode)
-  execute 'cexpr ' . 'system("git jump ' . a:mode . '")'
-  execute 'copen'
+  execute 'cgetexpr ' . 'system("git jump ' . a:mode . '")'
+  execute 'call asyncrun#quickfix_toggle(8)'
 endfunction
 com! -nargs=+ -complete=command Gjump call GitJump(<q-args>)
 
