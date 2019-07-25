@@ -83,11 +83,6 @@ if has('virtualedit')
     set virtualedit=block
 endif
 
-" Only allow errors reported by syntastic
-let g:syntastic_quiet_messages = {
-    \ "!level":  "errors"
-    \ }
-
 " Put plugins and dictionaries in this dir (also on Windows)
 let vimDir = '$HOME/.vim'
 let &runtimepath.=','.vimDir
@@ -101,12 +96,6 @@ if has('persistent_undo')
     let &undodir = myUndoDir
     set undofile
 endif
-
-" python-mode settings
-let g:pymode_rope_complete_on_dot = 0
-let g:pymode_lint_cwindow = 0
-" Auto-hide preview window on completion
-set completeopt=menu
 
 " UltiSnips settings
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -137,10 +126,6 @@ let g:livepreview_previewer = 'zathura' " Default PDF viewer for latex
 " delimitMate
 let delimitMate_expand_cr = 1 " Turn on the expansion of <CR>
 
-" vim-table-mode
-let g:table_mode_corner='|' " Markdown-compatible
-let g:table_mode_map_prefix = '<Leader>T'
-
 " vim-lion
 let g:lion_squeeze_spaces = 1
 
@@ -160,9 +145,6 @@ let g:ctrlp_prompt_mappings = {
   \ 'PrtHistory(-1)':       ['<m-p>'],
   \ 'PrtHistory(1)':        ['<m-n>'],
   \ }
-
-" Opt out of running in NeoVim terminal emulator
-let g:fugitive_force_bang_command = 1
 
 " Ferret
 let g:FerretExecutableArguments = {
