@@ -62,56 +62,38 @@ end
 -- }}}
 
 -- {{{ Variable definitions
---[[
-   [ default_apps.lua should be similar to this
-   [ local default_apps = {}
-   [ function default_apps.get()
-   [     return {
-   [         terminal = "termite"
-   [         , editor = os.getenv("EDITOR") or "vim"
-   [         ...
-   [     }
-   [ end
-   [ return default_apps
-   ]]
-default_apps_path = awful.util.getdir("config") .. "/" .. "default_apps.lua"
+
+-- {{{ Default apps
+
+-- A local module might look something like:
+-- local _M = {}
+-- function _M.get()
+--     local def = { web_browser = "google-chrome" }
+--     return def
+-- end
+-- return setmetatable({}, { __call = function(_, ...) return _M.get(...) end })
+
+local default_apps = {}
+local default_apps_path = awful.util.getdir("config") .. "/" .. "local/default_apps.lua"
 if awful.util.file_readable(default_apps_path) then
-    local default_apps = require("default_apps")
-    local apps = default_apps.get()
-
-    terminal = apps["terminal"]
-    editor = apps["editor"]
-    display_off = apps["display_off"]
-    web_browser = apps["web_browser"]
-    wifi_manager = apps["wifi_manager"]
-    email_client = apps["email_client"]
-    shutdown_dialog = apps["shutdown_dialog"]
-    xlocker = apps["xlocker"]
-    screenshooter = apps["screenshooter"]
-
-    -- Music player commands
-    music_player = apps["music_player"]
-    music_toggle = apps["music_toggle"]
-    music_next   = apps["music_next"]
-    music_prev   = apps["music_prev"]
-else
-    terminal = "urxvt"
-    editor = os.getenv("EDITOR") or "vim"
-    display_off = "dispoff"
-    web_browser = "google-chrome-beta"
-    wifi_manager = "wifi-menu"
-    email_client = "thunderbird"
-    shutdown_dialog = "farewell"
-    xlocker = "slock"
-    screenshooter = "flameshot gui"
-
-    -- Music player commands
-    music_player = "spotify"
-    music_toggle = "playerctl play-pause"
-    music_next   = "playerctl next"
-    music_prev   = "playerctl previous"
+    local default_apps_mod = require("local/default_apps")
+    default_apps = default_apps_mod()
 end
 
+terminal        = default_apps["terminal"]        or "urxvt"
+editor          = default_apps["editor"]          or os.getenv("EDITOR") or "vim"
+display_off     = default_apps["display_off"]     or "dispoff"
+web_browser     = default_apps["web_browser"]     or "firefox"
+wifi_manager    = default_apps["wifi_manager"]    or "wifi-menu"
+email_client    = default_apps["email_client"]    or "thunderbird"
+shutdown_dialog = default_apps["shutdown_dialog"] or "firewell"
+xlocker         = default_apps["xlocker"]         or "slock"
+screenshooter   = default_apps["screenshooter"]   or "flameshot gui"
+music_player    = default_apps["music_player"]    or "spotify"
+music_toggle    = default_apps["music_toggle"]    or "playerctl play-pause"
+music_next      = default_apps["music_next"]      or "playerctl next"
+music_prev      = default_apps["music_prev"]      or "playerctl previous"
+-- }}}
 
 -- Themes define colours, icons, and wallpapers
 theme_dir = awful.util.getdir("config") .. "/themes/zenburn/"
