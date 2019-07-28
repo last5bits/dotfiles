@@ -683,6 +683,10 @@ awful.rules.rules = {
       properties = { screen = 1, tag = "9", maximized = true } },
     { rule = { class = "OxygenNotIncluded" },
       properties = { floating = false } },
+    { rule = { class = "URxvt" },
+      properties = { size_hints_honor = false } },
+    { rule = { class = "Pavucontrol" },
+      properties = { maximized_vertical = true, maximized_horizontal = true } },
 }
 -- }}}
 
@@ -750,34 +754,6 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
---local awful = require("awful")
---rules_spec = {
-    --{ rule = { class = "assistant" },
-      --properties = { tag = tags[screen.count()][2] } },
---}
---for key, val in ipairs(rules_spec) do
-  --table.insert(awful.rules.rules, val)
---end
-
-----autorun = true
---autorun = false
---autorunApps =
---{
-    --"assistant"
---}
---if autorun then
-	--for app = 1, #autorunApps do
-		--awful.util.spawn(autorunApps[app])
-	--end
---end
-
--- {{{ Local rules
-rc_rules = awful.util.getdir("config") .. "/" .. "rules.lua"
-if awful.util.file_readable(rc_rules) then
-    dofile(rc_rules)
-end
--- }}}
---
 -- {{{ Autorun
 rc_autorun = awful.util.getdir("config") .. "/" .. "autorun.lua"
 if awful.util.file_readable(rc_autorun) then
