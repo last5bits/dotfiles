@@ -100,12 +100,6 @@ theme_dir = awful.util.getdir("config") .. "/themes/zenburn/"
 beautiful.init(theme_dir .. "theme.lua")
 gears.wallpaper.set("#000000")
 
-sinker = sinker()
-xrandrer = xrandrer()
-
-net_wireless = net_widgets.wireless({indent = 0, font = "monospace", popup_position = "bottom_right", popup_signal = true, timeout = 3})
-net_wired = net_widgets.indicator({interfaces = {"eth0"}, indent = 0, font = "monospace", popup_position = "bottom_right", timeout = 3, hidedisconnected = true})
-
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
 -- If you do not like this or do not have such a key,
@@ -168,6 +162,10 @@ cal.register(mytextclock)
 --month_calendar = awful.widget.calendar_popup.month(cal_args)
 --month_calendar:attach( mytextclock, "br" )
 year_calendar = awful.widget.calendar_popup.year(cal_args)
+
+-- Network widgets
+net_wireless = net_widgets.wireless({indent = 0, font = "monospace", popup_position = "bottom_right", popup_signal = true, timeout = 3})
+net_wired = net_widgets.indicator({interfaces = {"eth0"}, indent = 0, font = "monospace", popup_position = "bottom_right", timeout = 3, hidedisconnected = true})
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -307,6 +305,9 @@ local function show_time_and_charge()
         , replaces_id = notif_id
         , position = "bottom_right" }).id
 end
+
+sinker = sinker()
+xrandrer = xrandrer()
 
 -- {{{ Key bindings
 globalkeys = gears.table.join(
