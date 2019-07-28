@@ -755,8 +755,24 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 -- {{{ Autorun
-rc_autorun = awful.util.getdir("config") .. "/" .. "autorun.lua"
-if awful.util.file_readable(rc_autorun) then
-    dofile(rc_autorun)
+
+-- A local module might look something like:
+-- local _M = {}
+-- function _M.get()
+--     autorunApps =
+--     {
+--         "wmname LG3D"
+--     }
+-- end
+-- return setmetatable({}, { __call = function(_, ...) return _M.get(...) end })
+
+local local_autorun_path = awful.util.getdir("config") .. "/local/autorun_apps.lua"
+if awful.util.file_readable(local_autorun_path) then
+  local r = require("misc/run_once")
+  local local_autorun_apps = require("local/autorun_apps")
+  local apps = local_autorun_apps()
+  for i = 1, #apps do
+    r.run_once(apps[i])
+  end
 end
 -- }}}
