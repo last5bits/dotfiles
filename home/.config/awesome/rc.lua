@@ -591,6 +591,28 @@ clientbuttons = gears.table.join(
     end)
 )
 
+-- {{{ Local globalkeys
+
+-- A local module might look something like:
+-- local gears = require("gears")
+-- local awful = require("awful")
+-- local _M = {}
+-- function _M.get()
+--     local globalkeys = gears.table.join(
+--         awful.key({ modkey,           }, "e",      function () awful.spawn.raise_or_spawn("???") end,
+--                   {description="Shhhhh", group="custom"})
+--     )
+--     return globalkeys
+-- end
+-- return setmetatable({}, { __call = function(_, ...) return _M.get(...) end })
+
+local local_keys_path = awful.util.getdir("config") .. "/local/globalkeys.lua"
+if awful.util.file_readable(local_keys_path) then
+  local local_keys = require("local/globalkeys")
+  globalkeys = gears.table.join(globalkeys, local_keys())
+end
+-- }}}
+
 -- Set keys
 root.keys(globalkeys)
 -- }}}
