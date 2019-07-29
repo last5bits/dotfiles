@@ -39,8 +39,8 @@ if has('autocmd')
         autocmd QuickFixCmdPost *grep* cwindow
     augroup END
 
-    augroup netrw-sensible
+    augroup netrw-mappings
         autocmd!
-        autocmd FileType netrw nmap <buffer> <silent> <C-l> <Plug>NetrwRefresh
+        autocmd FileType netrw nmap <buffer> <silent> <C-r> <Plug>NetrwRefresh
     augroup END
 endif
