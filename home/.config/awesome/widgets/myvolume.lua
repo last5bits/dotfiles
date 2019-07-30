@@ -61,7 +61,7 @@ function myvolume.new()
         "┌[Device %d %s]\n" ..
         "├LR:\t%s%% %s%%\n" ..
         "└Muted:\t%s"
-      local msg = lain.util.markup.font("monospace 10",
+      local msg = lain.util.markup.font("monospace",
         string.format(format, vstat.index, vstat.device, vstat.left, vstat.right, vstat.muted))
       return msg
     end
