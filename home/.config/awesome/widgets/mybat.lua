@@ -23,10 +23,10 @@ function mybat.new()
           "┌[Battery %d]\n" ..
           "├Status:\t%s\n" ..
           "└Percentage:\t%s\n\n"
-        msg = msg .. lain.util.markup.font("monospace 10", string.format(format,
+        msg = msg .. lain.util.markup.font("monospace", string.format(format,
           i - 1, batstat.n_status[i], batstat.n_perc[i]))
       end
-      return msg .. lain.util.markup.font("monospace 10", "Time left:\t" .. batstat.time)
+      return msg .. lain.util.markup.font("monospace", "Time left:\t" .. batstat.time)
     end
   }
 
