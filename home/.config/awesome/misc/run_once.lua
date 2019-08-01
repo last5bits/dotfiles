@@ -63,7 +63,7 @@ end
 function M.run_once(shellCommand)
     -- check and Execute
     if shallExecute(M.oldPid, M.currentPid) then
-        awful.util.spawn(shellCommand)
+        awful.spawn(shellCommand)
     end
 end
 
