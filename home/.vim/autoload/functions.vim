@@ -32,6 +32,11 @@ function! functions#plaintext() abort
     nnoremap <buffer> k gk
 endfunction
 
+function! functions#llvm_code() abort
+  setlocal iskeyword+=.
+  setlocal iskeyword+=%
+endfunction
+
 function! functions#toggle_eventignore() abort
     if has('autocmd')
         if &eventignore == ""
