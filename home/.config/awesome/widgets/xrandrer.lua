@@ -7,6 +7,7 @@ local wibox = require("wibox")
 local beautiful = require("beautiful")
 local naughty = require("naughty")
 local xrandr = require('misc/xrandr')
+local gears = require("gears")
 
 local module = {}
 
@@ -42,8 +43,8 @@ local function new(args)
     ontop        = true,
   }
 
-  pop.cur_item = 0
   pop.num_items = 0
+  pop.cur_item = 1
   pop.widgets = {}
 
   function pop:set_config(command)
@@ -55,7 +56,7 @@ local function new(args)
     l:reset()
     self.widgets = {}
     self.num_items = 0
-    self.cur_item = 0
+    self.cur_item = 1
 
     for _, config in pairs(get_configs()) do
       local w = wibox.widget{
@@ -74,7 +75,7 @@ local function new(args)
       bg.command = config.command
 
       l:add(bg)
-      self.widgets[self.num_items] = bg
+      self.widgets[self.num_items + 1] = bg
       self.num_items = self.num_items + 1
     end
   end
@@ -88,7 +89,7 @@ local function new(args)
   end
 
   function pop:next_item()
-    new_cur_item = (self.cur_item + 1) % self.num_items
+    new_cur_item = gears.math.cycle(self.num_items, self.cur_item + 1)
     pop:set_current_item(new_cur_item)
   end
 
@@ -118,7 +119,7 @@ local function new(args)
       }
       return
     end
-    pop:set_current_item(0)
+    pop:set_current_item(1)
     pop:run_keygrabber()
     pop.visible = true
   end
