@@ -7,6 +7,7 @@ local audio = {}
 
 local awful = require("awful")
 local naughty = require("naughty")
+local gears = require("gears")
 
 local delta = 5
 local notif_id = nil
@@ -18,27 +19,11 @@ local function show_volume(output)
     notif_id = naughty.notify({ text = volume_msg, replaces_id = notif_id }).id
 end
 
--- Courtesy of https://coronalabs.com/blog/2013/04/16/lua-string-magic/
-function string:split( inSplitPattern, outResults )
-   if not outResults then
-      outResults = {}
-   end
-   local theStart = 1
-   local theSplitStart, theSplitEnd = string.find( self, inSplitPattern, theStart )
-   while theSplitStart do
-      table.insert( outResults, string.sub( self, theStart, theSplitStart-1 ) )
-      theStart = theSplitEnd + 1
-      theSplitStart, theSplitEnd = string.find( self, inSplitPattern, theStart )
-   end
-   table.insert( outResults, string.sub( self, theStart ) )
-   return outResults
-end
-
 -- Parse the pactl output and return sink input id
 -- I.e., Sink Input #<NUM> -- return <NUM>
 -- Return -1 if pid not found
 local function get_sink_input_id(output, pid)
-    lines = output:split('\n')
+    lines = gears.string.split(output, '\n')
     sink_input_id = nil
     volume = nil
     for _, line in pairs(lines) do
@@ -66,7 +51,7 @@ local function show_client_volume(output)
     end
 
     pid = c.pid
-    lines = output:split('\n')
+    lines = gears.string.split(output, '\n')
     volume = nil
     for _, line in pairs(lines) do
         -- Extract current volume
