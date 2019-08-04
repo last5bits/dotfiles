@@ -20,6 +20,8 @@ local cal = require("widgets/cal")
 local mybat = require('widgets/mybat')
 -- Pulseaudio volume indicator
 local myvolume = require('widgets/myvolume')
+-- Network indicator
+local mynet = require('widgets/mynet')
 -- Choose the default pulseaudio sink
 local sinker = require('widgets/sinker')
 -- Change overall/client volume with pulseaudio
@@ -162,6 +164,8 @@ cal.register(mytextclock)
 --month_calendar:attach( mytextclock, "br" )
 year_calendar = awful.widget.calendar_popup.year(cal_args)
 
+mywifi, myeth = mynet()
+
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
                     awful.button({ }, 1, function(t) t:view_only() end),
@@ -264,6 +268,8 @@ screen.connect_signal("request::desktop_decoration", function(s)
         { -- Right widgets
             s.mybattery,
             s.myvolume,
+            mywifi,
+            myeth,
             layout = wibox.layout.fixed.horizontal,
             --mykeyboardlayout,
             wibox.widget.systray(),
