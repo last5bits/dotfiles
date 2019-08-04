@@ -1,9 +1,10 @@
 local awful = require("awful")
 local wibox = require("wibox")
+local gears = require("gears")
 local lain = require("lain")
 
 local mynet = { mt = {} }
-local netstat = {}
+local netstat = { no_internet = true }
 
 function mynet.new(args)
   local ICON_DIR = awful.util.getdir("config") .. "/widgets/icons/"
@@ -11,6 +12,7 @@ function mynet.new(args)
   local wifi_mid_filename = ICON_DIR .. "wireless_1.png"
   local wifi_good_filename = ICON_DIR .. "wireless_2.png"
   local wifi_great_filename = ICON_DIR .. "wireless_3.png"
+  local wifi_noconnect_filename = ICON_DIR .. "wireless_noconnect.png"
 
   local wifi_na_filename = ICON_DIR .. "wireless_na.png"
   if args and args.wifi_hide_disconnected then
@@ -44,7 +46,9 @@ function mynet.new(args)
       if wlan0 then
         if wlan0.wifi then
           local signal = wlan0.signal
-          if signal < -83 then
+          if netstat.no_internet then
+            wifi_icon:set_image(wifi_noconnect_filename)
+          elseif signal < -83 then
             wifi_icon:set_image(wifi_weak_filename)
           elseif signal < -70 then
             wifi_icon:set_image(wifi_mid_filename)
@@ -58,7 +62,16 @@ function mynet.new(args)
         end
       end
 
-      netstat = net_now
+      awful.spawn.easy_async_with_shell("nc -z 8.8.8.8 53 >/dev/null 2>&1",
+          function(_, _, _, exit_code)
+              if not (exit_code == 0) then
+                  netstat.no_internet = true
+              else
+                  netstat.no_internet = false
+              end
+          end)
+
+      netstat = gears.table.join(netstat, net_now)
     end
   }
 
