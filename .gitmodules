@@ -4,9 +4,6 @@
 [submodule "home/.tmux/plugins/tmux-yank"]
 	path = home/.tmux/plugins/tmux-yank
 	url = https://github.com/tmux-plugins/tmux-yank.git
-[submodule "home/.config/awesome/net_widgets"]
-	path = home/.config/awesome/net_widgets
-	url = https://github.com/last5bits/net_widgets.git
 [submodule "home/.config/awesome/lain"]
 	path = home/.config/awesome/lain
 	url = https://github.com/lcpz/lain.git
