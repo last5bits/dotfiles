@@ -27,7 +27,6 @@ local audio = require('misc/audio')
 -- Switch monitors
 local xrandrer = require('widgets/xrandrer')
 -- Network widgets for wireless/wired connections
-local net_widgets = require("net_widgets")
 local lain = require("lain")
 
 
@@ -163,10 +162,6 @@ cal.register(mytextclock)
 --month_calendar:attach( mytextclock, "br" )
 year_calendar = awful.widget.calendar_popup.year(cal_args)
 
--- Network widgets
-net_wireless = net_widgets.wireless({indent = 0, font = "monospace", popup_position = "bottom_right", popup_signal = true, timeout = 3})
-net_wired = net_widgets.indicator({interfaces = {"eth0"}, indent = 0, font = "monospace", popup_position = "bottom_right", timeout = 3, hidedisconnected = true})
-
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
                     awful.button({ }, 1, function(t) t:view_only() end),
@@ -269,8 +264,6 @@ screen.connect_signal("request::desktop_decoration", function(s)
         { -- Right widgets
             s.mybattery,
             s.myvolume,
-            net_wired,
-            net_wireless,
             layout = wibox.layout.fixed.horizontal,
             --mykeyboardlayout,
             wibox.widget.systray(),
