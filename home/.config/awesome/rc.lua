@@ -22,6 +22,8 @@ local mybat = require('widgets/mybat')
 local myvolume = require('widgets/myvolume')
 -- Network indicator
 local mynet = require('widgets/mynet')
+-- Calendar widget
+local mycal = require('widgets/mycal')
 -- Choose the default pulseaudio sink
 local sinker = require('widgets/sinker')
 -- Change overall/client volume with pulseaudio
@@ -156,13 +158,7 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 -- {{{ Wibar
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
-
--- Create calendars
-cal_args = { spacing = 0, start_sunday = true }
-cal.register(mytextclock)
---month_calendar = awful.widget.calendar_popup.month(cal_args)
---month_calendar:attach( mytextclock, "br" )
-year_calendar = awful.widget.calendar_popup.year(cal_args)
+mycal({ attach_to = mytextclock })
 
 mywifi, myeth = mynet()
 
