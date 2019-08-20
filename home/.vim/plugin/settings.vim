@@ -151,6 +151,3 @@ let g:FerretExecutableArguments = {
   \   'rg': '--vimgrep --no-heading --max-columns 4096'
   \ }
 let g:FerretAutojump = 0
-
-" AsyncRun
-let g:asyncrun_open = 8 " Open the quickfix window automatically, make it 8 lines high

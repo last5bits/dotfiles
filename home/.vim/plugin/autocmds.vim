@@ -43,4 +43,9 @@ if has('autocmd')
         autocmd!
         autocmd FileType netrw nmap <buffer> <silent> <C-r> <Plug>NetrwRefresh
     augroup END
+
+    augroup AsyncRunAutocmd
+        autocmd User AsyncRunStart call asyncrun#quickfix_toggle(8, 1)
+            \| execute "AirlineRefresh"
+    augroup END
 endif
