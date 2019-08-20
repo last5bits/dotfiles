@@ -57,6 +57,8 @@ function! functions#get_clang_format_path()
     return "/usr/share/clang/clang-format.py"
   elseif filereadable("/usr/share/clang/clang-format-4.0/clang-format.py")
     return "/usr/share/clang/clang-format-4.0/clang-format.py"
+  elseif filereadable("/usr/share/clang/clang-format-7/clang-format.py")
+    return "/usr/share/clang/clang-format-7/clang-format.py"
   else
     return ""
   endif
