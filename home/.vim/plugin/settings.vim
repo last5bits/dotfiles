@@ -151,3 +151,6 @@ let g:FerretExecutableArguments = {
   \   'rg': '--vimgrep --no-heading --max-columns 4096'
   \ }
 let g:FerretAutojump = 0
+
+" Netrw
+let g:netrw_fastbrowse = 0
