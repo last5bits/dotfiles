@@ -17,6 +17,8 @@ set nowrapscan    " Do not continue the search from the top again
 set autoread      " Update an open buffer if it has been changed externally
 set ignorecase    " Ignore lower/upper case in searches
 set infercase     " This and the above for convenient search and completion
+set splitbelow    " Put the new window below the current one
+set splitright    " Put the new window to the right from the current one
 
 " Set it for delimitMate specifically. Otherwise, startup warnings appear:
 " `delimitMate: There seems to be some incompatibility with your settings that
