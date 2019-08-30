@@ -22,6 +22,9 @@ nmap <silent> <Leader>a :FSHere<cr>
 nmap <leader>t :TagbarToggle<CR>
 nmap <leader>T :TagbarCurrentTag<CR>
 
+" ctag
+nnoremap g} :vsp<CR>:exec("tag ".expand("<cword>"))<CR>
+
 " Open the fuzzy searcher through current bufs
 nmap <leader>b :CtrlPBuffer<cr>
 
