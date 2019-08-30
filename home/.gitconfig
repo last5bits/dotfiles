@@ -5,8 +5,7 @@
 [alias]
     lg = log --graph --pretty=format:'%Cred%h%Creset - %Cgreen(%ad)%C(yellow)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit --date=local
     supdate = submodule foreach git pull origin master
-    last = log -1 HEAD
-    lasts = log -50 HEAD
+    last = log -1
     dlast = diff HEAD~1 HEAD
     yr = yank --remote
     yb = yank --branch
