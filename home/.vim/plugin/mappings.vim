@@ -20,7 +20,7 @@ nmap <silent> <Leader>a :FSHere<cr>
 
 " Tagbar.
 nmap <leader>t :TagbarToggle<CR>
-nmap <leader>T :TagbarCurrentTag<CR>
+nmap <silent><leader>T :TagbarCurrentTag<CR>
 
 " ctag
 nnoremap g} :vsp<CR>:exec("tag ".expand("<cword>"))<CR>
