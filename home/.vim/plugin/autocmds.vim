@@ -13,8 +13,6 @@ if has('autocmd')
         autocmd BufReadPre,FileReadPre $HOME/Private/* setlocal noundofile
         " Open the project root.
         autocmd FileType netrw nnoremap <buffer> g~ :Gedit :/<CR>
-        " Use Shift-K to open cppman
-        autocmd FileType cpp nnoremap <silent><buffer> K <Esc>:Cppman <cword><CR>
         " Poor man vim-rooter, git only, using fugitive
         autocmd BufLeave * let b:last_cwd = getcwd()
         autocmd BufEnter * if exists('b:last_cwd')
