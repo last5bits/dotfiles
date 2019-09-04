@@ -16,7 +16,7 @@ nmap <leader>q :bp <BAR> bwipeout #<CR>
 noremap <silent><leader>o :W diffoff<CR>:syntax on<CR>:setl nocursorbind<CR>:only<CR>
 
 " Switch to the file and load it into the current window
-nmap <silent> <Leader>a :FSHere<cr>
+nmap <silent> <Leader>g :FSHere<cr>
 
 " Tagbar.
 nmap <leader>t :TagbarToggle<CR>
@@ -37,3 +37,6 @@ nmap <leader>Mr <Plug>MarkRegex
 
 " Search for visually selected text.
 vnoremap * y/<C-R>"<CR>
+
+" Terminal Debug
+map <silent><leader>n :call TermDebugSendCommand('next')<CR>
