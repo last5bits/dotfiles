@@ -11,8 +11,6 @@ if has('autocmd')
         autocmd VimResized * execute "normal! \<c-w>="
         " Exclude private files from being saved in the undodir
         autocmd BufReadPre,FileReadPre $HOME/Private/* setlocal noundofile
-        " Open the project root.
-        autocmd FileType netrw nnoremap <buffer> g~ :Gedit :/<CR>
         " Poor man vim-rooter, git only, using fugitive
         autocmd BufLeave * let b:last_cwd = getcwd()
         autocmd BufEnter * if exists('b:last_cwd')
@@ -33,6 +31,8 @@ if has('autocmd')
     augroup netrw-mappings
         autocmd!
         autocmd FileType netrw nmap <buffer> <silent> <C-r> <Plug>NetrwRefresh
+        " Open the project root.
+        autocmd FileType netrw nnoremap <buffer> g~ :Gedit :/<CR>
     augroup END
 
     augroup AsyncRunAutocmd
