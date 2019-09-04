@@ -5,9 +5,6 @@ command! Lcd lcd %:p:h
 " Pretty JSON
 command! PrettyJson %!python -m json.tool
 
-" Opens help in the same buffer
-command! -nargs=1 -complete=help H :enew | :set buftype=help | :h <args>
-
 " Ignore specific regexps in vimdiff
 function! IgnoreDiff(pattern)
     let opt = ""
