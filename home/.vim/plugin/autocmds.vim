@@ -39,4 +39,11 @@ if has('autocmd')
         autocmd User AsyncRunStart call asyncrun#quickfix_toggle(8, 1)
             \| execute "AirlineRefresh"
     augroup END
+
+    augroup project-specific
+        autocmd BufRead,BufNewFile */llvm-project/* 
+                    \ call functions#add_to_filetype_for(".llvmorg", "cpp")
+        autocmd BufRead,BufNewFile */llvm-4.0.0/* 
+                    \ call functions#add_to_filetype_for(".llvm4", "cpp")
+    augroup END
 endif

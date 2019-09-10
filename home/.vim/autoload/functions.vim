@@ -63,3 +63,9 @@ function! functions#get_clang_format_path()
     return ""
   endif
 endfunction
+
+function! functions#add_to_filetype_for(ext, ft)
+  if match(&filetype, '\v<' . a:ft . '>') != -1
+    let &filetype = &filetype . a:ext
+  endif
+endfunction
