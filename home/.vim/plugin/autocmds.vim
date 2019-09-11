@@ -1,6 +1,6 @@
 if has('autocmd')
     if v:version >= '704'
-        augroup autoSaveAndRead
+        augroup auto-save
             autocmd!
             autocmd TextChanged,InsertLeave,FocusLost * silent! wall
             autocmd CursorHold * silent! checktime
@@ -35,12 +35,14 @@ if has('autocmd')
         autocmd FileType netrw nnoremap <buffer> g~ :Gedit :/<CR>
     augroup END
 
-    augroup AsyncRunAutocmd
+    augroup async-run
+        autocmd!
         autocmd User AsyncRunStart call asyncrun#quickfix_toggle(8, 1)
             \| execute "AirlineRefresh"
     augroup END
 
     augroup project-specific
+        autocmd!
         autocmd BufRead,BufNewFile */llvm-project/* 
                     \ call functions#add_to_filetype_for(".llvmorg", "cpp")
         autocmd BufRead,BufNewFile */llvm-4.0.0/* 
