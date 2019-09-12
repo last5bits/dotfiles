@@ -38,9 +38,6 @@ nmap <leader>Mr <Plug>MarkRegex
 " Search for visually selected text.
 vnoremap * y/<C-R>"<CR>
 
-" Terminal Debug
-map <silent><leader>n :call TermDebugSendCommand('next')<CR>
-
 " vim-star-search
 nnoremap <silent> * :call functions#searchCWord()<CR>:set hls<CR>:SearchIndex<CR>
 vnoremap <silent> * :<C-u>call functions#searchVWord()<CR>:set hls<CR>:SearchIndex<CR>
