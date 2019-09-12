@@ -104,3 +104,13 @@ function! functions#searchVWord()
   let @s = savedS
   let @" = savedUnnamed
 endfunction
+
+function! functions#get_human_readable_file_size()
+  return trim(system("numfmt --to=iec-i --suffix=B --format=%.2f " . getfsize(expand(@%))))
+endfunction
+
+function! functions#add_filesize_for_debug_dumps()
+  call airline#parts#define_function('filesize', 'functions#get_human_readable_file_size')
+  call airline#parts#define_condition('filesize', '&filetype =~# "debug-dump"')
+  let g:airline_section_warning = airline#section#create_right(['filesize'])
+endfunction

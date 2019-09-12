@@ -120,6 +120,7 @@ let g:airline_extensions = ["branch", "tabline", "ctrlp", "quickfix"]
 let g:airline#extensions#tabline#fnamemod = ':t' " Show just the filename
 let g:airline#extensions#branch#vcs_checks = []
 let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status}'])
+call functions#add_filesize_for_debug_dumps()
 
 " Latex
 let g:tex_flavor='latex' " TeX instead of PlainTeX
