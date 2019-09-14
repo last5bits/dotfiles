@@ -61,3 +61,7 @@ hi CursorColumn cterm=NONE ctermbg=239 ctermfg=NONE
 
 hi DiffChange           ctermfg=Black         ctermbg=Yellow
 hi DiffText   term=bold ctermfg=White         ctermbg=Magenta
+
+hi GitGutterAdd    ctermfg=LightGreen
+hi GitGutterChange ctermfg=Yellow
+hi GitGutterDelete ctermfg=Magenta

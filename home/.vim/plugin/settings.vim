@@ -19,6 +19,7 @@ set ignorecase    " Ignore lower/upper case in searches
 set infercase     " This and the above for convenient search and completion
 set splitbelow    " Put the new window below the current one
 set splitright    " Put the new window to the right from the current one
+set updatetime=100 " Short update time is recommended for vim-gitgutter
 
 " Set it for delimitMate specifically. Otherwise, startup warnings appear:
 " `delimitMate: There seems to be some incompatibility with your settings that
