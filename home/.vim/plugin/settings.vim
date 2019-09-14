@@ -117,7 +117,7 @@ au! BufEnter *.h,*.hpp      let b:fswitchdst = 'cpp,cc,c' | let b:fswitchlocs = 
 
 " Airline settings
 let g:airline_powerline_fonts = 1
-let g:airline_extensions = ["branch", "tabline", "ctrlp", "quickfix"]
+let g:airline_extensions = ["branch", "tabline", "ctrlp", "quickfix", "tagbar"]
 let g:airline#extensions#tabline#fnamemod = ':t' " Show just the filename
 let g:airline#extensions#branch#vcs_checks = []
 let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status}'])
