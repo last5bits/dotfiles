@@ -63,6 +63,15 @@ shell_patterns=0
 	tar cf - "$Pwd" | xz -f > "$tar.tar.xz" && \
 	echo "../$tar.tar.xz created."
 
+7       Compress the current subdirectory (tar.lz4)
+	Pwd=`basename %d /`
+	echo -n "Name of the compressed file (without extension) [$Pwd]: "
+	read tar
+        if [ "$tar"x = x ]; then tar="$Pwd"; fi
+	cd .. && \
+	tar cf - "$Pwd" | lz4 - "$tar.tar.lz4" && \
+	echo "../$tar.tar.lz4 created."
+
 = f \.c$ & t r
 + f \.c$ & t r & ! t t
 c       Compile and link current .c file
@@ -204,7 +213,7 @@ U       Uudecode marked news articles (needs work)
 	fi
 	echo "Please test the output file before deleting anything."
 
-=+ f \.tar\.gz$ | f \.tar\.z$ | f \.tgz$ | f \.tpz$ | f \.tar\.lz$ | f \.tar\.lzma$ | f \.tar\.7z$ | f \.tar\.xz$ | f \.tar\.Z$ | f \.tar\.bz2$ & t r
+=+ f \.tar\.gz$ | f \.tar\.z$ | f \.tgz$ | f \.tpz$ | f \.tar\.lz$ | f \.tar\.lzma$ | f \.tar\.7z$ | f \.tar\.xz$ | f \.tar\.Z$ | f \.tar\.bz2$ | f \.tar\.lz4$ & t r
 x       Extract the contents of a compressed tar file
 	unset PRG
 	case %f in
@@ -225,6 +234,9 @@ x       Extract the contents of a compressed tar file
 		;;
 	    *.tar.7z)
 		PRG="7za e -so"
+		;;
+	    *.tar.lz4)
+		PRG="lz4 -d"
 		;;
 	    *)
 		exit 1
