@@ -82,9 +82,6 @@
 [submodule "home/.vim/bundle/vim-signature"]
 	path = home/.vim/bundle/vim-signature
 	url = https://github.com/kshenoy/vim-signature.git
-[submodule "home/.vim/bundle/vim-searchindex"]
-	path = home/.vim/bundle/vim-searchindex
-	url = https://github.com/google/vim-searchindex.git
 [submodule "home/.vim/bundle/linediff.vim"]
 	path = home/.vim/bundle/linediff.vim
 	url = https://github.com/AndrewRadev/linediff.vim.git
@@ -94,3 +91,6 @@
 [submodule "home/.vim/bundle/vim-gitgutter"]
 	path = home/.vim/bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "home/.vim/bundle/vim-star-search"]
+	path = home/.vim/bundle/vim-star-search
+	url = https://github.com/roszcz/Vim-Star-Search.git

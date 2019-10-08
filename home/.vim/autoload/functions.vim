@@ -70,41 +70,6 @@ function! functions#add_to_filetype_for(ext, ft)
   endif
 endfunction
 
-function! functions#searchCWord()
-  let wordStr = expand("<cword>")
-  if strlen(wordStr) == 0
-    echohl ErrorMsg
-    echo 'E348: No string under cursor'
-    echohl NONE
-    return
-  endif
-
-  if wordStr[0] =~ '\<'
-    let @/ = '\<' . wordStr . '\>'
-  else
-    let @/ = wordStr
-  endif
-
-  let savedUnnamed = @"
-  let savedS = @s
-  normal! "syiw
-  if wordStr != @s
-    normal! w
-  endif
-  let @s = savedS
-  let @" = savedUnnamed
-endfunction
-
-" https://github.com/bronson/vim-visual-star-search/
-function! functions#searchVWord()
-  let savedUnnamed = @"
-  let savedS = @s
-  normal! gv"sy
-  let @/ = '\V' . substitute(escape(@s, '\'), '\n', '\\n', 'g')
-  let @s = savedS
-  let @" = savedUnnamed
-endfunction
-
 function! functions#get_human_readable_file_size()
   return trim(system("numfmt --to=iec-i --suffix=B --format=%.2f " . getfsize(expand(@%))))
 endfunction
