@@ -16,9 +16,6 @@
 [submodule "home/.vim/bundle/vim-fugitive"]
 	path = home/.vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
-[submodule "home/.vim/bundle/ctrlp.vim"]
-	path = home/.vim/bundle/ctrlp.vim
-	url = https://github.com/ctrlpvim/ctrlp.vim.git
 [submodule "home/.vim/bundle/vim-bracketed-paste"]
 	path = home/.vim/bundle/vim-bracketed-paste
 	url = https://github.com/ConradIrwin/vim-bracketed-paste.git
@@ -94,3 +91,6 @@
 [submodule "home/.vim/bundle/vim-star-search"]
 	path = home/.vim/bundle/vim-star-search
 	url = https://github.com/roszcz/Vim-Star-Search.git
+[submodule "home/.vim/bundle/fzf"]
+	path = home/.vim/bundle/fzf
+	url = https://github.com/junegunn/fzf.git

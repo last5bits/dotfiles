@@ -25,8 +25,10 @@ nmap <silent><leader>T :TagbarCurrentTag<CR>
 " ctag
 nnoremap g} :vsp<CR>:exec("tag ".expand("<cword>"))<CR>
 
-" Open the fuzzy searcher through current bufs
-nmap <leader>b :CtrlPBuffer<cr>
+" Fuzzy-search files in the current directory
+nmap <C-P> :FZF<CR>
+" Fuzzy search through the open buffers
+nmap <leader>b :Buffers<CR>
 
 " Mappings for vim-mark.
 nmap <leader>Mt <Plug>MarkToggle

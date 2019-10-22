@@ -118,7 +118,7 @@ au! BufEnter *.h,*.hpp      let b:fswitchdst = 'cpp,cc,c' | let b:fswitchlocs = 
 
 " Airline settings
 let g:airline_powerline_fonts = 1
-let g:airline_extensions = ["branch", "tabline", "ctrlp", "quickfix"]
+let g:airline_extensions = ["branch", "tabline", "quickfix"]
 let g:airline#extensions#tabline#fnamemod = ':t' " Show just the filename
 let g:airline#extensions#branch#vcs_checks = []
 let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status}'])
@@ -133,23 +133,6 @@ let delimitMate_expand_cr = 1 " Turn on the expansion of <CR>
 
 " vim-lion
 let g:lion_squeeze_spaces = 1
-
-" CtrlP
-if executable('ag')
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-elseif executable('rg')
-  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
-  let g:ctrlp_use_caching = 0
-endif
-let g:ctrlp_prompt_mappings = {
-  \ 'PrtSelectMove("j")':   ['<c-n>', '<down>'],
-  \ 'PrtSelectMove("k")':   ['<c-p>', '<up>'],
-  \ 'PrtHistory(-1)':       ['<m-p>'],
-  \ 'PrtHistory(1)':        ['<m-n>'],
-  \ }
 
 " Ferret
 let g:FerretExecutableArguments = {
