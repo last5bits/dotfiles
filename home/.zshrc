@@ -109,3 +109,5 @@ alias cbwd="pwd | cb"
 alias cbhs="cat $HISTFILE | tail -n 1 | cb"
 
 source ~/.zshrc-local
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
