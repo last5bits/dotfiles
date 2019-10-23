@@ -7,3 +7,5 @@ export EDITOR="/usr/bin/vim"
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 export GIT_PAGER="vim - -R -c PAGER -c 'set filetype=git'"
 export MANPAGER="env MAN_PN=1 vim -M +MANPAGER -c PAGER -"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
