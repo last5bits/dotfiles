@@ -10,7 +10,6 @@
     yr = yank --remote
     yb = yank --branch
     sshow = show --pretty="" --name-only
-    br = "!git --no-pager branch"
 [pull]
     rebase = true
 [commit]
@@ -23,7 +22,5 @@
     submoduleSummary = true
 [diff]
     submodule = log
-[color]
-    pager = no
 [stash]
     showPatch = true
