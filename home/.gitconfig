@@ -7,13 +7,11 @@
     supdate = submodule foreach git pull origin master
     last = log -1
     dlast = diff HEAD~1 HEAD
-    yr = yank --remote
-    yb = yank --branch
     sshow = show --pretty="" --name-only
 [pull]
     rebase = true
 [commit]
-	verbose = true
+    verbose = true
 [mergetool]
     prompt = false
 [merge]
