@@ -13,7 +13,7 @@ nnoremap <leader>e :call functions#toggle_eventignore()<CR>
 " Close current buffer
 nmap <leader>q :bp <BAR> bwipeout #<CR>
 " Close all windows except the current one
-noremap <silent><leader>o :W diffoff<CR>:syntax on<CR>:setl nocursorbind<CR>:only<CR>
+noremap <silent><leader>o :W diffoff<CR>::setl nocursorbind<CR>:only<CR>
 
 " Switch to the file and load it into the current window
 nmap <silent> <Leader>g :FSHere<cr>
