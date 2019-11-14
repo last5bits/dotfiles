@@ -1,0 +1,1 @@
+com! G top Gstatus
