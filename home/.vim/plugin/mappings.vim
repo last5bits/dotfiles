@@ -1,5 +1,5 @@
 " Toggle the asyncrun quickfix window
-nmap <leader>f :call asyncrun#quickfix_toggle(8)<cr>
+nmap <silent><leader>f :call asyncrun#quickfix_toggle(8)<cr>
 
 " Make the current file executable
 nmap <leader>x :w<cr>:!chmod 755 %<cr>:e<cr>
