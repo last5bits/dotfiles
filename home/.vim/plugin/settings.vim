@@ -17,8 +17,6 @@ set nowrapscan    " Do not continue the search from the top again
 set autoread      " Update an open buffer if it has been changed externally
 set ignorecase    " Ignore lower/upper case in searches
 set infercase     " This and the above for convenient search and completion
-set splitbelow    " Put the new window below the current one
-set splitright    " Put the new window to the right from the current one
 set updatetime=100 " Short update time is recommended for vim-gitgutter
 set shortmess-=S   " Show search count message when searching
 

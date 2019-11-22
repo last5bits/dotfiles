@@ -1,1 +1,1 @@
-com! G top Gstatus
+com! Gdiff Gdiffsplit!
