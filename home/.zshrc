@@ -56,12 +56,6 @@ function start-ssh-agent() {
     fi
 }
 
-# ssh-add my github key
-function gh() {
-    start-ssh-agent
-    ssh-add -t 3600 ~/.ssh/github/id_rsa
-}
-
 # kill the ssh-agent on exit
 trap '[[ -n "$SSH_AGENT_PID" ]] && eval `ssh-agent -k`' 0
 
