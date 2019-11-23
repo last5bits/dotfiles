@@ -147,6 +147,20 @@ theme.hotkeys_description_font = theme.font
 theme.calendar_style = { border_color =  theme.border_focus }
 -- }}}
 
+-- {{{ Functions
+function theme.set_focus_client_border()
+    if awesome.xkb_get_layout_group() == 0 then
+      if client.focus then
+        client.focus.border_color = "#CD5C5C"
+      end
+    elseif awesome.xkb_get_layout_group() == 1 then
+      if client.focus then
+        client.focus.border_color = "#0087BD"
+      end
+    end
+end
+-- }}}
+
 return theme
 
 -- vim: filetype=lua:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:textwidth=80
