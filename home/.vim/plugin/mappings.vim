@@ -23,7 +23,7 @@ nmap <leader>t :TagbarToggle<CR>
 nmap <silent><leader>T :TagbarCurrentTag<CR>
 
 " ctag
-nnoremap g} :vsp<CR>:exec("tag ".expand("<cword>"))<CR>
+nnoremap <silent>g} :botright vsp<CR>:exec("tag ".expand("<cword>"))<CR>
 
 " Fuzzy-search files in the current directory
 nmap <C-P> :FZF<CR>
