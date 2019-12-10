@@ -45,6 +45,8 @@ if has('autocmd')
         autocmd!
         autocmd BufRead,BufNewFile */llvm-project/* 
                     \ call functions#add_to_filetype_for(".llvmorg", "cpp")
+        autocmd BufRead,BufNewFile */llvm-8.0-mono/*
+                    \ call functions#add_to_filetype_for(".llvmorg", "cpp")
         autocmd BufRead,BufNewFile */llvm-4.0.0/* 
                     \ call functions#add_to_filetype_for(".llvm4", "cpp")
     augroup END
