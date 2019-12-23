@@ -53,6 +53,7 @@ hi link Debug		Special
 
 " Make the cursor line grey rather than underline
 hi CursorLine   cterm=NONE ctermbg=239 ctermfg=NONE
+hi CursorLineNr term=bold cterm=bold ctermfg=11 gui=bold guifg=Yellow
 hi CursorColumn cterm=NONE ctermbg=239 ctermfg=NONE
 
 hi DiffChange           ctermfg=Black         ctermbg=Yellow
