@@ -1,3 +1,5 @@
+scriptencoding utf-8
+
 set showtabline=1 " Show me your tab line
 set tabstop=4     " One tabulation equals four spaces
 set expandtab     " No tabs, only spaces
