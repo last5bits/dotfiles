@@ -142,3 +142,16 @@ let g:FerretAutojump = 0
 
 " Netrw
 let g:netrw_fastbrowse = 0
+
+" vim-mark
+let g:mwDefaultHighlightingPalette = [
+  \	{ 'ctermbg':'Cyan', 'ctermfg':'Black' },
+  \	{ 'ctermbg':'Red', 'ctermfg':'Black' },
+  \	{ 'ctermbg':'Magenta', 'ctermfg':'Black' },
+  \	{ 'ctermbg':'Blue', 'ctermfg':'Black' },
+  \	{ 'ctermbg':'Green', 'ctermfg':'Black' },
+  \	{ 'ctermbg':'LightCyan', 'ctermfg':'Black' },
+  \	{ 'ctermbg':'LightRed', 'ctermfg':'Black' },
+  \	{ 'ctermbg':'LightMagenta', 'ctermfg':'Black' },
+  \	{ 'ctermbg':'LightBlue', 'ctermfg':'Black' },
+  \]
