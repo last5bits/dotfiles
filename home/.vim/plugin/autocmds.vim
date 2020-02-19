@@ -1,12 +1,4 @@
 if has('autocmd')
-    if v:version >= '704'
-        augroup auto-save
-            autocmd!
-            autocmd TextChanged,InsertLeave,FocusLost * silent! wall
-            autocmd CursorHold * silent! checktime
-        augroup END
-    endif
-
     augroup misc
         autocmd VimResized * execute "normal! \<c-w>="
         " Exclude private files from being saved in the undodir
