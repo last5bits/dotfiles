@@ -49,7 +49,7 @@ com! -nargs=+ -complete=command W call WinDo(<q-args>)
 " directly.
 function! GitJump(mode)
   execute 'cgetexpr ' . 'system("git jump ' . a:mode . '")'
-  execute 'call asyncrun#quickfix_toggle(8)'
+  execute 'call asyncrun#quickfix_toggle(8, 1)'
 endfunction
 com! -nargs=+ -complete=command Gjump call GitJump(<q-args>)
 
@@ -71,3 +71,21 @@ command! Buffers call fzf#run(fzf#wrap(
 " when the command is run with ! suffix (Buffers!)
 command! -bang Buffers call fzf#run(fzf#wrap(
     \ {'source': map(range(1, bufnr('$')), 'bufname(v:val)')}, <bang>0))
+
+function! GetAllSnippets()
+  call UltiSnips#SnippetsInCurrentScope(1)
+  let list = []
+  for [key, info] in items(g:current_ulti_dict_info)
+    let parts = split(info.location, ':')
+    call add(list, {
+          \"text": key,
+          \"filename": parts[0],
+          \"lnum": parts[1],
+          \"context": info.description,
+          \})
+  endfor
+  call setqflist([], ' ', { 'title': 'Snippets', 'items' : list})
+  call asyncrun#quickfix_toggle(8, 1)
+  execute "AirlineRefresh"
+endfunction
+command! -bang Snippets call GetAllSnippets()
