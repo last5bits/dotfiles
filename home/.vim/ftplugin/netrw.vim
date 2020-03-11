@@ -1,1 +1,1 @@
-execute 'map <silent> <buffer> <leader>q <C-^>'
+execute 'nmap <silent> <buffer> <leader>q <C-^>'
