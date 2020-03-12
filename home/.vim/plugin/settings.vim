@@ -16,7 +16,6 @@ set number        " Line numbers, please
 set lazyredraw    " Don't bother updating screen during macro playback
 set cursorline    " highlight current line
 set nowrapscan    " Do not continue the search from the top again
-set autoread      " Update an open buffer if it has been changed externally
 set ignorecase    " Ignore lower/upper case in searches
 set infercase     " This and the above for convenient search and completion
 set updatetime=100 " Short update time is recommended for vim-gitgutter
