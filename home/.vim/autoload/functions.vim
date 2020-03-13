@@ -71,7 +71,11 @@ function! functions#add_to_filetype_for(ext, ft)
 endfunction
 
 function! functions#get_human_readable_file_size()
-  return trim(system("numfmt --to=iec-i --suffix=B --format=%.2f " . getfsize(expand(@%))))
+  let l:fsize = getfsize(expand(@%))
+  if l:fsize == -1
+    return ""
+  endif
+  return trim(system("numfmt --to=iec-i --suffix=B --format=%.2f " . l:fsize))
 endfunction
 
 function! functions#add_filesize_for_debug_dumps()
