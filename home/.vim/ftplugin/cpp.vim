@@ -12,3 +12,4 @@ if v:version >=800
 endif
 
 execute 'nmap <silent> <buffer> <C-K> :py3f ' . functions#get_clang_format_path() . '<CR>'
+execute 'xmap <silent> <buffer> <C-K> :py3f ' . functions#get_clang_format_path() . '<CR>'
