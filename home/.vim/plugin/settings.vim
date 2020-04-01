@@ -111,6 +111,10 @@ let g:UltiSnipsUsePythonVersion = 3
 " Gutentags settings
 let g:gutentags_project_root = [".vimrc-local"]
 let g:gutentags_ctags_tagfile = ".tags"
+" Do not scan files ignored by .gitignore
+if executable('rg')
+    let g:gutentags_file_list_command = 'rg --files'
+endif
 
 " FSwitch settings
 au! BufEnter *.cpp,*.cc,*.c let b:fswitchdst = 'h,hpp'    | let b:fswitchlocs = 'reg:#lib#include/llvm#'
