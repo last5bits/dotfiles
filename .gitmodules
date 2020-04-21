@@ -52,9 +52,6 @@
 [submodule "home/.vim/bundle/vim-vinegar"]
 	path = home/.vim/bundle/vim-vinegar
 	url = https://github.com/tpope/vim-vinegar.git
-[submodule "home/.vim/bundle/ale"]
-	path = home/.vim/bundle/ale
-	url = https://github.com/w0rp/ale.git
 [submodule "home/.vim/bundle/vim-makery"]
 	path = home/.vim/bundle/vim-makery
 	url = https://github.com/igemnace/vim-makery.git
