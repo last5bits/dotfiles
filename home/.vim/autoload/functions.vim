@@ -83,3 +83,14 @@ function! functions#add_filesize_for_debug_dumps()
   call airline#parts#define_condition('filesize', '&filetype =~# "debug-dump"')
   let g:airline_section_warning = airline#section#create_right(['filesize'])
 endfunction
+
+function! functions#buflist()
+  redir => ls
+  silent ls
+  redir END
+  return split(ls, '\n')
+endfunction
+
+function! functions#bufopen(e)
+  execute 'buffer' matchstr(a:e, '^[ 0-9]*')
+endfunction

@@ -27,8 +27,13 @@ nnoremap <silent>g} :botright vsp<CR>:exec("tag ".expand("<cword>"))<CR>
 
 " Fuzzy-search files in the current directory
 nmap <C-P> :FZF<CR>
-" Fuzzy search through the open buffers
-nmap <leader>b :Buffers<CR>
+" Fuzzy-search through the open buffers
+nnoremap <silent> <Leader>b :call fzf#run({
+      \   'source':  reverse(functions#buflist()),
+      \   'sink':    function('functions#bufopen'),
+      \   'options': '+m',
+      \   'down':    len(functions#buflist()) + 2
+      \ })<CR>
 
 " Mappings for vim-mark.
 nmap <leader>Mt <Plug>MarkToggle

@@ -62,16 +62,6 @@ function! EnablePager() abort
 endfunction
 command! -nargs=0 PAGER call EnablePager()
 
-" This command now supports CTRL-T, CTRL-V, and CTRL-X key bindings
-" and opens fzf according to g:fzf_layout setting.
-command! Buffers call fzf#run(fzf#wrap(
-    \ {'source': map(range(1, bufnr('$')), 'bufname(v:val)')}))
-
-" This extends the above example to open fzf in fullscreen
-" when the command is run with ! suffix (Buffers!)
-command! -bang Buffers call fzf#run(fzf#wrap(
-    \ {'source': map(range(1, bufnr('$')), 'bufname(v:val)')}, <bang>0))
-
 function! GetAllSnippets()
   call UltiSnips#SnippetsInCurrentScope(1)
   let list = []
