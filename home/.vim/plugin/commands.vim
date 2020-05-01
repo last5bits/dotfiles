@@ -76,6 +76,5 @@ function! GetAllSnippets()
   endfor
   call setqflist([], ' ', { 'title': 'Snippets', 'items' : list})
   call asyncrun#quickfix_toggle(8, 1)
-  execute "AirlineRefresh"
 endfunction
 command! -bang Snippets call GetAllSnippets()

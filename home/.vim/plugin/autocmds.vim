@@ -30,7 +30,6 @@ if has('autocmd')
     augroup async-run
         autocmd!
         autocmd User AsyncRunStart call asyncrun#quickfix_toggle(8, 1)
-            \| execute "AirlineRefresh"
     augroup END
 
     augroup project-specific

@@ -70,20 +70,6 @@ function! functions#add_to_filetype_for(ext, ft)
   endif
 endfunction
 
-function! functions#get_human_readable_file_size()
-  let l:fsize = getfsize(expand(@%))
-  if l:fsize == -1
-    return ""
-  endif
-  return trim(system("numfmt --to=iec-i --suffix=B --format=%.2f " . l:fsize))
-endfunction
-
-function! functions#add_filesize_for_debug_dumps()
-  call airline#parts#define_function('filesize', 'functions#get_human_readable_file_size')
-  call airline#parts#define_condition('filesize', '&filetype =~# "debug-dump"')
-  let g:airline_section_warning = airline#section#create_right(['filesize'])
-endfunction
-
 function! functions#buflist()
   redir => ls
   silent ls

@@ -120,14 +120,6 @@ endif
 au! BufEnter *.cpp,*.cc,*.c let b:fswitchdst = 'h,hpp'    | let b:fswitchlocs = 'reg:#lib#include/llvm#'
 au! BufEnter *.h,*.hpp      let b:fswitchdst = 'cpp,cc,c' | let b:fswitchlocs = 'reg:#include/llvm#lib#'
 
-" Airline settings
-let g:airline_powerline_fonts = 1
-let g:airline_extensions = ["branch", "tabline", "quickfix"]
-let g:airline#extensions#tabline#fnamemod = ':t' " Show just the filename
-let g:airline#extensions#branch#vcs_checks = []
-let g:airline_section_error = airline#section#create_right(['%{g:asyncrun_status}'])
-call functions#add_filesize_for_debug_dumps()
-
 " Latex
 let g:tex_flavor='latex' " TeX instead of PlainTeX
 let g:livepreview_previewer = 'zathura' " Default PDF viewer for latex
