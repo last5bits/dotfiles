@@ -30,7 +30,9 @@ set backspace=indent,eol,start
 
 if has('folding')
   if has('windows')
+    set fillchars=diff:∙              " BULLET OPERATOR (U+2219, UTF-8: E2 88 99)
     set fillchars+=fold:·             " MIDDLE DOT (U+00B7, UTF-8: C2 B7)
+    set fillchars+=vert:\ 
   endif
   set foldmethod=indent               " not as cool as syntax, but faster
   set nofoldenable                    " start unfolded
