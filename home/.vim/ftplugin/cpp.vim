@@ -11,5 +11,5 @@ if v:version >=800
   packadd termdebug
 endif
 
-execute 'nmap <silent> <buffer> <C-K> :py3f ' . functions#get_clang_format_path() . '<CR>'
-execute 'xmap <silent> <buffer> <C-K> :py3f ' . functions#get_clang_format_path() . '<CR>'
+execute 'nmap <silent> <buffer> gq :py3f ' . functions#get_clang_format_path() . '<CR>'
+execute 'xmap <silent> <buffer> gq :py3f ' . functions#get_clang_format_path() . '<CR>'
