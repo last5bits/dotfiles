@@ -18,8 +18,8 @@ set cursorline    " highlight current line
 set nowrapscan    " Do not continue the search from the top again
 set ignorecase    " Ignore lower/upper case in searches
 set infercase     " This and the above for convenient search and completion
-set updatetime=100 " Short update time is recommended for vim-gitgutter
-set shortmess-=S   " Show search count message when searching
+set updatetime=99 " Short update time is recommended for vim-gitgutter
+set shortmess-=S  " Show search count message when searching
 set autowrite     " Write the contents of the file, if it has been modified
 
 " Set it for delimitMate specifically. Otherwise, startup warnings appear:
