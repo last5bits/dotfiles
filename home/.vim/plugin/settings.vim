@@ -22,6 +22,10 @@ set updatetime=99 " Short update time is recommended for vim-gitgutter
 set shortmess-=S  " Show search count message when searching
 set autowrite     " Write the contents of the file, if it has been modified
 
+if has('syntax')
+  set synmaxcol=200                   " don't bother syntax highlighting long lines
+endif
+
 " Set it for delimitMate specifically. Otherwise, startup warnings appear:
 " `delimitMate: There seems to be some incompatibility with your settings that
 " may interfer with the expansion of <CR>. See :help 'delimitMate_expand_cr'
