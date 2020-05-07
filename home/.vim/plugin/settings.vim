@@ -22,6 +22,9 @@ set updatetime=99 " Short update time is recommended for vim-gitgutter
 set shortmess-=S  " Show search count message when searching
 set autowrite     " Write the contents of the file, if it has been modified
 
+set laststatus=2  " always show status line
+set statusline=%m\%f\ %y\ %{&fileencoding?&fileencoding:&encoding}\ %=%(%l,%c%V\ %=\ %P%)
+
 if has('syntax')
   set synmaxcol=200                   " don't bother syntax highlighting long lines
 endif
