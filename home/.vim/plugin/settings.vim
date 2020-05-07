@@ -99,12 +99,16 @@ let &runtimepath.=','.vimDir
 
 " Keep undo history across sessions by storing it in a file
 if has('persistent_undo')
+  if exists('$SUDO_USER')
+    set noundofile                    " don't create root-owned files
+  else
     let myUndoDir = expand(vimDir . '/undodir')
-    "Create dirs
+    " Create dirs
     call system('mkdir ' . vimDir)
     call system('mkdir ' . myUndoDir)
     let &undodir = myUndoDir
     set undofile
+  endif
 endif
 
 " UltiSnips settings
