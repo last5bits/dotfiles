@@ -164,3 +164,6 @@ let g:mwDefaultHighlightingPalette = [
   \	{ 'ctermbg':'LightMagenta', 'ctermfg':'Black' },
   \	{ 'ctermbg':'LightBlue', 'ctermfg':'Black' },
   \]
+
+" vim-gitgutter
+let g:gitgutter_set_sign_backgrounds = 1
