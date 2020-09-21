@@ -67,9 +67,6 @@
 [submodule "home/.vim/bundle/ferret"]
 	path = home/.vim/bundle/ferret
 	url = https://github.com/wincent/ferret.git
-[submodule "home/.vim/bundle/vim-signature"]
-	path = home/.vim/bundle/vim-signature
-	url = https://github.com/kshenoy/vim-signature.git
 [submodule "home/.vim/bundle/linediff.vim"]
 	path = home/.vim/bundle/linediff.vim
 	url = https://github.com/AndrewRadev/linediff.vim.git
