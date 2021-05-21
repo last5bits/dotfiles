@@ -60,6 +60,7 @@ set -g message-style bg=colour245,fg=colour232
 # Command message
 set -g message-command-style bg=colour233,fg=colour250
 
-## Mode
-#set -g mode-bg colour243
-#set -g mode-fg colour232
+# tmux-cpu
+set -g @cpu_low_icon "ᚋ"
+set -g @cpu_medium_icon "ᚌ"
+set -g @cpu_high_icon "ᚍ"
