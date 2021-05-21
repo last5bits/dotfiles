@@ -4,6 +4,7 @@
     excludesfile = ~/.gitignore
 [alias]
     lg = log --graph --pretty=format:'%Cred%h%Creset - %Cgreen(%ad)%C(yellow)%d%Creset %s %C(bold blue)<%an>%Creset' --abbrev-commit --date=local
+    logn = log -n100
     shshow = show --pretty="" --name-only
 [pull]
     rebase = true
