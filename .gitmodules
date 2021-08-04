@@ -79,3 +79,6 @@
 [submodule "home/.vim/bundle/fzf"]
 	path = home/.vim/bundle/fzf
 	url = https://github.com/junegunn/fzf.git
+[submodule "home/.vim/bundle/vim-signify"]
+	path = home/.vim/bundle/vim-signify
+	url = https://github.com/mhinz/vim-signify.git
