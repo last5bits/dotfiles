@@ -35,6 +35,7 @@ endfunction
 function! functions#llvm_code() abort
   setlocal iskeyword+=.
   setlocal iskeyword+=%
+  setlocal iskeyword+=-
 endfunction
 
 function! functions#toggle_eventignore() abort
