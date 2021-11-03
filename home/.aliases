@@ -4,5 +4,6 @@ alias sc="systemctl"
 alias scu="systemctl --user"
 alias rdate="TZ=\"Europe/Moscow\" date"
 alias hcd="homeshick cd"
+alias G="git"
 
 # vim: set filetype=sh:
