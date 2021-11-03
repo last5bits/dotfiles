@@ -36,6 +36,7 @@ function! functions#llvm_code() abort
   setlocal iskeyword+=.
   setlocal iskeyword+=%
   setlocal iskeyword+=-
+  setlocal keywordprg=~/hpc/llvm-project/install/bin/llvm-cxxfilt
 endfunction
 
 function! functions#toggle_eventignore() abort
