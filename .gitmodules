@@ -1,81 +1,109 @@
 [submodule "home/.vim/bundle/nerdcommenter"]
 	path = home/.vim/bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
+	update = rebase
 [submodule "home/.vim/bundle/vim-pathogen"]
 	path = home/.vim/bundle/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen.git
+	update = rebase
 [submodule "home/.vim/bundle/delimitMate"]
 	path = home/.vim/bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate.git
+	update = rebase
 [submodule "home/.vim/bundle/vim-sensible"]
 	path = home/.vim/bundle/vim-sensible
 	url = https://github.com/tpope/vim-sensible.git
+	update = rebase
 [submodule "home/.vim/bundle/vim-fugitive"]
 	path = home/.vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
+	update = rebase
 [submodule "home/.vim/bundle/asyncrun.vim"]
 	path = home/.vim/bundle/asyncrun.vim
 	url = https://github.com/skywind3000/asyncrun.vim.git
+	update = rebase
 [submodule "home/.vim/bundle/vim-unimpaired"]
 	path = home/.vim/bundle/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
+	update = rebase
 [submodule "home/.vim/bundle/vimtex"]
 	path = home/.vim/bundle/vimtex
 	url = https://github.com/lervag/vimtex.git
+	update = rebase
 [submodule "home/.vim/bundle/ultisnips"]
 	path = home/.vim/bundle/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
+	update = rebase
 [submodule "home/.vim/bundle/vim-snippets"]
 	path = home/.vim/bundle/vim-snippets
 	url = https://github.com/honza/vim-snippets.git
+	update = rebase
 [submodule "home/.vim/bundle/vim-gutentags"]
 	path = home/.vim/bundle/vim-gutentags
 	url = https://github.com/ludovicchabant/vim-gutentags.git
+	update = rebase
 [submodule "home/.vim/bundle/vim-fswitch"]
 	path = home/.vim/bundle/vim-fswitch
 	url = https://github.com/derekwyatt/vim-fswitch.git
+	update = rebase
 [submodule "home/.vim/bundle/tagbar"]
 	path = home/.vim/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
+	update = rebase
 [submodule "home/.vim/bundle/vim-gnupg"]
 	path = home/.vim/bundle/vim-gnupg
 	url = https://github.com/jamessan/vim-gnupg.git
+	branch = main
+	update = rebase
 [submodule "home/.vim/bundle/vim-lion"]
 	path = home/.vim/bundle/vim-lion
 	url = https://github.com/tommcdo/vim-lion.git
+	update = rebase
 [submodule "home/.vim/bundle/vim-eunuch"]
 	path = home/.vim/bundle/vim-eunuch
 	url = https://github.com/tpope/vim-eunuch.git
+	update = rebase
 [submodule "home/.vim/bundle/vim-vinegar"]
 	path = home/.vim/bundle/vim-vinegar
 	url = https://github.com/tpope/vim-vinegar.git
+	update = rebase
 [submodule "home/.vim/bundle/vim-makery"]
 	path = home/.vim/bundle/vim-makery
 	url = https://github.com/igemnace/vim-makery.git
+	update = rebase
 [submodule "home/.vim/bundle/vim-sleuth"]
 	path = home/.vim/bundle/vim-sleuth
 	url = https://github.com/tpope/vim-sleuth.git
+	update = rebase
 [submodule "home/.vim/bundle/vim-mark"]
 	path = home/.vim/bundle/vim-mark
 	url = https://github.com/inkarkat/vim-mark.git
+	update = rebase
 [submodule "home/.vim/bundle/vim-ingo-library"]
 	path = home/.vim/bundle/vim-ingo-library
 	url = https://github.com/inkarkat/vim-ingo-library.git
+	update = rebase
 [submodule "home/.vim/bundle/vim-rsi"]
 	path = home/.vim/bundle/vim-rsi
 	url = https://github.com/tpope/vim-rsi.git
+	update = rebase
 [submodule "home/.vim/bundle/ferret"]
 	path = home/.vim/bundle/ferret
 	url = https://github.com/wincent/ferret.git
+	update = rebase
 [submodule "home/.vim/bundle/linediff.vim"]
 	path = home/.vim/bundle/linediff.vim
 	url = https://github.com/AndrewRadev/linediff.vim.git
+	update = rebase
 [submodule "home/.vim/bundle/vim-star-search"]
 	path = home/.vim/bundle/vim-star-search
 	url = https://github.com/roszcz/Vim-Star-Search.git
+	update = rebase
 [submodule "home/.vim/bundle/fzf"]
 	path = home/.vim/bundle/fzf
 	url = https://github.com/junegunn/fzf.git
+	update = rebase
 [submodule "home/.vim/bundle/vim-signify"]
 	path = home/.vim/bundle/vim-signify
 	url = https://github.com/mhinz/vim-signify.git
+	update = rebase
