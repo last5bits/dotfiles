@@ -104,9 +104,6 @@
 [submodule "home/.tmux/plugins/tmux-yank"]
 	path = home/.tmux/plugins/tmux-yank
 	url = https://github.com/tmux-plugins/tmux-yank.git
-[submodule "home/.config/awesome/lain"]
-	path = home/.config/awesome/lain
-	url = https://github.com/lcpz/lain.git
 [submodule "home/.tmux/plugins/tmux-cpu"]
 	path = home/.tmux/plugins/tmux-cpu
 	url = https://github.com/tmux-plugins/tmux-cpu
