@@ -51,6 +51,9 @@ if v:version > 703 || v:version == 703 && has('patch541')
   set formatoptions+=j    " remove comment leader when joining comment lines
 endif
 let g:NERDSpaceDelims = 1  " Insert spaces when commenting
+" Align line-wise comment delimeters flush left instead of following code
+" indentation
+let g:NERDDefaultAlign = 'start'
 
 if has('linebreak')
     set linebreak   " wrap long lines at characters in 'breakat'
