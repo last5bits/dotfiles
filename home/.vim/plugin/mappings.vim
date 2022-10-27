@@ -47,3 +47,6 @@ vnoremap * y/<C-R>"<CR>
 
 " vim-gitgutter
 nmap <leader>z :GitGutterFold<CR>
+
+nnoremap <leader>w <C-W>
+nnoremap <C-W> <Nop>
