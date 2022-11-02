@@ -56,6 +56,8 @@ hi CursorLine   cterm=NONE ctermbg=235 ctermfg=NONE
 hi CursorLineNr term=bold cterm=bold ctermfg=11 gui=bold guifg=Yellow
 hi CursorColumn cterm=NONE ctermbg=235 ctermfg=NONE
 
+hi ColorColumn cterm=NONE ctermbg=235 ctermfg=NONE
+
 hi DiffChange           ctermfg=Black         ctermbg=Yellow
 hi DiffText   term=bold ctermfg=White         ctermbg=Magenta
 
