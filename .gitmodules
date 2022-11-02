@@ -107,3 +107,6 @@
 	path = home/.vim/bundle/vim-signify
 	url = https://github.com/mhinz/vim-signify.git
 	update = rebase
+[submodule "home/.vim/bundle/vim-diminactive"]
+	path = home/.vim/bundle/vim-diminactive
+	url = https://github.com/blueyed/vim-diminactive.git
