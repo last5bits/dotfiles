@@ -6,5 +6,6 @@ alias rdate="TZ=\"Europe/Moscow\" date"
 alias hcd="homeshick cd"
 alias G="git"
 alias l="less"
+alias vim="nvim"
 
 # vim: set filetype=sh:
