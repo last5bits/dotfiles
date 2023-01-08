@@ -1,4 +1,10 @@
 --type-add
 td:*.td
+--type-add
+mlir:*.mlir
+--type-add
+llvm:*.ll
+--type-add
+mir:*.mir
 
 --smart-case
