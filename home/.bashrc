@@ -3,9 +3,9 @@ source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 source ~/.aliases
 
 export PATH="$PATH:$HOME/.bin"
-export EDITOR="/usr/bin/vim"
+export EDITOR="nvim"
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
-export MANPAGER="env MAN_PN=1 vim -M +MANPAGER -c PAGER -"
+export MANPAGER="less"
 
 bind 'set show-all-if-ambiguous on'
 bind 'TAB:menu-complete'
