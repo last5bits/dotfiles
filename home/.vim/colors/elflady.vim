@@ -27,6 +27,10 @@ hi SpellLocal term=underline ctermbg=14 ctermfg=Black gui=undercurl guisp=Cyan
 hi MatchParen term=bold ctermfg=White ctermbg=Black guibg=DarkCyan
 hi SignatureMarkText ctermfg=LightYellow
 
+hi StatusLine    cterm=NONE    ctermbg=White   ctermfg=Black
+hi StatusLineNC  cterm=NONE    ctermbg=Grey    ctermfg=Black
+hi VertSplit     cterm=NONE    ctermbg=Grey
+
 " Common groups that link to default highlighting.
 " You can specify other highlighting easily.
 hi link String	Constant
