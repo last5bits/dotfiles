@@ -8,6 +8,8 @@
     shshow = show --pretty="" --name-only
 [pull]
     rebase = true
+[rebase]
+    autoStash = true
 [commit]
     verbose = true
 [mergetool]
