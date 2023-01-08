@@ -50,11 +50,6 @@
 	path = home/.vim/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar.git
 	update = rebase
-[submodule "home/.vim/bundle/vim-gnupg"]
-	path = home/.vim/bundle/vim-gnupg
-	url = https://github.com/jamessan/vim-gnupg.git
-	branch = main
-	update = rebase
 [submodule "home/.vim/bundle/vim-lion"]
 	path = home/.vim/bundle/vim-lion
 	url = https://github.com/tommcdo/vim-lion.git
