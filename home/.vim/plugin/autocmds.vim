@@ -29,7 +29,7 @@ if has('autocmd')
 
     augroup async-run
         autocmd!
-        autocmd User AsyncRunStart call asyncrun#quickfix_toggle(8, 1)
+        autocmd User AsyncRunStart call asyncrun#quickfix_toggle(0, 1)
     augroup END
 
     augroup project-specific

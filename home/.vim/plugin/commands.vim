@@ -49,7 +49,7 @@ com! -nargs=+ -complete=command W call WinDo(<q-args>)
 " directly.
 function! GitJump(mode)
   execute 'cgetexpr ' . 'system("git jump ' . a:mode . '")'
-  execute 'call asyncrun#quickfix_toggle(8, 1)'
+  execute 'call asyncrun#quickfix_toggle(0, 1)'
 endfunction
 com! -nargs=+ -complete=command Gjump call GitJump(<q-args>)
 
@@ -75,6 +75,6 @@ function! GetAllSnippets()
           \})
   endfor
   call setqflist([], ' ', { 'title': 'Snippets', 'items' : list})
-  call asyncrun#quickfix_toggle(8, 1)
+  call asyncrun#quickfix_toggle(0, 1)
 endfunction
 command! -bang Snippets call GetAllSnippets()
