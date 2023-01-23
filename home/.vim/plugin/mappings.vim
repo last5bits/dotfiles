@@ -45,8 +45,8 @@ nmap <leader>Mr <Plug>MarkRegex
 " Search for visually selected text.
 vnoremap * y/<C-R>"<CR>
 
-" vim-gitgutter
-nmap <leader>z :GitGutterFold<CR>
+" vim-signify
+nmap <leader>z :SignifyToggle<CR>
 
 nnoremap <leader>w <C-W>
 nnoremap <C-W> <Nop>
