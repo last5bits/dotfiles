@@ -53,17 +53,10 @@ function! functions#toggle_eventignore() abort
 endfunction
 
 function! functions#get_clang_format_path()
-  if filereadable("/usr/share/vim/addons/syntax/clang-format.py")
-    return "/usr/share/vim/addons/syntax/clang-format.py"
-  elseif filereadable("/usr/share/clang/clang-format.py")
+  if filereadable("/usr/share/clang/clang-format.py")
     return "/usr/share/clang/clang-format.py"
-  elseif filereadable("/usr/share/clang/clang-format-4.0/clang-format.py")
-    return "/usr/share/clang/clang-format-4.0/clang-format.py"
-  elseif filereadable("/usr/share/clang/clang-format-7/clang-format.py")
-    return "/usr/share/clang/clang-format-7/clang-format.py"
-  else
-    return ""
   endif
+  return ""
 endfunction
 
 function! functions#add_to_filetype_for(ext, ft)
