@@ -102,3 +102,7 @@
 	path = home/.vim/bundle/vim-signify
 	url = https://github.com/mhinz/vim-signify.git
 	update = rebase
+[submodule "home/.vim/bundle/nvim-lspconfig"]
+	path = home/.vim/bundle/nvim-lspconfig
+	url = https://github.com/neovim/nvim-lspconfig.git
+	update = rebase
