@@ -15,9 +15,6 @@ nmap <leader>q :bp <BAR> bwipeout #<CR>
 " Close all windows except the current one
 noremap <silent><leader>o :W diffoff<CR>::setl nocursorbind<CR>:only<CR>
 
-" Switch to the file and load it into the current window
-nmap <silent> <Leader>g :FSHere<cr>
-
 " Tagbar.
 nmap <leader>t :TagbarToggle<CR>
 nmap <silent><leader>T :TagbarCurrentTag<CR>
