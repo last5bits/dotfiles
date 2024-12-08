@@ -44,6 +44,3 @@ vnoremap * y/<C-R>"<CR>
 
 " vim-signify
 nmap <leader>z :SignifyToggle<CR>
-
-nnoremap <leader>w <C-W>
-nnoremap <C-W> <Nop>
