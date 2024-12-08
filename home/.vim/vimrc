@@ -1,6 +1,6 @@
 set nocompatible
 let mapleader=' '
-colorscheme elflady
+colorscheme slate
 
 " Pathogen hacks
 let g:pathogen_disabled = []
