@@ -33,3 +33,15 @@ vim.api.nvim_create_autocmd('BufWritePre', {
     vim.opt.backupext = '-' .. vim.fn.strftime('%Y%m%d%H%M')
   end,
 })
+
+local augroup = vim.api.nvim_create_augroup('autocmds', {clear = true})
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'netrw',
+  group = augroup,
+  desc = 'Refresh the file system listing',
+  callback = function()
+    vim.keymap.set("n", '<C-r>', '<Plug>NetrwRefresh',
+      { noremap = true, buffer = true, silent = true })
+  end
+})

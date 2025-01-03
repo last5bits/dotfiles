@@ -17,7 +17,21 @@ return {
     end,
   },
   "tpope/vim-eunuch",
-  "tpope/vim-fugitive",
+  {
+    "tpope/vim-fugitive",
+    config = function()
+      local augroup = vim.api.nvim_create_augroup('fugitive_autocmds', {clear = true})
+      vim.api.nvim_create_autocmd('FileType', {
+        pattern = 'netrw',
+        group = augroup,
+        desc = 'Open the project root',
+        callback = function()
+          vim.keymap.set("n", 'g~', ':Gedit :/<CR>',
+            { noremap = true, buffer = true })
+        end
+      })
+    end,
+  },
   "tpope/vim-rsi",
   "tpope/vim-sensible",
   "tpope/vim-sleuth",
@@ -53,7 +67,15 @@ return {
   {
     "skywind3000/asyncrun.vim",
     config = function()
-      vim.keymap.set("n", "<leader>f", ":call asyncrun#quickfix_toggle(0)<CR>", { silent = true })
+      local qf_toggle_cmd = ':call asyncrun#quickfix_toggle(0)<CR>'
+      local augroup = vim.api.nvim_create_augroup('asyncrun_autocmds', {clear = true})
+      vim.keymap.set('n', '<leader>f', qf_toggle_cmd, { silent = true })
+      vim.api.nvim_create_autocmd('User', {
+        pattern = 'AsyncRunStart',
+        group = augroup,
+        desc = 'Bring up the quickfix window on each AsyncRun command invocation',
+        command = qf_toggle_cmd,
+      })
     end,
   },
   {
