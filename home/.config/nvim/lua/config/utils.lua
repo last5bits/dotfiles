@@ -12,7 +12,7 @@ function utils.set_plain_text()
 end
 
 function utils.set_llvm()
-  vim.opt_local.iskeyword:append('.%-')
+  vim.opt_local.iskeyword:append({'.', '%', '-'})
 end
 
 function utils.get_clang_format_path()
