@@ -103,7 +103,8 @@ return {
     "igemnace/vim-makery",
     dependencies = { 'skywind3000/asyncrun.vim' },
     config = function()
-      vim.api.nvim_create_user_command('Make', 'AsyncRun -program=make @ <args>', {})
+      vim.api.nvim_create_user_command('Make', 'AsyncRun -program=make @ <args>',
+        { bang = true, nargs = '*', complete = 'file' })
     end,
   },
   {
