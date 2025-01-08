@@ -88,14 +88,13 @@ return {
   {
     "skywind3000/asyncrun.vim",
     config = function()
-      local qf_toggle_cmd = ':call asyncrun#quickfix_toggle(0)<CR>'
       local augroup = vim.api.nvim_create_augroup('asyncrun_autocmds', {clear = true})
-      vim.keymap.set('n', '<leader>f', qf_toggle_cmd, { silent = true })
+      vim.keymap.set('n', '<leader>f', ':call asyncrun#quickfix_toggle(0)<CR>', { silent = true })
       vim.api.nvim_create_autocmd('User', {
         pattern = 'AsyncRunStart',
         group = augroup,
         desc = 'Bring up the quickfix window on each AsyncRun command invocation',
-        command = qf_toggle_cmd,
+        command = 'call asyncrun#quickfix_toggle(0, 1)',
       })
     end,
   },
