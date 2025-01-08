@@ -45,3 +45,15 @@ vim.api.nvim_create_autocmd('FileType', {
       { noremap = true, buffer = true, silent = true })
   end
 })
+
+vim.cmd [[
+augroup misc
+  " Poor man's vim-rooter, git only, using fugitive.
+  autocmd BufLeave * let b:last_cwd = getcwd()
+  autocmd BufEnter * if exists('b:last_cwd')
+                  \|   execute 'lcd' b:last_cwd
+                  \| else
+                  \|   silent! Glcd
+                  \| endif
+augroup END
+]]
