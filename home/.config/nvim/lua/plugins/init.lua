@@ -141,4 +141,11 @@ return {
   {
     "roszcz/Vim-Star-Search",
   },
+  {
+    "SirVer/ultisnips",
+    config = function()
+      vim.g["UltiSnipsExpandTrigger"] = '<tab>'
+      vim.g["UltiSnipsEditSplit"] = 'vertical'
+    end,
+  },
 }
