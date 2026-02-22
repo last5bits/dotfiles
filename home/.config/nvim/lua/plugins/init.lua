@@ -6,14 +6,20 @@ return {
     end,
   },
   {
-    "junegunn/fzf",
-  },
-  {
-    "junegunn/fzf.vim",
-    dependencies = { 'junegunn/fzf' },
+    "ibhagwan/fzf-lua",
     config = function()
-      vim.keymap.set('n', '<leader>t', ':Files<CR>', { desc = 'fzf find files' })
-      vim.keymap.set('n', '<leader>b', ':Buffers<CR>', { desc = 'fzf find buffers' })
+      local fzf = require("fzf-lua")
+      fzf.setup({
+        "fzf-vim",
+        winopts = {
+          preview = {
+            horizontal     = "right:50%",     -- right|left:size
+            hidden = false,
+          },
+        },
+      })
+      vim.keymap.set("n", "<leader>t", fzf.files)
+      vim.keymap.set("n", "<leader>b", fzf.buffers)
     end,
   },
   "tpope/vim-eunuch",
