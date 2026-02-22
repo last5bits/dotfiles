@@ -377,4 +377,4 @@ o       Open next a free console
         open -s -- sh
 
 D       DIFF two files
-        vimdiff %d/%p %D/%P
+        vim -d %d/%p %D/%P
