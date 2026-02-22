@@ -40,7 +40,7 @@ return {
   {
     "neovim/nvim-lspconfig",
     config = function()
-      require'lspconfig'.clangd.setup{}
+      vim.lsp.enable('clangd')
       vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { noremap = true, buffer = true, silent = true })
       vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { noremap = true, buffer = true, silent = true })
       vim.keymap.set('n', 'gy', vim.lsp.buf.type_definition, { noremap = true, buffer = true, silent = true })
