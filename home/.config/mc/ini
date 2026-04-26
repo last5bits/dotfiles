@@ -91,20 +91,23 @@ editor_filesize_threshold=64M
 editor_drop_selection_on_copy=true
 editor_state_full_filename=false
 editor_stop_format_chars=-+*\\,.;:&>
+safe_overwrite=false
+shadows=true
+shell_directory_timeout=900
 
 [Layout]
-message_visible=0
-keybar_visible=0
-xterm_title=1
+message_visible=false
+keybar_visible=false
+xterm_title=true
 output_lines=0
-command_prompt=1
-menubar_visible=0
-free_space=1
+command_prompt=true
+menubar_visible=false
+free_space=true
 
-horizontal_split=0
-vertical_equal=1
-left_panel_size=84
-horizontal_equal=1
+horizontal_split=false
+vertical_equal=true
+left_panel_size=120
+horizontal_equal=true
 top_panel_size=63
 
 [Misc]
@@ -117,6 +120,7 @@ source_codepage=Other_8_bit
 autodetect_codeset=
 clipboard_store=
 clipboard_paste=
+spell_language=en
 
 [Colors]
 base_color=
@@ -159,7 +163,7 @@ select_flags=6
 expanded_view_of_groups=0
 
 [Panelize]
-Find *.orig after patching=find . -name \\*.orig -print
 Find SUID and SGID programs=find . \\( \\( -perm -04000 -a -perm /011 \\) -o \\( -perm -02000 -a -perm /01 \\) \\) -print
-Find rejects after patching=find . -name \\*.rej -print
+Find *.orig after patching=find . -name \\*.orig -print
 Modified git files=git ls-files --modified
+Find rejects after patching=find . -name \\*.rej -print
