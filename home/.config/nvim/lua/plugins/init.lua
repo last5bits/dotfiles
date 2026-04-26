@@ -78,7 +78,7 @@ return {
             else
               gitsigns.nav_hunk('next')
             end
-          end)
+          end, { buffer = bufnr })
 
           vim.keymap.set('n', '[c', function()
             if vim.wo.diff then
@@ -86,7 +86,7 @@ return {
             else
               gitsigns.nav_hunk('prev')
             end
-          end)
+          end, { buffer = bufnr })
         end
       }
     end,
