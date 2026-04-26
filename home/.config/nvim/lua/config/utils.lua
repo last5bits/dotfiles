@@ -21,7 +21,7 @@ end
 
 function utils.map_clang_format()
   local clang_format_path = require('config.utils').get_clang_format_path()
-  vim.cmd('map <silent> <buffer> gq :py3f ' .. clang_format_path .. '<CR>')
+  vim.keymap.set('n', 'gq', ':py3f ' .. clang_format_path .. '<CR>', { silent = true, buffer = true })
 end
 
 return utils
