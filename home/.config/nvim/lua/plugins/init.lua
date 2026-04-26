@@ -154,4 +154,56 @@ return {
       vim.g["UltiSnipsEditSplit"] = 'vertical'
     end,
   },
+  {
+    "CopilotC-Nvim/CopilotChat.nvim",
+    dependencies = {
+      { "nvim-lua/plenary.nvim", branch = "master" },
+      { "nvim-treesitter/nvim-treesitter" },
+    },
+    build = "make tiktoken",
+    config = function(_, opts)
+      require('fzf-lua').register_ui_select()
+      vim.treesitter.language.register('markdown', 'copilot-chat')
+      require('CopilotChat').setup(vim.tbl_extend('force', opts, {
+        model = 'todo',
+        providers = {
+          copilot = { disabled = true },
+          my_provider = {  
+            get_url = function(opts) return "http://127.0.0.1:8080/v1/chat/completions" end,
+            get_headers = function() return { ["Authorization"] = "Bearer no-key"} end,
+            get_models = function(headers)
+              local utils = require 'CopilotChat.utils'
+              local response, err = utils.curl_get(
+                'http://127.0.0.1:8080/v1/models',
+                { headers = headers, json_response = true }
+              )
+              if err then error(err) end
+              return vim.tbl_map(function(model) return { id = model.id, name = model.id } end, response.body.data)
+            end,
+            prepare_input = require('CopilotChat.config.providers').copilot.prepare_input,
+            prepare_output = require('CopilotChat.config.providers').copilot.prepare_output,
+          }  
+        }  
+     }))
+     -- Normal: open CopilotChat
+     vim.keymap.set('n', '<leader>i', '<cmd>CopilotChat<cr>', { noremap = true, silent = true })
+     -- Visual: open CopilotChat and pass selected text as input
+     vim.keymap.set('v', '<leader>i', function()
+       -- yank selection into register z, then open CopilotChat with that text
+       vim.cmd('norm! "zy')
+       local sel = vim.fn.getreg('z')
+       -- if your CopilotChat plugin exposes a function taking initial input:
+       if pcall(require, 'copilot_chat') then
+         local ok, cc = pcall(require, 'copilot_chat')
+         if ok and type(cc.open) == 'function' then
+           cc.open({ initial_prompt = sel })
+           return
+         end
+       end
+       -- fallback: open command and paste selection into prompt (works if CopilotChat reads from unnamed register)
+       vim.fn.setreg('"', sel)
+       vim.cmd('CopilotChat')
+     end, { noremap = true, silent = true, desc = 'Open CopilotChat (use selection if any)' })
+    end,
+  },
 }
