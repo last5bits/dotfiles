@@ -11,7 +11,6 @@ vim.opt.swapfile = false
 vim.opt.scrolloff = 3
 vim.opt.hlsearch = true
 vim.opt.number = true
-vim.opt.lazyredraw = true
 vim.opt.cursorline = true
 vim.opt.wrapscan = false
 vim.opt.ignorecase = true
