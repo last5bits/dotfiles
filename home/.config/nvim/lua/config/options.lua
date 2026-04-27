@@ -20,6 +20,7 @@ vim.opt.updatetime = 250
 vim.opt.shortmess:append({ S = true })
 vim.opt.autowrite = true
 vim.opt.signcolumn = 'yes'
+vim.opt.termguicolors = true
 
 -- Diagnostics
 vim.diagnostic.config({ virtual_text = true })
