@@ -1,0 +1,57 @@
+#
+# Catppuccin Mocha - Standalone Tmux Theme
+#
+# Extracted from https://github.com/catppuccin/tmux.
+# Includes concepts, colors, and styling from the original authors.
+#
+# Requires terminal to be using a Nerd Font for icons.
+#
+
+set -g status-interval 1
+
+# ── Base Colors ──────────────────────────────────────────────────
+set -g status-style "bg=#181825,fg=#cdd6f4"
+set -g status-left-style  "bg=#181825,fg=#cdd6f4"
+set -g status-right-style "bg=#181825,fg=#cdd6f4"
+
+# ── Left Status (empty ─ windows live here) ─────────────────────
+set -g status-left ""
+
+# ── Right Status (two-tone pills, separate modules) ──────────────
+# Each module: colored icon → grey text.
+set -g status-right-length 150
+
+# Session: green icon on green / text on grey (red when prefix active)
+set -g status-right "#[fg=#{?client_prefix,#f38ba8,#a6e3a1},bg=#181825]#[fg=#11111b,bg=#{?client_prefix,#f38ba8,#a6e3a1}] #[fg=#cdd6f4,bg=#313244] #S#[fg=#313244,bg=#181825]"
+
+# Host: purple icon on purple / text on grey
+set -ag status-right " #[fg=#cba6f7,bg=#181825]#[fg=#11111b,bg=#cba6f7]󰒋 #[fg=#cdd6f4,bg=#313244] #(whoami)@#H#[fg=#313244,bg=#181825]"
+
+# Date/time: blue icon on blue / text on grey
+set -ag status-right " #[fg=#74c7ec,bg=#181825]#[fg=#11111b,bg=#74c7ec]󰃰 #[fg=#cdd6f4,bg=#313244] %H:%M:%S %d-%b-%y#[fg=#313244,bg=#181825]"
+
+# ── Window Status (two-tone rounded pills) ───────────────────────
+# Inactive: left cap → number on grey_overlay → text on grey_surface → right cap
+set -g window-status-format "#[fg=#9399b2,bg=#181825]#[fg=#11111b,bg=#9399b2]#I #[fg=#cdd6f4,bg=#313244] #W#[fg=#313244,bg=#181825]"
+# Active: left cap → number on mauve → text on surface_1 → right cap
+set -g window-status-current-format "#[fg=#cba6f7,bg=#181825]#[fg=#11111b,bg=#cba6f7]#I #[fg=#cdd6f4,bg=#45475a] #W#[fg=#45475a,bg=#181825]"
+set -g window-status-separator ""
+set -g status-justify left
+
+set -g window-status-activity-style "bg=#b4befe,fg=#11111b"
+set -g window-status-bell-style   "bg=#f9e2af,fg=#11111b"
+
+# ── Panes ────────────────────────────────────────────────────────
+set -g pane-border-style        "fg=#6c7086"
+set -g pane-active-border-style "fg=#b4befe"
+set -g display-panes-colour      "#181825"
+set -g display-panes-active-colour "#89b4fa"
+
+# ── Messages ─────────────────────────────────────────────────────
+set -g message-style        "fg=#94e2d5,bg=#6c7086,align=centre"
+set -g message-command-style "fg=#94e2d5,bg=#6c7086,align=centre"
+
+# ── Mode / Clock ─────────────────────────────────────────────────
+set -g mode-style        "bg=#313244,bold"
+set -g clock-mode-colour "#89b4fa"
+set -g clock-mode-style  24
