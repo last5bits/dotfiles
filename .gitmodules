@@ -110,3 +110,6 @@
 	path = home/.tmux/plugins/tmux-cpu
 	url = https://github.com/tmux-plugins/tmux-cpu
 	update = rebase
+[submodule "home/.config/tmux/catppuccin/tmux"]
+	path = home/.config/tmux/catppuccin/tmux
+	url = https://github.com/catppuccin/tmux.git
