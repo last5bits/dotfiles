@@ -22,20 +22,20 @@ set -g status-left ""
 set -g status-right-length 150
 
 # Session: green icon on green / text on grey (red when prefix active)
-set -g status-right "#[fg=#{?client_prefix,#f38ba8,#a6e3a1},bg=#181825]#[fg=#11111b,bg=#{?client_prefix,#f38ba8,#a6e3a1}] #[fg=#cdd6f4,bg=#313244] #S#[fg=#313244,bg=#181825]"
+set -g status-right "#[fg=#{?client_prefix,#f38ba8,#a6e3a1},bg=#181825]#[fg=#11111b,bg=#{?client_prefix,#f38ba8,#a6e3a1}] #[fg=#cdd6f4,bg=#181825] #S "
 
 # Host: purple icon on purple / text on grey
-set -ag status-right " #[fg=#cba6f7,bg=#181825]#[fg=#11111b,bg=#cba6f7]󰒋 #[fg=#cdd6f4,bg=#313244] #(whoami)@#H#[fg=#313244,bg=#181825]"
+set -ag status-right "#[fg=#cba6f7,bg=#181825]#[fg=#11111b,bg=#cba6f7]󰒋 #[fg=#cdd6f4,bg=#181825] #(whoami)@#H "
 
 # Date/time: blue icon on blue / text on grey
-set -ag status-right " #[fg=#74c7ec,bg=#181825]#[fg=#11111b,bg=#74c7ec]󰃰 #[fg=#cdd6f4,bg=#313244] %H:%M:%S %d-%b-%y#[fg=#313244,bg=#181825]"
+set -ag status-right "#[fg=#74c7ec,bg=#181825]#[fg=#11111b,bg=#74c7ec]󰃰 #[fg=#cdd6f4,bg=#181825] %H:%M:%S %d-%b-%y "
 
 # ── Window Status (two-tone rounded pills) ───────────────────────
 # Inactive: left cap → number on grey_overlay → text on grey_surface → right cap
 set -g window-status-format "#[fg=#9399b2,bg=#181825]#[fg=#11111b,bg=#9399b2]#I #[fg=#cdd6f4,bg=#313244] #W#[fg=#313244,bg=#181825]"
 # Active: left cap → number on mauve → text on surface_1 → right cap
 set -g window-status-current-format "#[fg=#cba6f7,bg=#181825]#[fg=#11111b,bg=#cba6f7]#I #[fg=#cdd6f4,bg=#45475a] #W#[fg=#45475a,bg=#181825]"
-set -g window-status-separator ""
+set -g window-status-separator " "
 set -g status-justify left
 
 set -g window-status-activity-style "bg=#b4befe,fg=#11111b"
