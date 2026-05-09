@@ -9,4 +9,6 @@ alias G="git"
 alias l="less"
 alias vim="nvim"
 
+tmux() { command tmux ls &>/dev/null && command tmux a || command tmux; }
+
 # vim: set filetype=sh:
