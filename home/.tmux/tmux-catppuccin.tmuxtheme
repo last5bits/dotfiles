@@ -14,20 +14,18 @@ set -g status-style "bg=#181825,fg=#cdd6f4"
 set -g status-left-style  "bg=#181825,fg=#cdd6f4"
 set -g status-right-style "bg=#181825,fg=#cdd6f4"
 
-# ── Left Status (empty ─ windows live here) ─────────────────────
-set -g status-left ""
+# ── Left Status (session pill, then windows) ────────────────────
+set -g status-left-length 150
+set -g status-left "#[fg=#{?client_prefix,#f38ba8,#a6e3a1},bg=#181825]#[fg=#11111b,bg=#{?client_prefix,#f38ba8,#a6e3a1}] #[fg=#cdd6f4,bg=#181825] #S "
 
-# ── Right Status (two-tone pills, separate modules) ──────────────
-# Each module: colored icon → grey text.
+# ── Right Status (host + date pills) ────────────────────────────
+# Each module: colored icon → bar bg text.
 set -g status-right-length 150
 
-# Session: green icon on green / text on grey (red when prefix active)
-set -g status-right "#[fg=#{?client_prefix,#f38ba8,#a6e3a1},bg=#181825]#[fg=#11111b,bg=#{?client_prefix,#f38ba8,#a6e3a1}] #[fg=#cdd6f4,bg=#181825] #S "
+# Host: purple icon on purple / text on bar bg
+set -g status-right "#[fg=#cba6f7,bg=#181825]#[fg=#11111b,bg=#cba6f7]󰒋 #[fg=#cdd6f4,bg=#181825] #(whoami)@#H "
 
-# Host: purple icon on purple / text on grey
-set -ag status-right "#[fg=#cba6f7,bg=#181825]#[fg=#11111b,bg=#cba6f7]󰒋 #[fg=#cdd6f4,bg=#181825] #(whoami)@#H "
-
-# Date/time: blue icon on blue / text on grey
+# Date/time: blue icon on blue / text on bar bg
 set -ag status-right "#[fg=#74c7ec,bg=#181825]#[fg=#11111b,bg=#74c7ec]󰃰 #[fg=#cdd6f4,bg=#181825] %H:%M:%S %d-%b-%y "
 
 # ── Window Status (two-tone rounded pills) ───────────────────────
