@@ -1,3 +1,4 @@
 theme = Deep
 font-thicken = true
 window-colorspace = display-p3
+confirm-close-surface = false
