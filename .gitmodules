@@ -2,7 +2,3 @@
 	path = home/.tmux/plugins/tmux-sensible
 	url = https://github.com/tmux-plugins/tmux-sensible
 	update = rebase
-[submodule "home/.tmux/plugins/tmux-yank"]
-	path = home/.tmux/plugins/tmux-yank
-	url = https://github.com/tmux-plugins/tmux-yank.git
-	update = rebase
