@@ -6,7 +6,3 @@
 	path = home/.tmux/plugins/tmux-yank
 	url = https://github.com/tmux-plugins/tmux-yank.git
 	update = rebase
-[submodule "home/.tmux/plugins/tmux-cpu"]
-	path = home/.tmux/plugins/tmux-cpu
-	url = https://github.com/tmux-plugins/tmux-cpu
-	update = rebase
