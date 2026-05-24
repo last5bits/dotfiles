@@ -10,6 +10,9 @@ export MANPAGER="less"
 bind 'set show-all-if-ambiguous on'
 bind 'TAB:menu-complete'
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-[ -f /usr/share/fzf/key-bindings.bash ] && source /usr/share/fzf/key-bindings.bash
-[ -f /usr/share/fzf/completion.bash ] && source /usr/share/fzf/completion.bash
+if [ -f ~/.fzf.bash ]; then
+    source ~/.fzf.bash
+elif [ -f /usr/share/fzf/key-bindings.bash ]; then
+    source /usr/share/fzf/key-bindings.bash
+    source /usr/share/fzf/completion.bash
+fi
