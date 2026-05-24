@@ -12,6 +12,12 @@ alias df="df -h"
 alias gdb="gdb -silent"
 alias ls="ls -h --color --group-directories-first"
 
-tmux() { command tmux a || command tmux; }
+tmux() {
+  if [ $# -eq 0 ]; then
+    command tmux a || command tmux
+  else
+    command tmux "$@"
+  fi
+}
 
 # vim: set filetype=sh:
