@@ -2,7 +2,7 @@ return {
   {
     "wincent/ferret",
     config = function()
-      vim.g["FerretAutojump"] = false
+      vim.g.FerretAutojump = false
     end,
   },
   {
