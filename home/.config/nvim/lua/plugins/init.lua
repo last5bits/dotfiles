@@ -155,11 +155,10 @@ return {
   },
   {
     "SirVer/ultisnips",
-    event = { "InsertEnter", "CmdlineEnter" },
     -- UltiSnips uses the embedded Python provider (:py3), not remote plugins.
     -- Skip loading entirely if Neovim was compiled without Python 3 support.
     cond = vim.fn.has("python3") == 1,
-    init = function()
+    config = function()
       vim.g.UltiSnipsExpandTrigger = "<tab>"
       vim.g.UltiSnipsEditSplit = "vertical"
     end,
