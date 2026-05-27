@@ -164,6 +164,28 @@ return {
     end,
   },
   {
+    "stevearc/conform.nvim",
+    opts = {
+      formatters_by_ft = {
+        c = { "clang_format" },
+        cpp = { "clang_format" },
+        python = { "ruff_format" },
+        lua = { "stylua" },
+        markdown = { "rumdl" },
+      },
+    },
+    keys = {
+      {
+        "gq",
+        function()
+          require("conform").format({ async = true })
+        end,
+        mode = { "n", "v" },
+        desc = "Format buffer",
+      },
+    },
+  },
+  {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     config = function()

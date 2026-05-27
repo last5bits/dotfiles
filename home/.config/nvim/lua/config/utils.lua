@@ -15,13 +15,4 @@ function utils.set_llvm()
   vim.opt_local.iskeyword:append({'.', '%', '-'})
 end
 
-function utils.get_clang_format_path()
-  return '/usr/share/clang/clang-format.py'
-end
-
-function utils.map_clang_format()
-  local clang_format_path = require('config.utils').get_clang_format_path()
-  vim.keymap.set('n', 'gq', ':py3f ' .. clang_format_path .. '<CR>', { silent = true, buffer = true })
-end
-
 return utils
