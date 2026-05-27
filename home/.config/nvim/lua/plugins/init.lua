@@ -1,50 +1,49 @@
 return {
   {
-    "wincent/ferret",
+    'wincent/ferret',
     config = function()
       vim.g.FerretAutojump = false
     end,
   },
   {
-    "ibhagwan/fzf-lua",
+    'ibhagwan/fzf-lua',
     config = function()
-      local fzf = require("fzf-lua")
+      local fzf = require('fzf-lua')
       fzf.setup({
-        "fzf-vim",
+        'fzf-vim',
         winopts = {
           preview = {
-            horizontal     = "right:50%",     -- right|left:size
+            horizontal = 'right:50%', -- right|left:size
             hidden = false,
           },
         },
       })
-      vim.keymap.set("n", "<leader>t", fzf.files)
-      vim.keymap.set("n", "<leader>b", fzf.buffers)
+      vim.keymap.set('n', '<leader>t', fzf.files)
+      vim.keymap.set('n', '<leader>b', fzf.buffers)
     end,
   },
-  "tpope/vim-eunuch",
+  'tpope/vim-eunuch',
   {
-    "tpope/vim-fugitive",
+    'tpope/vim-fugitive',
     config = function()
-      local augroup = vim.api.nvim_create_augroup('fugitive_autocmds', {clear = true})
+      local augroup = vim.api.nvim_create_augroup('fugitive_autocmds', { clear = true })
       vim.api.nvim_create_autocmd('FileType', {
         pattern = 'netrw',
         group = augroup,
         desc = 'Open the project root',
         callback = function()
-          vim.keymap.set("n", 'g~', ':Gedit :/<CR>',
-            { noremap = true, buffer = true })
-        end
+          vim.keymap.set('n', 'g~', ':Gedit :/<CR>', { noremap = true, buffer = true })
+        end,
       })
     end,
   },
-  "tpope/vim-rsi",
-  "tpope/vim-sensible",
-  "tpope/vim-sleuth",
-  "tpope/vim-vinegar",
-  "tpope/vim-unimpaired",
+  'tpope/vim-rsi',
+  'tpope/vim-sensible',
+  'tpope/vim-sleuth',
+  'tpope/vim-vinegar',
+  'tpope/vim-unimpaired',
   {
-    "neovim/nvim-lspconfig",
+    'neovim/nvim-lspconfig',
     config = function()
       vim.lsp.enable('clangd')
 
@@ -65,16 +64,16 @@ return {
     end,
   },
   {
-    "lewis6991/gitsigns.nvim",
+    'lewis6991/gitsigns.nvim',
     config = function()
-      require('gitsigns').setup{
+      require('gitsigns').setup({
         on_attach = function(bufnr)
           local gitsigns = require('gitsigns')
 
           -- Navigation
           vim.keymap.set('n', ']c', function()
             if vim.wo.diff then
-              vim.cmd.normal({']c', bang = true})
+              vim.cmd.normal({ ']c', bang = true })
             else
               gitsigns.nav_hunk('next')
             end
@@ -82,25 +81,25 @@ return {
 
           vim.keymap.set('n', '[c', function()
             if vim.wo.diff then
-              vim.cmd.normal({'[c', bang = true})
+              vim.cmd.normal({ '[c', bang = true })
             else
               gitsigns.nav_hunk('prev')
             end
           end, { buffer = bufnr })
-        end
-      }
+        end,
+      })
     end,
   },
   {
-    "azabiong/vim-highlighter",
+    'azabiong/vim-highlighter',
     init = function()
       -- settings
     end,
   },
   {
-    "skywind3000/asyncrun.vim",
+    'skywind3000/asyncrun.vim',
     config = function()
-      local augroup = vim.api.nvim_create_augroup('asyncrun_autocmds', {clear = true})
+      local augroup = vim.api.nvim_create_augroup('asyncrun_autocmds', { clear = true })
       vim.keymap.set('n', '<leader>f', ':call asyncrun#quickfix_toggle(0)<CR>', { silent = true })
       vim.api.nvim_create_autocmd('User', {
         pattern = 'AsyncRunStart',
@@ -111,20 +110,23 @@ return {
     end,
   },
   {
-    "igemnace/vim-makery",
+    'igemnace/vim-makery',
     dependencies = { 'skywind3000/asyncrun.vim' },
     config = function()
-      vim.api.nvim_create_user_command('Make', 'AsyncRun -program=make @ <args>',
-        { bang = true, nargs = '*', complete = 'file' })
+      vim.api.nvim_create_user_command(
+        'Make',
+        'AsyncRun -program=make @ <args>',
+        { bang = true, nargs = '*', complete = 'file' }
+      )
     end,
   },
   {
-    "preservim/nerdcommenter",
+    'preservim/nerdcommenter',
     dependencies = { 'rhysd/vim-llvm' },
     config = function()
-      vim.g["NERDSpaceDelims"] = true
-      vim.g["NERDDefaultAlign"] = "both"
-      vim.g["NERDCustomDelimeters"] = {
+      vim.g['NERDSpaceDelims'] = true
+      vim.g['NERDDefaultAlign'] = 'both'
+      vim.g['NERDCustomDelimeters'] = {
         mlir = { left = '// ' },
         tablegen = { left = '// ' },
       }
@@ -132,64 +134,63 @@ return {
   },
   {
     'windwp/nvim-autopairs',
-    event = "InsertEnter",
-    config = true
+    event = 'InsertEnter',
+    config = true,
     -- use opts = {} for passing setup options
     -- this is equivalent to setup({}) function
   },
   {
-    "rhysd/vim-llvm",
+    'rhysd/vim-llvm',
     init = function()
-      vim.g["llvm_extends_official"] = false
+      vim.g['llvm_extends_official'] = false
     end,
   },
   {
-    "AndrewRadev/linediff.vim",
+    'AndrewRadev/linediff.vim',
     config = function()
-      vim.api.nvim_create_user_command( 'Ld', 'Linediff',
-        {desc = 'An alias for :Linediff.'})
+      vim.api.nvim_create_user_command('Ld', 'Linediff', { desc = 'An alias for :Linediff.' })
     end,
   },
   {
-    "roszcz/Vim-Star-Search",
+    'roszcz/Vim-Star-Search',
   },
   {
-    "SirVer/ultisnips",
+    'SirVer/ultisnips',
     -- UltiSnips uses the embedded Python provider (:py3), not remote plugins.
     -- Skip loading entirely if Neovim was compiled without Python 3 support.
-    cond = vim.fn.has("python3") == 1,
+    cond = vim.fn.has('python3') == 1,
     config = function()
-      vim.g.UltiSnipsExpandTrigger = "<tab>"
-      vim.g.UltiSnipsEditSplit = "vertical"
+      vim.g.UltiSnipsExpandTrigger = '<tab>'
+      vim.g.UltiSnipsEditSplit = 'vertical'
     end,
   },
   {
-    "stevearc/conform.nvim",
+    'stevearc/conform.nvim',
     opts = {
       formatters_by_ft = {
-        c = { "clang_format" },
-        cpp = { "clang_format" },
-        python = { "ruff_format" },
-        lua = { "stylua" },
-        markdown = { "rumdl" },
+        c = { 'clang_format' },
+        cpp = { 'clang_format' },
+        python = { 'ruff_format' },
+        lua = { 'stylua' },
+        markdown = { 'rumdl' },
       },
     },
     keys = {
       {
-        "gq",
+        'gq',
         function()
-          require("conform").format({ async = true })
+          require('conform').format({ async = true })
         end,
-        mode = { "n", "v" },
-        desc = "Format buffer",
+        mode = { 'n', 'v' },
+        desc = 'Format buffer',
       },
     },
   },
   {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
+    'nvim-treesitter/nvim-treesitter',
+    build = ':TSUpdate',
     config = function()
-      local ok, configs = pcall(require, "nvim-treesitter.configs")
+      local ok, configs = pcall(require, 'nvim-treesitter.configs')
       if ok then
         configs.setup({
           highlight = { enable = true },

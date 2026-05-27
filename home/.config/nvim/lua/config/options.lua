@@ -60,20 +60,20 @@ vim.api.nvim_create_autocmd('FileType', {
 -- Poor man's vim-rooter (git only) using fugitive
 -- last_cwd stores the per-buffer working directory so it can be restored when
 -- switching back to that buffer, rather than always resetting to git root.
-local rooter_group = vim.api.nvim_create_augroup("vim_rooter", { clear = true })
-vim.api.nvim_create_autocmd("BufLeave", {
+local rooter_group = vim.api.nvim_create_augroup('vim_rooter', { clear = true })
+vim.api.nvim_create_autocmd('BufLeave', {
   group = rooter_group,
   callback = function()
     vim.b.last_cwd = vim.fn.getcwd()
   end,
 })
-vim.api.nvim_create_autocmd("BufEnter", {
+vim.api.nvim_create_autocmd('BufEnter', {
   group = rooter_group,
   callback = function()
     if vim.b.last_cwd then
-      vim.cmd("lcd " .. vim.b.last_cwd)
+      vim.cmd('lcd ' .. vim.b.last_cwd)
     else
-      pcall(vim.cmd, "Glcd")
+      pcall(vim.cmd, 'Glcd')
     end
   end,
 })

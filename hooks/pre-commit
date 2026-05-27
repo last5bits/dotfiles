@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# Pre-commit hook: run stylua on staged Lua files in the nvim config
+
+STYLUA_BIN="stylua"
+
+if ! command -v "$STYLUA_BIN" &>/dev/null; then
+  echo "stylua not found, skipping formatting"
+  exit 0
+fi
+
+# Get staged Lua files under the nvim config
+NVIM_DIR="home/.config/nvim"
+STAGED_FILES=$(git diff --cached --name-only --diff-filter=ACM | grep "^${NVIM_DIR}/.*\.lua$" || true)
+
+if [ -z "$STAGED_FILES" ]; then
+  exit 0
+fi
+
+echo "Running stylua on staged Lua files..."
+$STYLUA_BIN $STAGED_FILES
+
+# Re-stage any files stylua modified
+echo "$STAGED_FILES" | xargs git add 2>/dev/null
+
+exit 0
