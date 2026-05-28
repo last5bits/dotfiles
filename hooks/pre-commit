@@ -27,7 +27,7 @@ fi
 if [ -n "$NVIM_LUA_FILES" ]; then
   if command -v luacheck &>/dev/null; then
     echo "Running luacheck on staged Lua files..."
-    if ! luacheck $NVIM_LUA_FILES; then
+    if ! luacheck --config home/.config/nvim/.luacheckrc $NVIM_LUA_FILES; then
       FAILED=1
     fi
   else
