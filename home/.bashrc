@@ -13,6 +13,8 @@ HISTCONTROL=ignoreboth:erasedups
 HISTIGNORE="ls:ll:cd:pwd:clear:history"
 shopt -s histappend
 
+[[ -r /usr/share/bash-completion/bash_completion ]] && source /usr/share/bash-completion/bash_completion
+
 bind 'set show-all-if-ambiguous on'
 bind 'TAB:menu-complete'
 
