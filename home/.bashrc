@@ -7,6 +7,12 @@ export EDITOR="nvim"
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 export MANPAGER="less"
 
+HISTSIZE=100000
+HISTFILESIZE=100000
+HISTCONTROL=ignoreboth:erasedups
+HISTIGNORE="ls:ll:cd:pwd:clear:history"
+shopt -s histappend
+
 bind 'set show-all-if-ambiguous on'
 bind 'TAB:menu-complete'
 
