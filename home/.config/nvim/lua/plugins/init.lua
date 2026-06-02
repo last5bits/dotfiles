@@ -172,25 +172,21 @@ return {
   },
   {
     'stevearc/conform.nvim',
-    opts = {
-      formatters_by_ft = {
-        c = { 'clang_format' },
-        cpp = { 'clang_format' },
-        python = { 'ruff_format' },
-        lua = { 'stylua' },
-        markdown = { 'rumdl' },
-      },
-    },
-    keys = {
-      {
-        'gq',
-        function()
-          require('conform').format({ async = true })
-        end,
-        mode = { 'n', 'v' },
-        desc = 'Format buffer',
-      },
-    },
+    config = function()
+      local conform = require('conform')
+      conform.setup({
+        formatters_by_ft = {
+          c = { 'clang_format' },
+          cpp = { 'clang_format' },
+          python = { 'ruff_format' },
+          lua = { 'stylua' },
+          markdown = { 'rumdl' },
+        },
+      })
+      vim.keymap.set({ 'n', 'v' }, '<leader>gq', function()
+        conform.format({ async = true })
+      end)
+    end,
   },
   {
     'nvim-treesitter/nvim-treesitter',
