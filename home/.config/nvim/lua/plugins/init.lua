@@ -53,8 +53,20 @@ return {
         vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
         vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
         vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+        vim.keymap.set('i', '<C-k>', vim.lsp.buf.signature_help, { buffer = bufnr, desc = 'Signature help' })
         vim.keymap.set('n', 'cx', vim.lsp.buf.code_action, opts)
         vim.keymap.set('n', 'cr', vim.lsp.buf.rename, opts)
+        vim.keymap.set('n', '<leader>lc', vim.lsp.buf.incoming_calls, { buffer = bufnr, desc = 'Incoming calls' })
+        vim.keymap.set('n', '<leader>lo', vim.lsp.buf.outgoing_calls, { buffer = bufnr, desc = 'Outgoing calls' })
+
+        vim.api.nvim_create_autocmd('CursorHold', {
+          buffer = bufnr,
+          callback = vim.lsp.buf.document_highlight,
+        })
+        vim.api.nvim_create_autocmd('CursorMoved', {
+          buffer = bufnr,
+          callback = vim.lsp.buf.clear_references,
+        })
       end
 
       vim.lsp.config('pyright', {

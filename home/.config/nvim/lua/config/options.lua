@@ -26,6 +26,11 @@ vim.diagnostic.config({ virtual_text = true })
 -- Colorscheme
 vim.cmd('colorscheme slate')
 
+-- LSP document highlight colours
+vim.api.nvim_set_hl(0, 'LspReferenceRead', { link = 'Visual' })
+vim.api.nvim_set_hl(0, 'LspReferenceText', { link = 'Visual' })
+vim.api.nvim_set_hl(0, 'LspReferenceWrite', { link = 'Visual' })
+
 -- Backup configuration
 vim.opt.backup = true
 vim.opt.backupdir = vim.fn.expand('$HOME/.local/share/nvim/backup/')
