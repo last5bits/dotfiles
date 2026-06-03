@@ -173,14 +173,23 @@ return {
     'roszcz/Vim-Star-Search',
   },
   {
-    'SirVer/ultisnips',
-    -- UltiSnips uses the embedded Python provider (:py3), not remote plugins.
-    -- Skip loading entirely if Neovim was compiled without Python 3 support.
-    cond = vim.fn.has('python3') == 1,
-    config = function()
-      vim.g.UltiSnipsExpandTrigger = '<tab>'
-      vim.g.UltiSnipsEditSplit = 'vertical'
-    end,
+    'saghen/blink.cmp',
+    version = '1.*',
+    opts = {
+      keymap = {
+        preset = 'default',
+        ['<C-n>'] = { 'select_next', 'snippet_forward', 'fallback' },
+        ['<C-p>'] = { 'select_prev', 'snippet_backward', 'fallback' },
+        ['<CR>'] = { 'accept', 'fallback' },
+      },
+      appearance = {
+        use_nvim_cmp_as_default = true,
+        nerd_font_variant = 'mono',
+      },
+      sources = {
+        default = { 'lsp', 'path', 'snippets', 'buffer' },
+      },
+    },
   },
   {
     'stevearc/conform.nvim',

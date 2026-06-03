@@ -1,0 +1,19 @@
+{
+  "ns": {
+    "prefix": "ns",
+    "body": [
+      "namespace ${1:name}",
+      "{",
+      "\t$0",
+      "} // namespace $1"
+    ]
+  },
+  "dbgs": {
+    "prefix": "dbgs",
+    "body": ["LLVM_DEBUG(dbgs() << \"$0\\n\");"]
+  },
+  "errs": {
+    "prefix": "errs",
+    "body": ["llvm::errs() << \"$0\\n\";"]
+  }
+}

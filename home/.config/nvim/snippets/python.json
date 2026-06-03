@@ -1,0 +1,10 @@
+{
+  "pf": {
+    "prefix": "pf",
+    "body": ["print(f\"${1:var} {$1}\")"]
+  },
+  "bp": {
+    "prefix": "bp",
+    "body": ["breakpoint()${1}"]
+  }
+}
