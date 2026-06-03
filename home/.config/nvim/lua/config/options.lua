@@ -1,4 +1,25 @@
 -- General editor settings
+vim.opt.backspace = 'indent,eol,start'
+vim.opt.complete:remove('i')
+vim.opt.smarttab = true
+vim.opt.nrformats:remove('octal')
+vim.opt.formatoptions:append('j')
+vim.opt.incsearch = true
+vim.opt.laststatus = 2
+vim.opt.ruler = true
+vim.opt.wildmenu = true
+vim.opt.sidescroll = 1
+vim.opt.sidescrolloff = 2
+vim.opt.display = 'lastline,truncate'
+vim.opt.listchars = { tab = '> ', trail = '-', extends = '>', precedes = '<', nbsp = '+' }
+vim.opt.autoread = true
+vim.opt.history = 1000
+vim.opt.tabpagemax = 50
+vim.opt.sessionoptions:remove('options')
+vim.opt.viewoptions:remove('options')
+vim.opt.langremap = false
+vim.g.is_posix = 1
+
 vim.opt.showtabline = 1
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4

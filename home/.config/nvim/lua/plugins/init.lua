@@ -38,7 +38,6 @@ return {
     end,
   },
   'tpope/vim-rsi',
-  'tpope/vim-sensible',
   'tpope/vim-sleuth',
   'tpope/vim-vinegar',
   'tpope/vim-unimpaired',
