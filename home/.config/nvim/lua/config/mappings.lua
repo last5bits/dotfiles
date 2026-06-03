@@ -6,7 +6,7 @@ vim.keymap.set('n', '<leader>o', ':W diffoff<CR>:setl nocursorbind<CR>:only<CR>'
 vim.keymap.set(
   'n',
   '<C-l>',
-  ':nohlsearch<<Bar>diffupdate<<CR><C-l>',
+  ':nohlsearch<Bar>diffupdate<CR><C-l>',
   { silent = true, desc = 'Clear search highlight, update diff, redraw' }
 )
 vim.keymap.set('i', '<C-u>', '<C-g>u<C-u>', { desc = 'Delete to start of line (break undo)' })
