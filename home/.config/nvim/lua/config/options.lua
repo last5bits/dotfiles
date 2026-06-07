@@ -37,6 +37,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.infercase = true
 vim.opt.updatetime = 250
+vim.opt.shortmess:append({ S = true })
 vim.opt.autowrite = true
 vim.opt.signcolumn = 'yes'
 vim.opt.termguicolors = true
