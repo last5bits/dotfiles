@@ -1,0 +1,3 @@
+{
+  "pc": {"makeprg": "hooks/pre-commit", "errorformat": "%+G%.%#"}
+}
