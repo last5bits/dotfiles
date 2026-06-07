@@ -207,4 +207,9 @@ return {
       end
     end,
   },
+  {
+    'echasnovski/mini.statusline',
+    version = '*',
+    config = true,
+  },
 }
