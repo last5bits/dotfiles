@@ -156,9 +156,7 @@ return {
       vim.api.nvim_create_user_command('Ld', 'Linediff', { desc = 'An alias for :Linediff.' })
     end,
   },
-  {
-    'roszcz/Vim-Star-Search',
-  },
+
   {
     'saghen/blink.cmp',
     version = '1.*',
