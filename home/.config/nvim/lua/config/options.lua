@@ -41,6 +41,10 @@ vim.opt.autowrite = true
 vim.opt.signcolumn = 'yes'
 vim.opt.termguicolors = true
 
+-- Diff display settings
+vim.opt.diffopt:append('linematch:60') -- smarter intra-line diffing (Neovim 0.9+)
+vim.opt.diffopt:append('algorithm:histogram')
+
 -- Diagnostics
 vim.diagnostic.config({ virtual_text = true })
 
