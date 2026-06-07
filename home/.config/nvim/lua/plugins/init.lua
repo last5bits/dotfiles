@@ -138,18 +138,6 @@ return {
     end,
   },
   {
-    'preservim/nerdcommenter',
-    dependencies = { 'rhysd/vim-llvm' },
-    config = function()
-      vim.g['NERDSpaceDelims'] = true
-      vim.g['NERDDefaultAlign'] = 'both'
-      vim.g['NERDCustomDelimeters'] = {
-        mlir = { left = '// ' },
-        tablegen = { left = '// ' },
-      }
-    end,
-  },
-  {
     'windwp/nvim-autopairs',
     event = 'InsertEnter',
     config = true,
