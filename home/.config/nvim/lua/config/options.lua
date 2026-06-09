@@ -53,9 +53,9 @@ vim.diagnostic.config({ virtual_text = true })
 vim.cmd('colorscheme slate')
 
 -- LSP document highlight colours
-vim.api.nvim_set_hl(0, 'LspReferenceRead', { link = 'Visual' })
-vim.api.nvim_set_hl(0, 'LspReferenceText', { link = 'Visual' })
-vim.api.nvim_set_hl(0, 'LspReferenceWrite', { link = 'Visual' })
+vim.api.nvim_set_hl(0, 'LspReferenceRead', { link = 'StatusLine' })
+vim.api.nvim_set_hl(0, 'LspReferenceText', { link = 'StatusLine' })
+vim.api.nvim_set_hl(0, 'LspReferenceWrite', { link = 'StatusLine' })
 
 -- Backup configuration
 vim.opt.backup = true
