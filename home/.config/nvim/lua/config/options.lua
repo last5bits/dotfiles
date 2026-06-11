@@ -21,6 +21,7 @@ vim.opt.langremap = false
 vim.g.is_posix = 1
 
 vim.opt.showtabline = 1
+vim.opt.tabline = "%!v:lua.require('config.tabline').render()"
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
