@@ -30,4 +30,9 @@ require('lazy').setup({
     notify = true,
     frequency = 86400, -- check for updates once a day
   },
+  -- disable config file watching and auto-reload
+  change_detection = {
+    enabled = false,
+    notify = false,
+  },
 })
