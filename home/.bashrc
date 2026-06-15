@@ -5,7 +5,7 @@ source ~/.aliases
 export PATH="$PATH:$HOME/.bin"
 export EDITOR="nvim"
 export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
-export MANPAGER="less"
+export MANPAGER="less -R"
 
 HISTSIZE=100000
 HISTFILESIZE=100000

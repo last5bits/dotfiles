@@ -11,6 +11,7 @@ alias vim="nvim"
 alias df="df -h"
 alias gdb="gdb -silent"
 alias ls="ls -h --color --group-directories-first"
+alias ll="ls -la"
 
 tmux() {
   if [ $# -eq 0 ]; then
