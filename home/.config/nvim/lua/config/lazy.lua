@@ -24,12 +24,7 @@ require('lazy').setup({
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
   install = { colorscheme = { 'slate' } },
-  -- automatically check for plugin updates
-  checker = {
-    enabled = true,
-    notify = true,
-    frequency = 86400, -- check for updates once a day
-  },
+  checker = { enabled = false },
   -- disable config file watching and auto-reload
   change_detection = {
     enabled = false,
