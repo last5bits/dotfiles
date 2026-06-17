@@ -39,17 +39,26 @@ fi
 TRAILING_FILES=$(echo "$STAGED_FILES" | grep -v '\.snippets$' || true)
 if [ -n "$TRAILING_FILES" ]; then
   echo "Checking for trailing whitespace..."
-  for file in $TRAILING_FILES; do
+  while IFS= read -r file; do
     if git diff --cached --check -- "$file" 2>/dev/null | grep -q "trailing whitespace"; then
       echo "  trailing whitespace in $file"
       FAILED=1
     fi
-  done
+  done <<< "$TRAILING_FILES"
 fi
+
+# --- merge conflict markers ---
+echo "Checking for merge conflict markers..."
+while IFS= read -r file; do
+  if git diff --cached -- "$file" 2>/dev/null | grep -q '^+<<<<<<< \|^+=======\|^+>>>>>>> '; then
+    echo "  merge conflict marker in $file"
+    FAILED=1
+  fi
+done <<< "$STAGED_FILES"
 
 # --- end-of-file newline ---
 echo "Checking for missing end-of-file newlines..."
-for file in $STAGED_FILES; do
+while IFS= read -r file; do
   if [ -f "$file" ]; then
     if [ -s "$file" ] && [ "$(tail -c 1 "$file" | wc -l)" -eq 0 ]; then
       echo "  missing newline at EOF: $file"
@@ -57,7 +66,7 @@ for file in $STAGED_FILES; do
       git add "$file"
     fi
   fi
-done
+done <<< "$STAGED_FILES"
 
 if [ "$FAILED" -ne 0 ]; then
   echo "Pre-commit checks failed. Fix the issues above and try again."
