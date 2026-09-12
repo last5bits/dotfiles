@@ -15,7 +15,7 @@ local function get_visual_text()
   local mode = vim.fn.mode()
 
   -- Exit visual mode so '< and '> are updated.
-  vim.cmd('noautocmd normal! <Esc>')
+  vim.cmd([[noautocmd execute "normal! \<Esc>"]])
 
   local ok, region = pcall(vim.fn.getregion, start_pos, end_pos, { type = mode })
   if ok and region then
