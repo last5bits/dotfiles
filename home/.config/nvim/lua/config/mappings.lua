@@ -9,5 +9,6 @@ vim.keymap.set(
   ':nohlsearch<Bar>diffupdate<CR><C-l>',
   { silent = true, desc = 'Clear search highlight, update diff, redraw' }
 )
+vim.keymap.set('x', 'gC', ':normal gcc<CR>', { silent = true, desc = 'Toggle comment on each line' })
 vim.keymap.set('i', '<C-u>', '<C-g>u<C-u>', { desc = 'Delete to start of line (break undo)' })
 vim.keymap.set('i', '<C-w>', '<C-g>u<C-w>', { desc = 'Delete word (break undo)' })
